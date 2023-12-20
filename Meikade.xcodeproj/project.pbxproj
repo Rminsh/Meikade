@@ -24,6 +24,8 @@
 		C69945F52B3365F4008D475F /* ExploreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945F42B3365F4008D475F /* ExploreItemView.swift */; };
 		C69945F72B336699008D475F /* ExploreStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945F62B336699008D475F /* ExploreStaticView.swift */; };
 		C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C69945F82B336B7F008D475F /* Localizable.xcstrings */; };
+		C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C69945FB2B337042008D475F /* Vazirmatn.ttf */; };
+		C69946002B3370EF008D475F /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945FF2B3370EF008D475F /* CustomFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		C69945F42B3365F4008D475F /* ExploreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItemView.swift; sourceTree = "<group>"; };
 		C69945F62B336699008D475F /* ExploreStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreStaticView.swift; sourceTree = "<group>"; };
 		C69945F82B336B7F008D475F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		C69945FB2B337042008D475F /* Vazirmatn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazirmatn.ttf; sourceTree = "<group>"; };
+		C69945FD2B337075008D475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C69945FF2B3370EF008D475F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 		C69945BB2B32E8CD008D475F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C69945FE2B3370E6008D475F /* General */,
 				C69945F32B335CCE008D475F /* Resources */,
 				C69945F22B335CC7008D475F /* Views */,
 				C69945BC2B32E8CD008D475F /* MeikadeApp.swift */,
@@ -146,11 +152,29 @@
 		C69945F32B335CCE008D475F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C69945FA2B33703A008D475F /* Fonts */,
 				C69945C02B32E8CE008D475F /* Assets.xcassets */,
+				C69945FD2B337075008D475F /* Info.plist */,
 				C69945C22B32E8CE008D475F /* Meikade.entitlements */,
 				C69945F82B336B7F008D475F /* Localizable.xcstrings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C69945FA2B33703A008D475F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C69945FB2B337042008D475F /* Vazirmatn.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C69945FE2B3370E6008D475F /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C69945FF2B3370EF008D475F /* CustomFont.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */,
 				C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */,
 				C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */,
 			);
@@ -235,6 +260,7 @@
 				C69945D92B333A3F008D475F /* RequestError.swift in Sources */,
 				C69945F52B3365F4008D475F /* ExploreItemView.swift in Sources */,
 				C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */,
+				C69946002B3370EF008D475F /* CustomFont.swift in Sources */,
 				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
@@ -374,6 +400,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Resources/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -410,6 +437,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Resources/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

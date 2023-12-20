@@ -50,6 +50,7 @@ extension ExploreView: View {
                             }
                         } header: {
                             Text(section.section)
+                                .customFont(style: .body)
                                 #if os(iOS)
                                 .padding(.horizontal)
                                 #endif
@@ -64,7 +65,13 @@ extension ExploreView: View {
             #if !os(macOS)
             .listStyle(.grouped)
             #endif
-            .navigationTitle("می‌کده")
+            .toolbar {
+                ToolbarItem(placement: .secondaryAction) {
+                    Image("Meikade")
+                        .font(.system(size: 42))
+                        
+                }
+            }
         }
         .task {
             await getExplore()

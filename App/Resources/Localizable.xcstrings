@@ -66,16 +66,6 @@
     },
     "Unexpected Status Code (status) occured" : {
 
-    },
-    "می‌کده" : {
-      "localizations" : {
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "می‌کده"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"
