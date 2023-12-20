@@ -11,7 +11,9 @@ import SwiftUI
 struct MeikadeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExploreView()
+                .environment(\.locale, .init(identifier: "fa"))
+                .environment(\.layoutDirection, .rightToLeft)
         }
     }
 }

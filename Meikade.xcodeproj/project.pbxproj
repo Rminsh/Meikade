@@ -8,18 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BC2B32E8CD008D475F /* MeikadeApp.swift */; };
-		C69945BF2B32E8CD008D475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BE2B32E8CD008D475F /* ContentView.swift */; };
+		C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BE2B32E8CD008D475F /* ExploreView.swift */; };
 		C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69945C02B32E8CE008D475F /* Assets.xcassets */; };
-		C69945C52B32E8CE008D475F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69945C42B32E8CE008D475F /* Preview Assets.xcassets */; };
+		C69945CE2B333895008D475F /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945CD2B333895008D475F /* Explore.swift */; };
+		C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D12B333A3F008D475F /* HTTPContentType.swift */; };
+		C69945D72B333A3F008D475F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D22B333A3F008D475F /* HTTPMethod.swift */; };
+		C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D32B333A3F008D475F /* HTTPClient.swift */; };
+		C69945D92B333A3F008D475F /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D42B333A3F008D475F /* RequestError.swift */; };
+		C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D52B333A3F008D475F /* Endpoint.swift */; };
+		C69945DC2B333B5C008D475F /* MeikadeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945DB2B333B5C008D475F /* MeikadeEndpoint.swift */; };
+		C69945DF2B333DFA008D475F /* MeikadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945DE2B333DFA008D475F /* MeikadeService.swift */; };
+		C69945EB2B334B26008D475F /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = C69945EA2B334B26008D475F /* Nuke */; };
+		C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = C69945EC2B334B26008D475F /* NukeExtensions */; };
+		C69945EF2B334B26008D475F /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = C69945EE2B334B26008D475F /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C69945B92B32E8CD008D475F /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69945BC2B32E8CD008D475F /* MeikadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeApp.swift; sourceTree = "<group>"; };
-		C69945BE2B32E8CD008D475F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C69945BE2B32E8CD008D475F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		C69945C02B32E8CE008D475F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C69945C22B32E8CE008D475F /* Meikade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Meikade.entitlements; sourceTree = "<group>"; };
-		C69945C42B32E8CE008D475F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C69945CD2B333895008D475F /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
+		C69945D12B333A3F008D475F /* HTTPContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPContentType.swift; sourceTree = "<group>"; };
+		C69945D22B333A3F008D475F /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		C69945D32B333A3F008D475F /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		C69945D42B333A3F008D475F /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		C69945D52B333A3F008D475F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		C69945DB2B333B5C008D475F /* MeikadeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeEndpoint.swift; sourceTree = "<group>"; };
+		C69945DE2B333DFA008D475F /* MeikadeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69945EF2B334B26008D475F /* NukeUI in Frameworks */,
+				C69945EB2B334B26008D475F /* Nuke in Frameworks */,
+				C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,7 +56,8 @@
 		C69945B02B32E8CD008D475F = {
 			isa = PBXGroup;
 			children = (
-				C69945BB2B32E8CD008D475F /* Meikade */,
+				C69945BB2B32E8CD008D475F /* App */,
+				C69945CB2B333875008D475F /* Networking */,
 				C69945BA2B32E8CD008D475F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,24 +70,78 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C69945BB2B32E8CD008D475F /* Meikade */ = {
+		C69945BB2B32E8CD008D475F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C69945F32B335CCE008D475F /* Resources */,
+				C69945F22B335CC7008D475F /* Views */,
 				C69945BC2B32E8CD008D475F /* MeikadeApp.swift */,
-				C69945BE2B32E8CD008D475F /* ContentView.swift */,
-				C69945C02B32E8CE008D475F /* Assets.xcassets */,
-				C69945C22B32E8CE008D475F /* Meikade.entitlements */,
-				C69945C32B32E8CE008D475F /* Preview Content */,
 			);
-			path = Meikade;
+			path = App;
 			sourceTree = "<group>";
 		};
-		C69945C32B32E8CE008D475F /* Preview Content */ = {
+		C69945CB2B333875008D475F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C69945C42B32E8CE008D475F /* Preview Assets.xcassets */,
+				C69945D02B333A3F008D475F /* Base */,
+				C69945CF2B333A2B008D475F /* Endpoints */,
+				C69945CC2B33387D008D475F /* Models */,
+				C69945DD2B333D55008D475F /* Services */,
 			);
-			path = "Preview Content";
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C69945CC2B33387D008D475F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C69945CD2B333895008D475F /* Explore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C69945CF2B333A2B008D475F /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				C69945DB2B333B5C008D475F /* MeikadeEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		C69945D02B333A3F008D475F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C69945D12B333A3F008D475F /* HTTPContentType.swift */,
+				C69945D22B333A3F008D475F /* HTTPMethod.swift */,
+				C69945D32B333A3F008D475F /* HTTPClient.swift */,
+				C69945D42B333A3F008D475F /* RequestError.swift */,
+				C69945D52B333A3F008D475F /* Endpoint.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C69945DD2B333D55008D475F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C69945DE2B333DFA008D475F /* MeikadeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C69945F22B335CC7008D475F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C69945BE2B32E8CD008D475F /* ExploreView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C69945F32B335CCE008D475F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C69945C02B32E8CE008D475F /* Assets.xcassets */,
+				C69945C22B32E8CE008D475F /* Meikade.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +160,11 @@
 			dependencies = (
 			);
 			name = Meikade;
+			packageProductDependencies = (
+				C69945EA2B334B26008D475F /* Nuke */,
+				C69945EC2B334B26008D475F /* NukeExtensions */,
+				C69945EE2B334B26008D475F /* NukeUI */,
+			);
 			productName = Meikade;
 			productReference = C69945B92B32E8CD008D475F /* Meikade.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +193,9 @@
 				Base,
 			);
 			mainGroup = C69945B02B32E8CD008D475F;
+			packageReferences = (
+				C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = C69945BA2B32E8CD008D475F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69945C52B32E8CE008D475F /* Preview Assets.xcassets in Resources */,
 				C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +221,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69945BF2B32E8CD008D475F /* ContentView.swift in Sources */,
+				C69945D92B333A3F008D475F /* RequestError.swift in Sources */,
+				C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */,
+				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
+				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
+				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
 				C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */,
+				C69945DC2B333B5C008D475F /* MeikadeEndpoint.swift in Sources */,
+				C69945D72B333A3F008D475F /* HTTPMethod.swift in Sources */,
+				C69945DF2B333DFA008D475F /* MeikadeService.swift in Sources */,
+				C69945CE2B333895008D475F /* Explore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +356,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Meikade/Meikade.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/Meikade.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Meikade/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -290,10 +379,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aseman.Meikade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -302,10 +392,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Meikade/Meikade.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/Meikade.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Meikade/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -326,10 +415,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aseman.Meikade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -355,6 +445,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C69945EA2B334B26008D475F /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		C69945EC2B334B26008D475F /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		C69945EE2B334B26008D475F /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C69945B12B32E8CD008D475F /* Project object */;
 }
