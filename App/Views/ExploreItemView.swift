@@ -13,19 +13,21 @@ struct ExploreItemView: View {
     
     var body: some View {
         HStack {
-            LazyImage(url: URL(string: item.image)) { state in
-                if let image = state.image {
-                    image
-                        .resizable()
-                } else {
-                    Rectangle()
-                        .foregroundStyle(.secondary)
+            if item.image != "" {
+                LazyImage(url: URL(string: item.image)) { state in
+                    if let image = state.image {
+                        image
+                            .resizable()
+                    } else {
+                        Rectangle()
+                            .foregroundStyle(.secondary)
+                    }
                 }
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 75, height: 75)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .shadow(radius: 1)
             }
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 75, height: 75)
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            .shadow(radius: 1)
             
             VStack(alignment: .leading) {
                 Text(item.title)
