@@ -1,0 +1,82 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "All Poets" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All Poets"
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "همه شاعرها"
+          }
+        }
+      }
+    },
+    "Bad Request" : {
+
+    },
+    "Hafez Divination" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hafez Divination"
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فال حافظ"
+          }
+        }
+      }
+    },
+    "Network error" : {
+      "comment" : "Invalid URL\n   no response"
+    },
+    "Parsing error" : {
+
+    },
+    "Random Poem" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Random Poem"
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شعر اتفاقی"
+          }
+        }
+      }
+    },
+    "Session expired" : {
+      "comment" : "no response"
+    },
+    "Unexpected Status Code (status) occured" : {
+
+    },
+    "می‌کده" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "می‌کده"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
