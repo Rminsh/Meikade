@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C61DEAA72B34251300E8949B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C69945F22B335CC7008D475F /* Explore */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C69945B02B32E8CD008D475F = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +94,7 @@
 			children = (
 				C69945FE2B3370E6008D475F /* General */,
 				C69945F32B335CCE008D475F /* Resources */,
-				C69945F22B335CC7008D475F /* Views */,
+				C61DEAA72B34251300E8949B /* Views */,
 				C69945BC2B32E8CD008D475F /* MeikadeApp.swift */,
 			);
 			path = App;
@@ -139,14 +147,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		C69945F22B335CC7008D475F /* Views */ = {
+		C69945F22B335CC7008D475F /* Explore */ = {
 			isa = PBXGroup;
 			children = (
 				C69945F42B3365F4008D475F /* ExploreItemView.swift */,
 				C69945F62B336699008D475F /* ExploreStaticView.swift */,
 				C69945BE2B32E8CD008D475F /* ExploreView.swift */,
 			);
-			path = Views;
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		C69945F32B335CCE008D475F /* Resources */ = {
