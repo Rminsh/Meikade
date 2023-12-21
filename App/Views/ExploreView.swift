@@ -26,11 +26,11 @@ extension ExploreView: View {
         NavigationStack {
             List {
                 if let sections = explore?.sections {
-                    ForEach(sections, id: \.section) { section in
+                    ForEach(sections, id: \.id) { section in
                         Section {
                             if section.type == "static" {
                                 HStack {
-                                    ForEach(section.modelData, id: \.title) { item in
+                                    ForEach(section.modelData, id: \.id) { item in
                                         ExploreStaticView(item: item)
                                             .padding(.horizontal, 4)
                                     }
@@ -62,14 +62,20 @@ extension ExploreView: View {
                     }
                 }
             }
-            #if !os(macOS)
+            #if os(macOS)
+            .listStyle(.plain)
+            #else
             .listStyle(.grouped)
             #endif
+            .navigationTitle("")
             .toolbar {
                 ToolbarItem(placement: .secondaryAction) {
                     Image("Meikade")
+                        #if os(visionOS)
                         .font(.system(size: 42))
-                        
+                        #else
+                        .font(.largeTitle)
+                        #endif
                 }
             }
         }
