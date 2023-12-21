@@ -57,6 +57,7 @@ extension ExploreView: View {
                                 .padding(.bottom, 2)
                         }
                         .listRowInsets(.init())
+                        .listSectionSeparator(.hidden)
                         .listRowBackground(Color.clear)
                         .listRowSeparatorTint(.clear)
                     }
@@ -68,20 +69,35 @@ extension ExploreView: View {
             .listStyle(.grouped)
             #endif
             .navigationTitle("")
+            #if os(iOS)
+            .toolbarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
-                ToolbarItem(placement: .secondaryAction) {
-                    Image("Meikade")
-                        #if os(visionOS)
-                        .font(.system(size: 42))
-                        #else
-                        .font(.largeTitle)
-                        #endif
+                #if os(iOS)
+                ToolbarItem(placement: .principal) {
+                    logo
                 }
+                #else
+                ToolbarItem(placement: .secondaryAction) {
+                    logo
+                }
+                #endif
             }
         }
         .task {
             await getExplore()
         }
+    }
+    
+    var logo: some View {
+        Image("Meikade")
+            #if os(visionOS)
+            .font(.system(size: 42))
+            #elseif os(iOS)
+            .font(.title)
+            #else
+            .font(.largeTitle)
+            #endif
     }
 }
 

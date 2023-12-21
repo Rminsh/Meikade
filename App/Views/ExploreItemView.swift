@@ -43,10 +43,17 @@ struct ExploreItemView: View {
             .frame(width: 130, height: 80, alignment: .leading)
         }
         .padding()
+        #if os(iOS)
+        .background(
+            Color(uiColor: UIColor.secondarySystemGroupedBackground),
+            in: RoundedRectangle(cornerRadius: 21)
+        )
+        #else
         .background(
             .quinary,
             in: RoundedRectangle(cornerRadius: 21)
         )
+        #endif
     }
 }
 

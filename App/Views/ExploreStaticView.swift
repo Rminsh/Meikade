@@ -30,7 +30,11 @@ struct ExploreStaticView: View {
                 .fontWeight(.medium)
                 .foregroundStyle(.white)
         }
+        #if os(iOS)
+        .frame(width: 100, height: 100)
+        #else
         .frame(width: 150, height: 150)
+        #endif
         .clipShape(RoundedRectangle(cornerRadius: 21))
     }
 }
