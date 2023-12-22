@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60801C52B358FC300AEFE77 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */; };
+		C60801C62B358FC300AEFE77 /* DimaNastalighTahriri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */; };
 		C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BC2B32E8CD008D475F /* MeikadeApp.swift */; };
 		C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BE2B32E8CD008D475F /* ExploreView.swift */; };
 		C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69945C02B32E8CE008D475F /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
+		C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaNastalighTahriri.ttf; sourceTree = "<group>"; };
 		C69945B92B32E8CD008D475F /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69945BC2B32E8CD008D475F /* MeikadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeApp.swift; sourceTree = "<group>"; };
 		C69945BE2B32E8CD008D475F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 		C69945FA2B33703A008D475F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */,
+				C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */,
 				C69945FB2B337042008D475F /* Vazirmatn.ttf */,
 			);
 			path = Fonts;
@@ -252,8 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60801C52B358FC300AEFE77 /* DimaShekasteh.ttf in Resources */,
 				C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */,
 				C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */,
+				C60801C62B358FC300AEFE77 /* DimaNastalighTahriri.ttf in Resources */,
 				C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

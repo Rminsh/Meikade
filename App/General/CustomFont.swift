@@ -13,6 +13,12 @@ public typealias UXFont = NSFont
 public typealias UXFont = UIFont
 #endif
 
+enum Fonts: String {
+    case vazirmatn = "Vazirmatn"
+    case dimaNastaligh = "Dima Nastaligh Tahriri"
+    case dimaShekasteh = "Dima Shekasteh Free"
+}
+
 struct CustomFont: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
 
@@ -31,7 +37,7 @@ struct CustomFont: ViewModifier {
 
 extension View {
     func customFont(
-        name: String = "Vazirmatn",
+        name: String = Fonts.vazirmatn.rawValue,
         style: UXFont.TextStyle,
         weight: Font.Weight = .regular
     ) -> some View {
