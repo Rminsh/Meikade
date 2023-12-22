@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C60801C52B358FC300AEFE77 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */; };
 		C60801C62B358FC300AEFE77 /* DimaNastalighTahriri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */; };
+		C60801C92B35936E00AEFE77 /* PoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801C82B35936E00AEFE77 /* PoemView.swift */; };
+		C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CA2B3593EF00AEFE77 /* Verse.swift */; };
+		C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
 		C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BC2B32E8CD008D475F /* MeikadeApp.swift */; };
 		C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BE2B32E8CD008D475F /* ExploreView.swift */; };
 		C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69945C02B32E8CE008D475F /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
 		C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaNastalighTahriri.ttf; sourceTree = "<group>"; };
+		C60801C82B35936E00AEFE77 /* PoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemView.swift; sourceTree = "<group>"; };
+		C60801CA2B3593EF00AEFE77 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		C60801CD2B359A5700AEFE77 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		C69945B92B32E8CD008D475F /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69945BC2B32E8CD008D475F /* MeikadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeApp.swift; sourceTree = "<group>"; };
 		C69945BE2B32E8CD008D475F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -68,9 +74,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C60801C72B35936400AEFE77 /* Poem */ = {
+			isa = PBXGroup;
+			children = (
+				C60801C82B35936E00AEFE77 /* PoemView.swift */,
+			);
+			path = Poem;
+			sourceTree = "<group>";
+		};
+		C60801CC2B359A4D00AEFE77 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C60801CD2B359A5700AEFE77 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C61DEAA72B34251300E8949B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C60801C72B35936400AEFE77 /* Poem */,
 				C69945F22B335CC7008D475F /* Explore */,
 			);
 			path = Views;
@@ -96,6 +119,7 @@
 		C69945BB2B32E8CD008D475F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C60801CC2B359A4D00AEFE77 /* Extensions */,
 				C69945FE2B3370E6008D475F /* General */,
 				C69945F32B335CCE008D475F /* Resources */,
 				C61DEAA72B34251300E8949B /* Views */,
@@ -119,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C69945CD2B333895008D475F /* Explore.swift */,
+				C60801CA2B3593EF00AEFE77 /* Verse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,10 +299,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C69945D92B333A3F008D475F /* RequestError.swift in Sources */,
+				C60801C92B35936E00AEFE77 /* PoemView.swift in Sources */,
 				C69945F52B3365F4008D475F /* ExploreItemView.swift in Sources */,
 				C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */,
+				C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */,
 				C69946002B3370EF008D475F /* CustomFont.swift in Sources */,
 				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
+				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
 				C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */,
