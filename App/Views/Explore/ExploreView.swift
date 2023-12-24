@@ -25,43 +25,7 @@ extension ExploreView: View {
     var body: some View {
         NavigationStack {
             List {
-                if let sections = explore?.sections {
-                    ForEach(sections, id: \.id) { section in
-                        Section {
-                            if section.type == "static" {
-                                HStack {
-                                    ForEach(section.modelData, id: \.id) { item in
-                                        ExploreStaticView(item: item)
-                                            .padding(.horizontal, 4)
-                                    }
-                                }
-                                .frame(maxWidth: .infinity, alignment: .center)
-                            } else {
-                                ScrollView(.horizontal) {
-                                    HStack {
-                                        ForEach(section.modelData, id: \.title) { item in
-                                            ExploreItemView(item: item)
-                                        }
-                                    }
-                                    #if os(iOS)
-                                    .padding(.horizontal)
-                                    #endif
-                                }
-                            }
-                        } header: {
-                            Text(section.section)
-                                .customFont(style: .body)
-                                #if os(iOS)
-                                .padding(.horizontal)
-                                #endif
-                                .padding(.bottom, 2)
-                        }
-                        .listRowInsets(.init())
-                        .listSectionSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                        .listRowSeparatorTint(.clear)
-                    }
-                }
+                content
             }
             #if os(macOS)
             .listStyle(.plain)
@@ -98,6 +62,52 @@ extension ExploreView: View {
             #else
             .font(.largeTitle)
             #endif
+    }
+    
+    var content: some View {
+        Group {
+            if let sections = explore?.sections {
+                ForEach(sections, id: \.id) { section in
+                    Section {
+                        if section.type == "static" {
+                            HStack {
+                                ForEach(section.modelData, id: \.id) { item in
+                                    ExploreStaticView(item: item)
+                                        .padding(.horizontal, 4)
+                                }
+                            }
+                            .frame(maxWidth: 500)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            #if os(iOS)
+                            .padding(.horizontal)
+                            #endif
+                        } else {
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    ForEach(section.modelData, id: \.title) { item in
+                                        ExploreItemView(item: item)
+                                    }
+                                }
+                                #if os(iOS)
+                                .padding(.horizontal)
+                                #endif
+                            }
+                        }
+                    } header: {
+                        Text(section.section)
+                            .customFont(style: .body)
+                            #if os(iOS)
+                            .padding(.horizontal)
+                            #endif
+                            .padding(.bottom, 2)
+                    }
+                    .listRowInsets(.init())
+                    .listSectionSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparatorTint(.clear)
+                }
+            }
+        }
     }
 }
 

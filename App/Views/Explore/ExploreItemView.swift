@@ -24,14 +24,14 @@ struct ExploreItemView: View {
                     }
                 }
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 75, height: 75)
+                .frame(width: 64, height: 64)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .shadow(radius: 1)
             }
             
             VStack(alignment: .leading) {
                 Text(item.title)
-                    .customFont(style: .headline)
+                    .customFont(style: .body)
                     .fontWeight(.semibold)
                     .lineLimit(2)
                     .foregroundStyle(.primary)
@@ -40,7 +40,8 @@ struct ExploreItemView: View {
                     .customFont(style: .body)
                     .foregroundStyle(.secondary)
             }
-            .frame(width: 130, height: 80, alignment: .leading)
+            .frame(width: 130, alignment: .leading)
+            .frame(maxHeight: .infinity)
         }
         .padding()
         #if os(iOS)
@@ -60,7 +61,7 @@ struct ExploreItemView: View {
 #Preview {
     ExploreItemView(
         item: .init(
-            title: "Test",
+            title: "Test\ntest",
             subtitle: "test",
             heightRatio: 1,
             image: "https://meikade.com/offlines/thumbs/28.png",

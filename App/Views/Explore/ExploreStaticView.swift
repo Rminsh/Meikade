@@ -22,7 +22,7 @@ struct ExploreStaticView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            .aspectRatio(contentMode: .fill)
+            
             .overlay(Color.black.opacity(0.7))
             
             Text(LocalizedStringKey(item.title))
@@ -30,11 +30,7 @@ struct ExploreStaticView: View {
                 .fontWeight(.medium)
                 .foregroundStyle(.white)
         }
-        #if os(iOS)
-        .frame(width: 100, height: 100)
-        #else
-        .frame(width: 150, height: 150)
-        #endif
+        .aspectRatio(1, contentMode: .fit)
         .clipShape(RoundedRectangle(cornerRadius: 21))
     }
 }
