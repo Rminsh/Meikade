@@ -12,6 +12,9 @@
 		C60801C92B35936E00AEFE77 /* PoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801C82B35936E00AEFE77 /* PoemView.swift */; };
 		C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CA2B3593EF00AEFE77 /* Verse.swift */; };
 		C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
+		C66359E32B398CA200F76709 /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
+		C66359E52B398CF800F76709 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
+		C66359E72B398D2900F76709 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E62B398D2900F76709 /* Category.swift */; };
 		C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BC2B32E8CD008D475F /* MeikadeApp.swift */; };
 		C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BE2B32E8CD008D475F /* ExploreView.swift */; };
 		C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69945C02B32E8CE008D475F /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		C60801C82B35936E00AEFE77 /* PoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemView.swift; sourceTree = "<group>"; };
 		C60801CA2B3593EF00AEFE77 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		C60801CD2B359A5700AEFE77 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		C66359E22B398CA200F76709 /* Poet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poet.swift; sourceTree = "<group>"; };
+		C66359E42B398CF800F76709 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
+		C66359E62B398D2900F76709 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C69945B92B32E8CD008D475F /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69945BC2B32E8CD008D475F /* MeikadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeApp.swift; sourceTree = "<group>"; };
 		C69945BE2B32E8CD008D475F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -142,7 +148,10 @@
 		C69945CC2B33387D008D475F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C66359E62B398D2900F76709 /* Category.swift */,
 				C69945CD2B333895008D475F /* Explore.swift */,
+				C66359E42B398CF800F76709 /* Poem.swift */,
+				C66359E22B398CA200F76709 /* Poet.swift */,
 				C60801CA2B3593EF00AEFE77 /* Verse.swift */,
 			);
 			path = Models;
@@ -308,8 +317,11 @@
 				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
+				C66359E72B398D2900F76709 /* Category.swift in Sources */,
 				C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */,
 				C69945DC2B333B5C008D475F /* MeikadeEndpoint.swift in Sources */,
+				C66359E32B398CA200F76709 /* Poet.swift in Sources */,
+				C66359E52B398CF800F76709 /* Poem.swift in Sources */,
 				C69945F72B336699008D475F /* ExploreStaticView.swift in Sources */,
 				C69945D72B333A3F008D475F /* HTTPMethod.swift in Sources */,
 				C69945DF2B333DFA008D475F /* MeikadeService.swift in Sources */,
