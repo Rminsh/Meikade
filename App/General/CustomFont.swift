@@ -13,23 +13,42 @@ public typealias UXFont = NSFont
 public typealias UXFont = UIFont
 #endif
 
-enum Fonts: String {
+enum Fonts: String, CaseIterable {
     case vazirmatn = "Vazirmatn"
     case dimaNastaligh = "Dima Nastaligh Tahriri"
     case dimaShekasteh = "Dima Shekasteh Free"
+    
+    var extraPointSize: CGFloat {
+        switch self {
+        case .vazirmatn:
+            return 1
+        case .dimaNastaligh:
+            return 1.5
+            
+        case .dimaShekasteh:
+            return 1.2
+        }
+    }
+    
+    static func getValue(name: String) -> Fonts? {
+        if let fontEnum = Fonts(rawValue: name) {
+            return fontEnum
+        }
+        return nil
+    }
 }
 
 struct CustomFont: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
 
-    var name: String
+    var name: Fonts
     var style: UXFont.TextStyle
     var weight: Font.Weight = .regular
 
     func body(content: Content) -> some View {
         return content
             .font(
-                .custom(name, size: UXFont.preferredFont(forTextStyle: style).pointSize)
+                .custom(name.rawValue, size: UXFont.preferredFont(forTextStyle: style).pointSize * name.extraPointSize)
                 .weight(weight)
             )
     }
@@ -37,7 +56,7 @@ struct CustomFont: ViewModifier {
 
 extension View {
     func customFont(
-        name: String = Fonts.vazirmatn.rawValue,
+        name: Fonts = Fonts.vazirmatn,
         style: UXFont.TextStyle,
         weight: Font.Weight = .regular
     ) -> some View {

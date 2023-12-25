@@ -9,13 +9,18 @@ import SwiftUI
 
 struct PoemView: View {
     
-    @State var poemID: Int? = nil
+    var poemID: Int? = nil
+    
     @State var title: String = ""
     @State var subtitle: String = ""
     @State var verses: [Verse] = []
     
     @State var loading: Bool = false
     @State var emptyState: PoemEmptyState? = nil
+    
+    @State var showVersesTheme: Bool = false
+    
+    @AppStorage("versesFont") var versesFont: String = Fonts.dimaShekasteh.rawValue
     
     var isRTL: Bool {
         verses.first?.text.isRTL ?? false
@@ -118,8 +123,11 @@ extension PoemView {
                 }
                 .toolbar {
                     ToolbarItem {
-                        Button(action: {}) {
+                        Button(action: {showVersesTheme.toggle()}) {
                             Label("Theme", systemImage: "textformat.alt")
+                        }
+                        .popover(isPresented: $showVersesTheme) {
+                            VersesThemeView()
                         }
                     }
                     
@@ -163,8 +171,8 @@ extension PoemView {
                 Text(verse.text)
                     .textSelection(.enabled)
                     .customFont(
-                        name: Fonts.dimaShekasteh.rawValue,
-                        style: .title1
+                        name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                        style: .body
                     )
                     .frame(
                         maxWidth: .infinity,
