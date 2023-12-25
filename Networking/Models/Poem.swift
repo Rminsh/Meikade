@@ -17,10 +17,10 @@ struct Poem: Codable {
 // MARK: - PoemDetail
 struct PoemDetail: Codable {
     let id: Int
-    let poetID: Int
-    let categoryID: Int
+    let poetID: Int?
+    let categoryID: Int?
     let title: String
-    let phrase: String
+    let phrase: String?
     let views: Int
 
     enum CodingKeys: String, CodingKey {
@@ -35,4 +35,8 @@ struct PoemDetail: Codable {
 
 struct PoemResponse: Codable {
     let result: Poem
+}
+
+struct PoemsResponse: Codable {
+    let result: [PoemDetail]
 }

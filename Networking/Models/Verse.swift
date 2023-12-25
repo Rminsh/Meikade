@@ -30,6 +30,10 @@ public struct Verse: Codable {
     }
 }
 
+struct VersesResponse: Codable {
+    let result: [Verse]
+}
+
 extension Verse {
     static let preview: [Verse] = [
         .init(
