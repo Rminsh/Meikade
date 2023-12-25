@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "All Poets" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,7 +22,25 @@
       }
     },
     "Bad Request" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطا در درخواست"
+          }
+        }
+      }
+    },
+    "Connection error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطا در شبکه"
+          }
+        }
+      }
     },
     "Hafez Divination" : {
       "extractionState" : "manual",
@@ -39,10 +60,35 @@
       }
     },
     "Network error" : {
-      "comment" : "Invalid URL\n   no response"
+      "comment" : "Invalid URL\n   no response",
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطا در شبکه"
+          }
+        }
+      }
     },
     "Parsing error" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطا در دیتا"
+          }
+        }
+      }
+    },
+    "Poem not found" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شعر پیدا نشد"
+          }
+        }
+      }
     },
     "Random Poem" : {
       "extractionState" : "manual",
@@ -62,7 +108,35 @@
       }
     },
     "Session expired" : {
-      "comment" : "no response"
+      "comment" : "no response",
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "درخواست منقضی شده"
+          }
+        }
+      }
+    },
+    "Theme" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم"
+          }
+        }
+      }
+    },
+    "Try again" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلاش دوباره"
+          }
+        }
+      }
     },
     "Unexpected Status Code (status) occured" : {
 
