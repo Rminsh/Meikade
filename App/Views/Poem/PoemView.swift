@@ -14,6 +14,7 @@ struct PoemView: View {
     @State var title: String = ""
     @State var subtitle: String = ""
     @State var verses: [Verse] = []
+    @State var description: String = ""
     
     @State var loading: Bool = false
     @State var emptyState: PoemEmptyState? = nil
@@ -71,6 +72,7 @@ struct PoemView: View {
                 title = poem.poem.title
                 subtitle = poem.poet.name
                 verses = poem.verses
+                description = poem.poem.phrase ?? ""
                 
                 if poem.verses.isEmpty {
                     emptyState = .empty
@@ -194,6 +196,17 @@ extension PoemView {
                     .padding(.horizontal)
                     .padding(.vertical, 5)
             }
+            
+            if description != "" {
+                Section {
+                    Text(description)
+                        .customFont(style: .body)
+                } header: {
+                    Text("Phrase")
+                        .customFont(style: .body)
+                }
+                .listSectionSeparator(.hidden, edges: .bottom)
+            }
         }
         .listStyle(.plain)
     }
@@ -203,6 +216,8 @@ extension PoemView {
     PoemView(
         title: "غزل شماره ۷۱",
         subtitle: "حافظ",
-        verses: Verse.preview
+        verses: Verse.preview,
+        description: "از سخن یاوه گویان ناراحت نشو تو همان راه راست را برو چون به نتیجه ی کارت اعتقاد داری. از استهزائ حریفان و ب خردان ناراحت نشو چون یکرنگ هستی و کبر و غرور هم نداری. در بارگاه حق تعالی مورد عنایت قرار می گیری.روی حمایت و دلسوزی بستگان هم حساب نکن."
     )
+    .environment(\.layoutDirection, .rightToLeft)
 }

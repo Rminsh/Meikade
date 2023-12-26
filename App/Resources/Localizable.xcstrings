@@ -83,6 +83,16 @@
         }
       }
     },
+    "Phrase" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعبیر"
+          }
+        }
+      }
+    },
     "Poem not found" : {
       "localizations" : {
         "fa" : {
