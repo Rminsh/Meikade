@@ -21,18 +21,27 @@ struct VersesThemeView: View {
                         Text("Font")
                         Text("قلم")
                     }
+                    #if os(iOS)
+                    .padding()
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    #else
                     .padding(4)
-                    .multilineTextAlignment(.center)
+                    #endif
                     .customFont(
                         name: Fonts(rawValue: font.rawValue) ?? .vazirmatn,
-                        style: .body
+                        style: .subheadline
                     )
-                    
                 }
+                .buttonStyle(.bordered)
                 .buttonBorderShape(.roundedRectangle(radius: 8))
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
+                        #if os(iOS)
+                        .stroke(.accent, lineWidth: versesFont == font.rawValue ? 2 : 0)
+                        #else
                         .stroke(lineWidth: versesFont == font.rawValue ? 2 : 0)
+                        #endif
                 }
             }
         }

@@ -128,6 +128,7 @@ extension PoemView {
                         }
                         .popover(isPresented: $showVersesTheme) {
                             VersesThemeView()
+                                .presentationDetents([.fraction(0.2), .medium])
                         }
                     }
                     
