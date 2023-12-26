@@ -42,6 +42,9 @@
         }
       }
     },
+    "Font" : {
+
+    },
     "Hafez Divination" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -139,6 +142,9 @@
       }
     },
     "Unexpected Status Code (status) occured" : {
+
+    },
+    "قلم" : {
 
     }
   },

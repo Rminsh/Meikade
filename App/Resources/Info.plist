@@ -4,8 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>DimaNastalighTahriri.ttf</string>
-		<string>DimaShekasteh.ttf</string>
+		<string>Behdad.ttf</string>
+		<string>Mikhak.ttf</string>
+		<string>Tanha.ttf</string>
 		<string>Vazirmatn.ttf</string>
 	</array>
 	<key>ATSApplicationFontsPath</key>

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C60801C52B358FC300AEFE77 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */; };
-		C60801C62B358FC300AEFE77 /* DimaNastalighTahriri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */; };
 		C60801C92B35936E00AEFE77 /* PoemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801C82B35936E00AEFE77 /* PoemView.swift */; };
 		C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CA2B3593EF00AEFE77 /* Verse.swift */; };
 		C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
@@ -35,11 +33,13 @@
 		C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C69945F82B336B7F008D475F /* Localizable.xcstrings */; };
 		C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C69945FB2B337042008D475F /* Vazirmatn.ttf */; };
 		C69946002B3370EF008D475F /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945FF2B3370EF008D475F /* CustomFont.swift */; };
+		C6A3A9AA2B3AB02C002EE6CF /* Tanha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */; };
+		C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */; };
+		C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */; };
+		C6A3A9B02B3AB537002EE6CF /* Mikhak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
-		C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaNastalighTahriri.ttf; sourceTree = "<group>"; };
 		C60801C82B35936E00AEFE77 /* PoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemView.swift; sourceTree = "<group>"; };
 		C60801CA2B3593EF00AEFE77 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		C60801CD2B359A5700AEFE77 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -66,6 +66,10 @@
 		C69945FB2B337042008D475F /* Vazirmatn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazirmatn.ttf; sourceTree = "<group>"; };
 		C69945FD2B337075008D475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C69945FF2B3370EF008D475F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tanha.ttf; sourceTree = "<group>"; };
+		C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Behdad.ttf; sourceTree = "<group>"; };
+		C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mikhak.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,8 +217,9 @@
 		C69945FA2B33703A008D475F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C60801C42B358FC300AEFE77 /* DimaNastalighTahriri.ttf */,
-				C60801C32B358FC200AEFE77 /* DimaShekasteh.ttf */,
+				C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */,
+				C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */,
+				C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */,
 				C69945FB2B337042008D475F /* Vazirmatn.ttf */,
 			);
 			path = Fonts;
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				C69945FF2B3370EF008D475F /* CustomFont.swift */,
+				C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -295,10 +301,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C60801C52B358FC300AEFE77 /* DimaShekasteh.ttf in Resources */,
 				C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */,
+				C6A3A9AA2B3AB02C002EE6CF /* Tanha.ttf in Resources */,
+				C6A3A9B02B3AB537002EE6CF /* Mikhak.ttf in Resources */,
+				C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */,
 				C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */,
-				C60801C62B358FC300AEFE77 /* DimaNastalighTahriri.ttf in Resources */,
 				C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +325,7 @@
 				C611556D2B3A0C830058E72A /* VersesThemeView.swift in Sources */,
 				C69946002B3370EF008D475F /* CustomFont.swift in Sources */,
 				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
+				C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */,
 				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,

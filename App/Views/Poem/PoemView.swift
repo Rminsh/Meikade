@@ -20,7 +20,7 @@ struct PoemView: View {
     
     @State var showVersesTheme: Bool = false
     
-    @AppStorage("versesFont") var versesFont: String = Fonts.dimaShekasteh.rawValue
+    @AppStorage("versesFont") var versesFont: String = Fonts.vazirmatn.rawValue
     
     var isRTL: Bool {
         verses.first?.text.isRTL ?? false
@@ -170,10 +170,17 @@ extension PoemView {
             ForEach(verses, id: \.id) { verse in
                 Text(verse.text)
                     .textSelection(.enabled)
+                    #if os(iOS)
                     .customFont(
                         name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
                         style: .body
                     )
+                    #else
+                    .customFont(
+                        name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                        style: .title3
+                    )
+                    #endif
                     .frame(
                         maxWidth: .infinity,
                         alignment: verse.position == 0 ? .leading : .trailing
@@ -184,6 +191,7 @@ extension PoemView {
                     .frame(maxWidth: 650)
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
+                    .padding(.vertical, 5)
             }
         }
         .listStyle(.plain)
