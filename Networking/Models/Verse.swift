@@ -11,7 +11,7 @@ public struct Verse: Codable {
     let id = UUID()
     let verseOrder: Int
     let position: Int
-    let text: String
+    let text: String?
     
     enum CodingKeys: String, CodingKey {
         case verseOrder = "vorder"
@@ -22,11 +22,11 @@ public struct Verse: Codable {
     public init(
         verseOrder: Int,
         position: Int,
-        text: String
+        text: String?
     ) {
         self.verseOrder = verseOrder
         self.position = position
-        self.text = text
+        self.text = text ?? ""
     }
 }
 

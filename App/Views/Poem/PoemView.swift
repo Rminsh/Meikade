@@ -25,7 +25,7 @@ struct PoemView: View {
     
     var shareText: String {
         if !verses.isEmpty {
-            let allVerses: [String] = verses.map({$0.text})
+            let allVerses: [String] = verses.map({$0.text ?? ""})
             let header: String = title + "\n" + subtitle + "\n\n"
             let result: String = allVerses.joined(separator: "\n")
             return header + result
@@ -35,7 +35,7 @@ struct PoemView: View {
     }
     
     var isRTL: Bool {
-        verses.first?.text.isRTL ?? false
+        verses.first?.text?.isRTL ?? false
     }
     
     enum PoemEmptyState: Equatable {
@@ -105,9 +105,8 @@ struct PoemView: View {
 
 extension PoemView {
     var body: some View {
-        NavigationStack {
-            content
-                .overlay {
+        content
+            .overlay {
                     if !loading && verses.isEmpty, let emptyState {
                         ContentUnavailableView {
                             Label(
@@ -134,7 +133,7 @@ extension PoemView {
                         ProgressView()
                     }
                 }
-                .toolbar {
+            .toolbar {
                     ToolbarItem {
                         if shareText != "" {
                             ShareLink(item: shareText)
@@ -172,45 +171,46 @@ extension PoemView {
                     }
                     #endif
                 }
-                #if os(macOS)
-                .navigationTitle(title)
-                .navigationSubtitle(subtitle)
-                #elseif os(iOS)
-                .navigationBarTitleDisplayMode(.inline)
-                #endif
-        }
-        .task {
-            await getPoem()
-        }
+            #if os(macOS)
+            .navigationTitle(title)
+            .navigationSubtitle(subtitle)
+            #elseif os(iOS)
+            .navigationBarTitleDisplayMode(.inline)
+            #endif
+            .task {
+                await getPoem()
+            }
     }
     
     var content: some View {
         List {
             ForEach(verses, id: \.id) { verse in
-                Text(verse.text)
-                    .textSelection(.enabled)
-                    #if os(iOS)
-                    .customFont(
-                        name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
-                        style: .body
-                    )
-                    #else
-                    .customFont(
-                        name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
-                        style: .title3
-                    )
-                    #endif
-                    .frame(
-                        maxWidth: .infinity,
-                        alignment: verse.position == 0 ? .leading : .trailing
-                    )
-                    .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(.init())
-                    .frame(maxWidth: 650)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .padding(.vertical, 5)
+                if let verseText = verse.text {
+                    Text(verseText)
+                        .textSelection(.enabled)
+                        #if os(iOS)
+                        .customFont(
+                            name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                            style: .body
+                        )
+                        #else
+                        .customFont(
+                            name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                            style: .title3
+                        )
+                        #endif
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: verse.position == 1 ? .trailing : .leading
+                        )
+                        .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(.init())
+                        .frame(maxWidth: 650)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .padding(.vertical, 5)
+                }
             }
             
             if description != "" {
@@ -229,11 +229,13 @@ extension PoemView {
 }
 
 #Preview {
-    PoemView(
-        title: "غزل شماره ۷۱",
-        subtitle: "حافظ",
-        verses: Verse.preview,
-        description: "از سخن یاوه گویان ناراحت نشو تو همان راه راست را برو چون به نتیجه ی کارت اعتقاد داری. از استهزائ حریفان و ب خردان ناراحت نشو چون یکرنگ هستی و کبر و غرور هم نداری. در بارگاه حق تعالی مورد عنایت قرار می گیری.روی حمایت و دلسوزی بستگان هم حساب نکن."
-    )
+    NavigationStack {
+        PoemView(
+            title: "غزل شماره ۷۱",
+            subtitle: "حافظ",
+            verses: Verse.preview,
+            description: "از سخن یاوه گویان ناراحت نشو تو همان راه راست را برو چون به نتیجه ی کارت اعتقاد داری. از استهزائ حریفان و ب خردان ناراحت نشو چون یکرنگ هستی و کبر و غرور هم نداری. در بارگاه حق تعالی مورد عنایت قرار می گیری.روی حمایت و دلسوزی بستگان هم حساب نکن."
+        )
+    }
     .environment(\.layoutDirection, .rightToLeft)
 }
