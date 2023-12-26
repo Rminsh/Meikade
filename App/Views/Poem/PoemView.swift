@@ -23,6 +23,17 @@ struct PoemView: View {
     
     @AppStorage("versesFont") var versesFont: String = Fonts.vazirmatn.rawValue
     
+    var shareText: String {
+        if !verses.isEmpty {
+            let allVerses: [String] = verses.map({$0.text})
+            let header: String = title + "\n" + subtitle + "\n\n"
+            let result: String = allVerses.joined(separator: "\n")
+            return header + result
+        } else {
+            return ""
+        }
+    }
+    
     var isRTL: Bool {
         verses.first?.text.isRTL ?? false
     }
@@ -124,6 +135,11 @@ extension PoemView {
                     }
                 }
                 .toolbar {
+                    ToolbarItem {
+                        if shareText != "" {
+                            ShareLink(item: shareText)
+                        }
+                    }
                     ToolbarItem {
                         Button(action: {showVersesTheme.toggle()}) {
                             Label("Theme", systemImage: "textformat.alt")
