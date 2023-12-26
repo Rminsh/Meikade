@@ -24,29 +24,22 @@ struct ExploreView {
 extension ExploreView: View {
     var body: some View {
         NavigationStack {
-            List {
-                content
-            }
-            #if os(macOS)
-            .listStyle(.plain)
-            #else
-            .listStyle(.grouped)
-            #endif
-            .navigationTitle("")
-            #if os(iOS)
-            .toolbarTitleDisplayMode(.inline)
-            #endif
-            .toolbar {
+            content
+                .navigationTitle("")
                 #if os(iOS)
-                ToolbarItem(placement: .principal) {
-                    logo
-                }
-                #else
-                ToolbarItem(placement: .secondaryAction) {
-                    logo
-                }
+                .toolbarTitleDisplayMode(.inline)
                 #endif
-            }
+                .toolbar {
+                    #if os(iOS)
+                    ToolbarItem(placement: .principal) {
+                        logo
+                    }
+                    #else
+                    ToolbarItem(placement: .secondaryAction) {
+                        logo
+                    }
+                    #endif
+                }
         }
         .task {
             await getExplore()
@@ -65,7 +58,7 @@ extension ExploreView: View {
     }
     
     var content: some View {
-        Group {
+        List {
             if let sections = explore?.sections {
                 ForEach(sections, id: \.id) { section in
                     Section {
@@ -92,6 +85,7 @@ extension ExploreView: View {
                                 .padding(.horizontal)
                                 #endif
                             }
+                            .scrollClipDisabled()
                         }
                     } header: {
                         Text(section.section)
@@ -100,14 +94,22 @@ extension ExploreView: View {
                             .padding(.horizontal)
                             #endif
                             .padding(.bottom, 2)
+                            .listRowSeparator(.hidden)
+                            .listSectionSeparator(.hidden)
                     }
                     .listRowInsets(.init())
+                    .listRowSeparator(.hidden)
                     .listSectionSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-                    .listRowSeparatorTint(.clear)
+                    .listSectionSeparatorTint(Color.clear)
+                    .listRowSeparatorTint(Color.clear)
                 }
             }
         }
+        #if os(macOS)
+        .listStyle(.plain)
+        #else
+        .listStyle(.grouped)
+        #endif
     }
 }
 
