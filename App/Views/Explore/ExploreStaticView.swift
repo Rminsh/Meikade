@@ -22,7 +22,6 @@ struct ExploreStaticView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            
             .overlay(Color.black.opacity(0.7))
             
             Text(LocalizedStringKey(item.title))

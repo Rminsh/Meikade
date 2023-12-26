@@ -21,6 +21,9 @@
         }
       }
     },
+    "All Poets page coming soon" : {
+
+    },
     "Bad Request" : {
       "localizations" : {
         "fa" : {
@@ -62,6 +65,9 @@
         }
       }
     },
+    "Hafiz faal page coming soon" : {
+
+    },
     "Network error" : {
       "comment" : "Invalid URL\n   no response",
       "localizations" : {
@@ -72,6 +78,12 @@
           }
         }
       }
+    },
+    "Nothing here" : {
+
+    },
+    "Page not found: %@" : {
+
     },
     "Parsing error" : {
       "localizations" : {
@@ -119,6 +131,9 @@
           }
         }
       }
+    },
+    "Random poet page coming soon" : {
+
     },
     "Session expired" : {
       "comment" : "no response",

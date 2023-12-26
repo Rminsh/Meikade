@@ -43,13 +43,15 @@ struct ExploreItemView: View {
             .frame(width: 130, alignment: .leading)
             .frame(maxHeight: .infinity)
         }
+        #if !os(visionOS)
         .padding()
+        #endif
         #if os(iOS)
         .background(
             Color(uiColor: UIColor.secondarySystemGroupedBackground),
             in: RoundedRectangle(cornerRadius: 21)
         )
-        #else
+        #elseif os(macOS)
         .background(
             .quinary,
             in: RoundedRectangle(cornerRadius: 21)

@@ -10,6 +10,7 @@ import SwiftUI
 struct ExploreView {
     
     @State var explore: Explore? = nil
+    @State private var path = NavigationPath()
     
     func getExplore() async {
         let service = MeikadeService()
@@ -23,7 +24,7 @@ struct ExploreView {
 
 extension ExploreView: View {
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             content
                 .navigationTitle("")
                 #if os(iOS)
@@ -65,8 +66,16 @@ extension ExploreView: View {
                         if section.type == "static" {
                             HStack {
                                 ForEach(section.modelData, id: \.id) { item in
-                                    ExploreStaticView(item: item)
-                                        .padding(.horizontal, 4)
+                                    Button {
+                                        path.append(item.link)
+                                    } label: {
+                                        ExploreStaticView(item: item)
+                                    }
+                                    #if os(visionOS)
+                                    .buttonBorderShape(.roundedRectangle(radius: 21))
+                                    #endif
+                                    .buttonStyle(.plain)
+                                    .padding(.horizontal, 4)
                                 }
                             }
                             .frame(maxWidth: 500)
@@ -77,8 +86,17 @@ extension ExploreView: View {
                         } else {
                             ScrollView(.horizontal) {
                                 HStack {
-                                    ForEach(section.modelData, id: \.title) { item in
-                                        ExploreItemView(item: item)
+                                    ForEach(section.modelData, id: \.id) { item in
+                                        Button {
+                                            path.append(item.link)
+                                        } label: {
+                                            ExploreItemView(item: item)
+                                        }
+                                        #if os(visionOS)
+                                        .buttonBorderShape(.roundedRectangle(radius: 21))
+                                        #else
+                                        .buttonStyle(.plain)
+                                        #endif
                                     }
                                 }
                                 #if os(iOS)
@@ -102,6 +120,7 @@ extension ExploreView: View {
                     .listSectionSeparator(.hidden)
                     .listSectionSeparatorTint(Color.clear)
                     .listRowSeparatorTint(Color.clear)
+                    .listRowBackground(Color.clear)
                 }
             }
         }
@@ -110,6 +129,9 @@ extension ExploreView: View {
         #else
         .listStyle(.grouped)
         #endif
+        .navigationDestination(for: String.self) { link in
+            RouterView(link: link)
+        }
     }
 }
 
