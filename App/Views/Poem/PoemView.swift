@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+enum PoemType {
+    case poem(id: Int)
+    case random(poetID: Int? = nil)
+}
+
 struct PoemView: View {
     
-    var poemID: Int? = nil
+    var poemType: PoemType? = nil
     
     @State var title: String = ""
     @State var subtitle: String = ""
@@ -38,36 +43,69 @@ struct PoemView: View {
         verses.first?.text?.isRTL ?? false
     }
     
-    func getPoem() async {
-        if let poemID {
-            loading = true
-            let service = MeikadeService()
-            do {
-                let poem = try await service.getPoem(
-                    poemID: poemID,
-                    verseLimit: 200,
-                    verseOffset: 0
-                )
-                title = poem.poem.title
-                subtitle = poem.poet.name
-                verses = poem.verses
-                description = poem.poem.phrase ?? ""
-                
-                if poem.verses.isEmpty {
-                    emptyState = .poemEmpty
-                }
-            } catch {
-                emptyState = .network(subtitle: error.localizedDescription)
-                #if DEBUG
-                print(error)
-                #endif
-            }
-            loading = false
-        } else {
+    func getData() async {
+        switch poemType {
+        case .poem(let id):
+            await getPoem(id: id)
+        case .random:
+            await getRandomPoem()
+        default:
             if verses.isEmpty {
                 emptyState = .poemEmpty
             }
         }
+    }
+    
+    func getPoem(id: Int) async {
+        loading = true
+        let service = MeikadeService()
+        do {
+            let poem = try await service.getPoem(
+                poemID: id,
+                verseLimit: 200,
+                verseOffset: 0
+            )
+            title = poem.poem.title
+            subtitle = poem.poet.name
+            verses = poem.verses
+            description = poem.poem.phrase ?? ""
+            
+            if poem.verses.isEmpty {
+                emptyState = .poemEmpty
+            }
+        } catch {
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
+            print(error)
+            #endif
+        }
+        loading = false
+    }
+    
+    func getRandomPoem() async {
+        loading = true
+        let service = MeikadeService()
+        do {
+            let poem = try await service.getRandomPoem(
+                verseLimit: 200,
+                verseOffset: 0
+            )
+            
+            title = poem.poem.title
+            subtitle = poem.poet.name
+            verses = poem.verses
+            description = poem.poem.phrase ?? ""
+            
+            if poem.verses.isEmpty {
+                emptyState = .poemEmpty
+            }
+        } catch {
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
+            print(error)
+            #endif
+        }
+        loading = false
     }
 }
 
@@ -122,7 +160,7 @@ extension PoemView {
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .task {
-                await getPoem()
+                await getData()
             }
     }
     
@@ -187,7 +225,7 @@ extension PoemView {
                     if case EmptyState.network = emptyState {
                         Button {
                             Task {
-                                await getPoem()
+                                await getData()
                             }
                         } label: {
                             Text("Try again")

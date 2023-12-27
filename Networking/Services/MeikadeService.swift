@@ -12,7 +12,7 @@ protocol MeikadeServiceable {
     
     func getPoem(poemID: Int, verseLimit: Int, verseOffset: Int) async throws -> Poem
     func getPoems(poetID: Int, categoryID: Int, offset: Int) async throws -> [PoemDetail]
-    func getRandomPoem(verseLimit: Int, verseOffset: Int, poetID: Int) async throws -> Poem
+    func getRandomPoem(verseLimit: Int, verseOffset: Int, poetID: Int?) async throws -> Poem
     func getVerses(poemID: Int) async throws -> [Verse]
 }
 
@@ -39,7 +39,7 @@ struct MeikadeService: HTTPClient, MeikadeServiceable {
         ).result
     }
     
-    func getRandomPoem(verseLimit: Int, verseOffset: Int, poetID: Int) async throws -> Poem {
+    func getRandomPoem(verseLimit: Int, verseOffset: Int, poetID: Int? = nil) async throws -> Poem {
         return try await sendRequest(
             endpoint: MeikadeEndpoint.randomPoem(verseLimit: verseLimit, verseOffset: verseOffset, poetID: poetID),
             responseModel: PoemResponse.self

@@ -62,13 +62,12 @@ extension RouterView: View {
                 // TODO: Implement this page
                 ContentUnavailableView("All Poets page coming soon", image: "Meikade")
             case .randomPoem:
-                // TODO: Implement this page
-                ContentUnavailableView("Random poet page coming soon", image: "Meikade")
+                PoemView(poemType: .random())
             case .hafizFaal:
                 // TODO: Implement this page
                 ContentUnavailableView("Hafiz faal page coming soon", image: "Meikade")
             case .poem(let poemID):
-                PoemView(poemID: poemID)
+                PoemView(poemType: .poem(id: poemID))
             default:
                 ContentUnavailableView("Nothing here", systemImage: "book.and.wrench", description: Text("Page not found: \(link ?? "")"))
             }
