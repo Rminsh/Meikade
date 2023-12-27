@@ -95,16 +95,11 @@ extension PoetsListView: View {
             }
         }
         .pickerStyle(.segmented)
-        #if os(iOS)
-        .introspect(.picker(style: .segmented), on: .iOS(.v16...)) { item in
-            let font = UXFont.custom(style: .caption1)
-            item.setTitleTextAttributes(
-                [NSAttributedString.Key.font: font],
-                for: .normal
-            )
-        }
-        #elseif os(visionOS)
-        .introspect(.picker(style: .segmented), on: .visionOS(.v1...)) { item in
+        #if os(iOS) || os(visionOS)
+        .introspect(
+            .picker(style: .segmented),
+            on: .iOS(.v16...), .visionOS(.v1...)
+        ) { item in
             let font = UXFont.custom(style: .caption1)
             item.setTitleTextAttributes(
                 [NSAttributedString.Key.font: font],
