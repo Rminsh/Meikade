@@ -12,13 +12,29 @@ struct ExploreView {
     @State var explore: Explore? = nil
     @State private var path = NavigationPath()
     
+    @State var loading: Bool = false
+    @State var emptyState: EmptyState? = nil
+    
     func getExplore() async {
+        loading = true
+        
         let service = MeikadeService()
         do {
             explore = try await service.getExplore()
+            if explore?.sections.isEmpty ?? false {
+                emptyState = .empty(
+                    icon: "text.book.closed",
+                    title: "Nothing here"
+                )
+            }
         } catch {
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
             print(error)
+            #endif
         }
+        
+        loading = false
     }
 }
 
@@ -30,6 +46,9 @@ extension ExploreView: View {
                 #if os(iOS)
                 .toolbarTitleDisplayMode(.inline)
                 #endif
+                .overlay {
+                    emptyStateView
+                }
                 .toolbar {
                     #if os(iOS)
                     ToolbarItem(placement: .principal) {
@@ -131,6 +150,36 @@ extension ExploreView: View {
         #endif
         .navigationDestination(for: String.self) { link in
             RouterView(link: link)
+        }
+    }
+    
+    var emptyStateView: some View {
+        Group {
+            if !loading && explore == nil, let emptyState {
+                ContentUnavailableView {
+                    Label(
+                        LocalizedStringKey(emptyState.title),
+                        systemImage: emptyState.icon
+                    )
+                    .customFont(style: .largeTitle)
+                } description: {
+                    Text(LocalizedStringKey(emptyState.subtitle))
+                        .customFont(style: .headline)
+                } actions: {
+                    if case EmptyState.network = emptyState {
+                        Button {
+                            Task {
+                                await getExplore()
+                            }
+                        } label: {
+                            Text("Try again")
+                                .customFont(style: .body)
+                        }
+                    }
+                }
+            } else if loading {
+                ProgressView()
+            }
         }
     }
 }

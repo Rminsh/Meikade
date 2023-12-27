@@ -11,6 +11,7 @@
 		C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CA2B3593EF00AEFE77 /* Verse.swift */; };
 		C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
 		C611556D2B3A0C830058E72A /* VersesThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611556C2B3A0C830058E72A /* VersesThemeView.swift */; };
+		C64749C52B3C0E1100AD4807 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C42B3C0E1100AD4807 /* EmptyState.swift */; };
 		C66359E12B397C5A00F76709 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E02B397C5A00F76709 /* Router.swift */; };
 		C66359E32B398CA200F76709 /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
 		C66359E52B398CF800F76709 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
@@ -45,6 +46,7 @@
 		C60801CA2B3593EF00AEFE77 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		C60801CD2B359A5700AEFE77 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		C611556C2B3A0C830058E72A /* VersesThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesThemeView.swift; sourceTree = "<group>"; };
+		C64749C42B3C0E1100AD4807 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		C66359E02B397C5A00F76709 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C66359E22B398CA200F76709 /* Poet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poet.swift; sourceTree = "<group>"; };
 		C66359E42B398CF800F76709 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				C69945FF2B3370EF008D475F /* CustomFont.swift */,
 				C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */,
+				C64749C42B3C0E1100AD4807 /* EmptyState.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64749C52B3C0E1100AD4807 /* EmptyState.swift in Sources */,
 				C69945D92B333A3F008D475F /* RequestError.swift in Sources */,
 				C60801C92B35936E00AEFE77 /* PoemView.swift in Sources */,
 				C69945F52B3365F4008D475F /* ExploreItemView.swift in Sources */,

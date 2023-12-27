@@ -17,7 +17,7 @@ struct PoemView: View {
     @State var description: String = ""
     
     @State var loading: Bool = false
-    @State var emptyState: PoemEmptyState? = nil
+    @State var emptyState: EmptyState? = nil
     
     @State var showVersesTheme: Bool = false
     
@@ -38,38 +38,6 @@ struct PoemView: View {
         verses.first?.text?.isRTL ?? false
     }
     
-    enum PoemEmptyState: Equatable {
-        case empty
-        case network(subtitle: String)
-        
-        var icon: String {
-            switch self {
-            case .empty:
-                return "text.book.closed"
-            case .network:
-                return "wifi.exclamationmark"
-            }
-        }
-        
-        var title: String {
-            switch self {
-            case .empty:
-                return "Poem not found"
-            case .network:
-                return "Connection error"
-            }
-        }
-        
-        var subtitle: String {
-            switch self {
-            case .empty:
-                return ""
-            case .network(let subtitle):
-                return subtitle
-            }
-        }
-    }
-    
     func getPoem() async {
         if let poemID {
             loading = true
@@ -86,7 +54,7 @@ struct PoemView: View {
                 description = poem.poem.phrase ?? ""
                 
                 if poem.verses.isEmpty {
-                    emptyState = .empty
+                    emptyState = .poemEmpty
                 }
             } catch {
                 emptyState = .network(subtitle: error.localizedDescription)
@@ -97,7 +65,7 @@ struct PoemView: View {
             loading = false
         } else {
             if verses.isEmpty {
-                emptyState = .empty
+                emptyState = .poemEmpty
             }
         }
     }
@@ -107,32 +75,8 @@ extension PoemView {
     var body: some View {
         content
             .overlay {
-                    if !loading && verses.isEmpty, let emptyState {
-                        ContentUnavailableView {
-                            Label(
-                                LocalizedStringKey(emptyState.title),
-                                systemImage: emptyState.icon
-                            )
-                            .customFont(style: .largeTitle)
-                        } description: {
-                            Text(LocalizedStringKey(emptyState.subtitle))
-                                .customFont(style: .headline)
-                        } actions: {
-                            if emptyState != .empty {
-                                Button {
-                                    Task {
-                                        await getPoem()
-                                    }
-                                } label: {
-                                    Text("Try again")
-                                        .customFont(style: .body)
-                                }
-                            }
-                        }
-                    } else if loading {
-                        ProgressView()
-                    }
-                }
+                emptyStateView
+            }
             .toolbar {
                     ToolbarItem {
                         if shareText != "" {
@@ -226,6 +170,40 @@ extension PoemView {
         }
         .listStyle(.plain)
     }
+    
+    var emptyStateView: some View {
+        Group {
+            if !loading && verses.isEmpty, let emptyState {
+                ContentUnavailableView {
+                    Label(
+                        LocalizedStringKey(emptyState.title),
+                        systemImage: emptyState.icon
+                    )
+                    .customFont(style: .largeTitle)
+                } description: {
+                    Text(LocalizedStringKey(emptyState.subtitle))
+                        .customFont(style: .headline)
+                } actions: {
+                    if case EmptyState.network = emptyState {
+                        Button {
+                            Task {
+                                await getPoem()
+                            }
+                        } label: {
+                            Text("Try again")
+                                .customFont(style: .body)
+                        }
+                    }
+                }
+            } else if loading {
+                ProgressView()
+            }
+        }
+    }
+}
+
+extension EmptyState {
+    static let poemEmpty = EmptyState.empty(icon: "text.book.closed", title: "Poem not found")
 }
 
 #Preview {
