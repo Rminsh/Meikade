@@ -13,6 +13,15 @@ public typealias UXFont = NSFont
 public typealias UXFont = UIFont
 #endif
 
+extension UXFont {
+    static func custom(style: UXFont.TextStyle) -> UXFont {
+        return UXFont(
+            name: Fonts.vazirmatn.rawValue,
+            size: UXFont.preferredFont(forTextStyle: style).pointSize
+        )!
+    }
+}
+
 struct CustomFont: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
 

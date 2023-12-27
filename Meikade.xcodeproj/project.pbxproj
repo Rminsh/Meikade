@@ -13,6 +13,7 @@
 		C611556D2B3A0C830058E72A /* VersesThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611556C2B3A0C830058E72A /* VersesThemeView.swift */; };
 		C64749C52B3C0E1100AD4807 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C42B3C0E1100AD4807 /* EmptyState.swift */; };
 		C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */; };
+		C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */; };
 		C66359E12B397C5A00F76709 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E02B397C5A00F76709 /* Router.swift */; };
 		C66359E32B398CA200F76709 /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
 		C66359E52B398CF800F76709 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
@@ -86,6 +87,7 @@
 				C69945EF2B334B26008D475F /* NukeUI in Frameworks */,
 				C69945EB2B334B26008D475F /* Nuke in Frameworks */,
 				C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */,
+				C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +281,7 @@
 				C69945EA2B334B26008D475F /* Nuke */,
 				C69945EC2B334B26008D475F /* NukeExtensions */,
 				C69945EE2B334B26008D475F /* NukeUI */,
+				C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */,
 			);
 			productName = Meikade;
 			productReference = C69945B92B32E8CD008D475F /* Meikade.app */;
@@ -311,6 +314,7 @@
 			mainGroup = C69945B02B32E8CD008D475F;
 			packageReferences = (
 				C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */,
+				C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = C69945BA2B32E8CD008D475F /* Products */;
 			projectDirPath = "";
@@ -584,6 +588,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 		C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke/";
@@ -595,6 +607,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = SwiftUIIntrospect;
+		};
 		C69945EA2B334B26008D475F /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */;
