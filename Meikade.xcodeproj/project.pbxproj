@@ -114,9 +114,9 @@
 		C61DEAA72B34251300E8949B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C64749C62B3C1D2D00AD4807 /* Poet */,
-				C60801C72B35936400AEFE77 /* Poem */,
 				C69945F22B335CC7008D475F /* Explore */,
+				C60801C72B35936400AEFE77 /* Poem */,
+				C64749C62B3C1D2D00AD4807 /* Poet */,
 			);
 			path = Views;
 			sourceTree = "<group>";

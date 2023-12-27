@@ -76,13 +76,14 @@ extension PoetsListView: View {
             emptyStateView
         }
         .toolbar {
-            ToolbarItem(placement: .automatic) {
+            ToolbarItem(placement: .principal) {
                 poetTypes
             }
         }
         .task {
             await loadAll()
         }
+        .toolbarTitleDisplayMode(.inline)
         .navigationTitle("Poets")
     }
     
@@ -153,4 +154,6 @@ extension PoetsListView: View {
     NavigationStack {
         PoetsListView()
     }
+    .environment(\.locale, .init(identifier: "fa"))
+    .environment(\.layoutDirection, .rightToLeft)
 }

@@ -87,6 +87,16 @@
     "Hafiz faal page coming soon" : {
 
     },
+    "Meikade" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "می‌کده"
+          }
+        }
+      }
+    },
     "Network error" : {
       "comment" : "Invalid URL\n   no response",
       "localizations" : {
