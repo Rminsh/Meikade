@@ -10,10 +10,14 @@ import Foundation
 protocol MeikadeServiceable {
     func getExplore() async throws -> Explore
     
+    // MARK: - Poems
     func getPoem(poemID: Int, verseLimit: Int, verseOffset: Int) async throws -> Poem
     func getPoems(poetID: Int, categoryID: Int, offset: Int) async throws -> [PoemDetail]
     func getRandomPoem(verseLimit: Int, verseOffset: Int, poetID: Int?) async throws -> Poem
     func getVerses(poemID: Int) async throws -> [Verse]
+    
+    // MARK: - Poets
+    func getPoetTypes() async throws -> [PoetTypes]
 }
 
 struct MeikadeService: HTTPClient, MeikadeServiceable {
@@ -50,6 +54,14 @@ struct MeikadeService: HTTPClient, MeikadeServiceable {
         return try await sendRequest(
             endpoint: MeikadeEndpoint.verses(poemID: poemID),
             responseModel: VersesResponse.self
+        ).result
+    }
+    
+    // MARK: - Poets
+    func getPoetTypes() async throws -> [PoetTypes] {
+        return try await sendRequest(
+            endpoint: MeikadeEndpoint.poetTypes,
+            responseModel: PoetTypesResponse.self
         ).result
     }
 }
