@@ -59,8 +59,7 @@ extension RouterView: View {
         Group {
             switch route {
             case .allPoets(let typeID):
-                // TODO: Implement this page
-                ContentUnavailableView("All Poets page coming soon", image: "Meikade")
+                PoetsListView()
             case .randomPoem:
                 PoemView(poemType: .random())
             case .hafizFaal:

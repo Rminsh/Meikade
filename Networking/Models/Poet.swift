@@ -8,19 +8,22 @@
 import Foundation
 
 // MARK: - Poet
-struct Poet: Codable {
-    let id: Int
-    let username: String
-    let name: String
-    let description: String
+struct Poet: Codable, Hashable {
+    let id: Int?
+    let username: String?
+    let name: String?
+    let title: String?
+    let description: String?
     let image: String
-    let wikipedia: String
+    let wikipedia: String?
     let color: String
-    let views: Int
+    let views: Int?
+    let types: [PoetType]?
 }
 
-struct PoetTypes: Codable {
-    let id: Int
+// MARK: - Poet type
+struct PoetType: Codable, Hashable, Identifiable {
+    let id: Int?
     let name: String
     let nameEN: String
     
@@ -31,5 +34,22 @@ struct PoetTypes: Codable {
 }
 
 struct PoetTypesResponse: Codable {
-    let result: [PoetTypes]
+    let result: [PoetType]
+}
+
+// MARK: - PoetsResponse
+struct PoetsResponse: Codable {
+    let result: [PoetsResult]
+
+    enum CodingKeys: String, CodingKey {
+        case result = "result"
+    }
+}
+
+struct PoetsResult: Codable {
+    let type: String
+    let section: String
+    let color: String
+    let background: Bool
+    let modelData: [Poet]
 }
