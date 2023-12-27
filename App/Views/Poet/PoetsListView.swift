@@ -12,7 +12,7 @@ struct PoetsListView {
     @State var types: [PoetType] = []
     @State var selectedType: Int? = nil
     
-    @State var poets: [Poet] = []
+    @State var poets: [PoetItem] = []
     
     @State var loading: Bool = false
     @State var emptyState: EmptyState? = nil
@@ -67,7 +67,7 @@ extension PoetsListView: View {
     var body: some View {
         List {
             ForEach(poets, id: \.self) { poet in
-                Text(poet.title ?? "")
+                Text(poet.title)
                     .customFont(style: .title3)
                     .padding(.vertical, 5)
             }

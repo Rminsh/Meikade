@@ -18,7 +18,7 @@ protocol MeikadeServiceable {
     
     // MARK: - Poets
     func getPoetTypes() async throws -> [PoetType]
-    func getPoets(limit: Int, offset: Int, typeID: Int) async throws -> [Poet]
+    func getPoets(limit: Int, offset: Int, typeID: Int) async throws -> [PoetItem]
 }
 
 struct MeikadeService: HTTPClient, MeikadeServiceable {
@@ -66,7 +66,7 @@ struct MeikadeService: HTTPClient, MeikadeServiceable {
         ).result
     }
     
-    func getPoets(limit: Int, offset: Int, typeID: Int) async throws -> [Poet] {
+    func getPoets(limit: Int, offset: Int, typeID: Int) async throws -> [PoetItem] {
         let response = try await sendRequest(
             endpoint: MeikadeEndpoint.poets(limit: limit, offset: offset, typeID: typeID),
             responseModel: PoetsResponse.self

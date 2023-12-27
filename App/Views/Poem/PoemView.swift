@@ -66,7 +66,7 @@ struct PoemView: View {
                 verseOffset: 0
             )
             title = poem.poem.title
-            subtitle = poem.poet.name ?? ""
+            subtitle = poem.poet.name
             verses = poem.verses
             description = poem.poem.phrase ?? ""
             
@@ -92,7 +92,7 @@ struct PoemView: View {
             )
             
             title = poem.poem.title
-            subtitle = poem.poet.name ?? ""
+            subtitle = poem.poet.name
             verses = poem.verses
             description = poem.poem.phrase ?? ""
             
