@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RegexBuilder
 
 // MARK: - Poet
 struct Poet: Codable, Hashable {
@@ -17,6 +18,24 @@ struct Poet: Codable, Hashable {
     let wikipedia: String
     let color: String
     let views: Int
+    let types: [PoetType]?
+    let categories: [PoetCategory]?
+}
+
+struct PoetCategory: Codable, Hashable {
+    let id: Int
+        let poetID: Int
+        let title: String
+
+        enum CodingKeys: String, CodingKey {
+            case id = "id"
+            case poetID = "poet_id"
+            case title = "title"
+        }
+}
+
+struct PoetResponse: Codable {
+    let result: Poet
 }
 
 struct PoetItem: Codable, Hashable {
@@ -37,6 +56,15 @@ struct PoetItem: Codable, Hashable {
     let link: String
     let heightRatio: Double
     let details: PoetDetails
+    
+    var poetID: Int? {
+        let regexPattern = /page\:\/poet\?id\=(\d+)/
+        if let result = link.wholeMatch(of: regexPattern), let poetID = Int(result.1) {
+            return poetID
+        } else {
+            return nil
+        }
+    }
 }
 
 struct PoetDetails: Codable {

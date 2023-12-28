@@ -5,6 +5,7 @@
 //  Created by Armin on 12/27/23.
 //
 
+import NukeUI
 import SwiftUI
 @_spi(Advanced) import SwiftUIIntrospect
 
@@ -67,11 +68,39 @@ extension PoetsListView: View {
     var body: some View {
         List {
             ForEach(poets, id: \.self) { poet in
-                Text(poet.title)
-                    .customFont(style: .title3)
-                    .padding(.vertical, 5)
+                if let poetID = poet.poetID {
+                    NavigationLink {
+                        PoetView(poetID: poetID)
+                    } label: {
+                        HStack {
+                            if selectedType != 4 {
+                                LazyImage(url: URL(string: "https://meikade.com/offlines/thumbs/\(poetID).png")) { state in
+                                    if let image = state.image {
+                                        image
+                                            .resizable()
+                                    } else {
+                                        Rectangle()
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 48, height: 48)
+                                .clipShape(.circle)
+                                .shadow(radius: 1)
+                            }
+                            
+                            Text(poet.title)
+                                .customFont(style: .title3)
+                                .padding(5)
+                        }
+                    }
+                }
             }
         }
+        #if os(macOS)
+        .listStyle(.inset(alternatesRowBackgrounds: true))
+        .environment(\.defaultMinListRowHeight, 60)
+        #endif
         .overlay {
             emptyStateView
         }
@@ -85,6 +114,8 @@ extension PoetsListView: View {
         }
         .toolbarTitleDisplayMode(.inline)
         .navigationTitle("Poets")
+        .environment(\.locale, .init(identifier: "fa"))
+        .environment(\.layoutDirection, .rightToLeft)
     }
     
     var poetTypes: some View {

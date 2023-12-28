@@ -58,7 +58,7 @@ extension RouterView: View {
     var body: some View {
         Group {
             switch route {
-            case .allPoets(let typeID):
+            case .allPoets:
                 PoetsListView()
             case .randomPoem:
                 PoemView(poemType: .random())

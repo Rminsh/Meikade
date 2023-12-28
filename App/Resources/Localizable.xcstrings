@@ -53,6 +53,16 @@
         }
       }
     },
+    "Description" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توضیحات"
+          }
+        }
+      }
+    },
     "English" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -87,12 +97,32 @@
     "Hafiz faal page coming soon" : {
 
     },
+    "Less" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بستن"
+          }
+        }
+      }
+    },
     "Meikade" : {
       "localizations" : {
         "fa" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "می‌کده"
+          }
+        }
+      }
+    },
+    "More" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بیشتر"
           }
         }
       }
