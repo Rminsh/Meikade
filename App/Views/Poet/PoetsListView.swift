@@ -113,9 +113,7 @@ extension PoetsListView: View {
             await loadAll()
         }
         .toolbarTitleDisplayMode(.inline)
-        .navigationTitle("Poets")
-        .environment(\.locale, .init(identifier: "fa"))
-        .environment(\.layoutDirection, .rightToLeft)
+        .navigationTitle("")
     }
     
     var poetTypes: some View {

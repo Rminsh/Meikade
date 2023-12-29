@@ -14,44 +14,38 @@ struct PoetView {
     @State var poet: Poet? = nil
     @State var descriptionExpanded: Bool = false
     
+    @State var loading: Bool = false
+    @State var emptyState: EmptyState? = nil
+    
     func getPoet() async {
+        loading = true
+        
         let service = MeikadeService()
         do {
-            poet = try await service.getPoet(poetID: poetID)
+            let poetResult = try await service.getPoet(poetID: poetID)
+            if poetResult.username != "" && poetResult.name != "" {
+                poet = poetResult
+            } else {
+                emptyState = .empty(
+                    icon: "person.bust",
+                    title: "Poet not found"
+                )
+            }
         } catch {
-            
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
+            print(error)
+            #endif
         }
+        
+        loading = false
     }
 }
 
 extension PoetView: View {
     var body: some View {
-        List {
+        Form {
             if let poet {
-                Section {
-                    VStack {
-                        LazyImage(url: URL(string: "https://meikade.com/offlines/thumbs/\(poetID).png")) { state in
-                            if let image = state.image {
-                                image
-                                    .resizable()
-                            } else {
-                                Rectangle()
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 64, height: 64)
-                        .clipShape(.circle)
-                        .shadow(radius: 1)
-                        
-                        Text(poet.name)
-                            .customFont(style: .title1, weight: .bold)
-                    }
-                    .frame(maxWidth: .infinity)
-                }
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.clear)
-                
                 Section {
                     VStack(spacing: 5) {
                         Text(poet.description)
@@ -72,9 +66,28 @@ extension PoetView: View {
                             .customFont(style: .caption1)
                         }
                     }
+                    .listRowSeparator(.hidden, edges: .bottom)
                 } header: {
-                    Text("Description")
-                        .customFont(style: .subheadline)
+                    VStack {
+                        LazyImage(url: URL(string: "https://meikade.com/offlines/thumbs/\(poetID).png")) { state in
+                            if let image = state.image {
+                                image
+                                    .resizable()
+                            } else {
+                                Circle()
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 64, height: 64)
+                        .clipShape(.circle)
+                        .shadow(radius: 1)
+                        
+                        Text(poet.name)
+                            .customFont(style: .title1, weight: .bold)
+                    }
+                    .foregroundStyle(.primary)
+                    .frame(maxWidth: .infinity)
                 }
                 
                 if let categories = poet.categories {
@@ -95,6 +108,10 @@ extension PoetView: View {
                 }
             }
         }
+        .formStyle(.grouped)
+        .overlay {
+            emptyStateView
+        }
         .navigationTitle("")
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -103,10 +120,43 @@ extension PoetView: View {
             await getPoet()
         }
     }
+    
+    var emptyStateView: some View {
+        Group {
+            if !loading && poet == nil, let emptyState {
+                ContentUnavailableView {
+                    Label(
+                        LocalizedStringKey(emptyState.title),
+                        systemImage: emptyState.icon
+                    )
+                    .customFont(style: .largeTitle)
+                } description: {
+                    Text(LocalizedStringKey(emptyState.subtitle))
+                        .customFont(style: .headline)
+                } actions: {
+                    if case EmptyState.network = emptyState {
+                        Button {
+                            Task {
+                                await getPoet()
+                            }
+                        } label: {
+                            Text("Try again")
+                                .customFont(style: .body)
+                        }
+                    }
+                }
+            } else if loading {
+                ProgressView()
+            }
+        }
+    }
 }
 
 #Preview {
     NavigationStack {
         PoetView(poetID: 2)
+            #if os(macOS)
+            .frame(width: 450, height: 450)
+            #endif
     }
 }
