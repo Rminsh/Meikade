@@ -53,17 +53,6 @@
         }
       }
     },
-    "Description" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "توضیحات"
-          }
-        }
-      }
-    },
     "English" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -91,16 +80,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "فال حافظ"
-          }
-        }
-      }
-    },
-    "Hafiz faal page coming soon" : {
-      "localizations" : {
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فال حافظ به زودی"
           }
         }
       }

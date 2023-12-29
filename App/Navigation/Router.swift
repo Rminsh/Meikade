@@ -63,8 +63,7 @@ extension RouterView: View {
             case .randomPoem:
                 PoemView(poemType: .random())
             case .hafizFaal:
-                // TODO: Implement this page
-                ContentUnavailableView("Hafiz faal page coming soon", image: "Meikade")
+                PoemView(poemType: .poem(id: Int.random(in: 2130..<2625)))
             case .poem(let poemID):
                 PoemView(poemType: .poem(id: poemID))
             default:
