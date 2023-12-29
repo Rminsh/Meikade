@@ -10,10 +10,16 @@ import SwiftUI
 struct PoemsListView {
     var poetID: Int
     var categoryID: Int
+    var title: String = ""
     
     @State var poems: [PoemDetail] = []
     
+    @State var loading: Bool = false
+    @State var emptyState: EmptyState? = nil
+    
     func getPoems() async {
+        loading = true
+        
         let service = MeikadeService()
         do {
             poems = try await service.getPoems(
@@ -21,30 +27,83 @@ struct PoemsListView {
                 categoryID: categoryID,
                 offset: 0
             )
-        } catch {
             
+            if poems.isEmpty {
+                emptyState = .empty(
+                    icon: "books.vertical",
+                    title: "Poems list is empty"
+                )
+            }
+        } catch {
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
+            print(error)
+            #endif
         }
+        
+        loading = false
     }
 }
 
 extension PoemsListView: View {
-    
     var body: some View {
-        List {
+        Form {
             ForEach(poems, id: \.id) { poem in
-                Text(poem.title)
-                    .customFont(style: .body)
+                NavigationLink {
+                    PoemView(poemType: .poem(id: poem.id))
+                } label: {
+                    Text(poem.title)
+                        .customFont(style: .body)
+                }
             }
         }
+        .navigationTitle(title)
+        .overlay(emptyStateView)
+        .formStyle(.grouped)
         .task {
             await getPoems()
+        }
+    }
+    
+    var emptyStateView: some View {
+        Group {
+            if !loading && poems.isEmpty, let emptyState {
+                ContentUnavailableView {
+                    Label(
+                        LocalizedStringKey(emptyState.title),
+                        systemImage: emptyState.icon
+                    )
+                    .customFont(style: .largeTitle)
+                } description: {
+                    Text(LocalizedStringKey(emptyState.subtitle))
+                        .customFont(style: .headline)
+                } actions: {
+                    if case EmptyState.network = emptyState {
+                        Button {
+                            Task {
+                                await getPoems()
+                            }
+                        } label: {
+                            Text("Try again")
+                                .customFont(style: .body)
+                        }
+                    }
+                }
+            } else if loading {
+                ProgressView()
+            }
         }
     }
 }
 
 #Preview {
-    PoemsListView(
-        poetID: 2,
-        categoryID: 24
-    )
+    NavigationStack {
+        PoemsListView(
+            poetID: 2,
+            categoryID: 24
+        )
+        #if os(macOS)
+        .frame(width: 450, height: 450)
+        #endif
+    }
 }

@@ -96,7 +96,8 @@ extension PoetView: View {
                             NavigationLink {
                                 PoemsListView(
                                     poetID: poetID,
-                                    categoryID: category.id
+                                    categoryID: category.id,
+                                    title: category.title
                                 )
                             } label: {
                                 Text(category.title)
