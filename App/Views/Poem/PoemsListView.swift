@@ -57,9 +57,15 @@ extension PoemsListView: View {
                 }
             }
         }
-        .navigationTitle(title)
+        .navigationTitle("")
         .overlay(emptyStateView)
         .formStyle(.grouped)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(title)
+                    .customFont(style: .title3, weight: .bold)
+            }
+        }
         .task {
             await getPoems()
         }
@@ -100,10 +106,13 @@ extension PoemsListView: View {
     NavigationStack {
         PoemsListView(
             poetID: 2,
-            categoryID: 24
+            categoryID: 24,
+            title: "غزلیات"
         )
         #if os(macOS)
         .frame(width: 450, height: 450)
+        #else
+        .navigationBarTitleDisplayMode(.inline)
         #endif
     }
 }

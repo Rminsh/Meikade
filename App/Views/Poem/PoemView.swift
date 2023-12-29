@@ -158,6 +158,7 @@ extension PoemView {
             .navigationSubtitle(subtitle)
             #elseif os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.editor)
             #endif
             .task {
                 await getData()

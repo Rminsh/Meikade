@@ -54,6 +54,7 @@
       }
     },
     "Description" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fa" : {
           "stringUnit" : {
@@ -95,7 +96,14 @@
       }
     },
     "Hafiz faal page coming soon" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فال حافظ به زودی"
+          }
+        }
+      }
     },
     "Less" : {
       "localizations" : {
@@ -199,7 +207,19 @@
         }
       }
     },
+    "Poet not found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شاعر پیدا نشد"
+          }
+        }
+      }
+    },
     "Poets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fa" : {
           "stringUnit" : {
