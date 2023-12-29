@@ -22,7 +22,7 @@ struct ExploreStaticView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            .overlay(Color.black.opacity(0.7))
+            .overlay(Color.black.opacity(0.6))
             
             Text(LocalizedStringKey(item.title))
                 .customFont(style: .headline)

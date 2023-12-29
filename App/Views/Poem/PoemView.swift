@@ -107,6 +107,21 @@ struct PoemView: View {
         }
         loading = false
     }
+    
+    func getPosition(_ position: Int) -> Alignment {
+        switch position {
+        case 0:
+            return .leading
+        case 1:
+            return .trailing
+        case 2:
+            return .center
+        case -5:
+            return .leading
+        default:
+            return .leading
+        }
+    }
 }
 
 extension PoemView {
@@ -184,7 +199,7 @@ extension PoemView {
                         #endif
                         .frame(
                             maxWidth: .infinity,
-                            alignment: verse.position == 1 ? .trailing : .leading
+                            alignment: getPosition(verse.position)
                         )
                         .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
                         .listRowSeparator(.hidden)
