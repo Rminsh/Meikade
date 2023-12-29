@@ -90,7 +90,7 @@ extension PoetsListView: View {
                             }
                             
                             Text(poet.title)
-                                .customFont(style: .title3)
+                                .customFont(style: .body)
                                 .padding(5)
                         }
                     }

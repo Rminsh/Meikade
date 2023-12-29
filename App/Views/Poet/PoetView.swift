@@ -80,9 +80,16 @@ extension PoetView: View {
                 if let categories = poet.categories {
                     Section {
                         ForEach(categories, id: \.id) { category in
-                            Text(category.title)
-                                .customFont(style: .title3)
-                                .padding(2)
+                            NavigationLink {
+                                PoemsListView(
+                                    poetID: poetID,
+                                    categoryID: category.id
+                                )
+                            } label: {
+                                Text(category.title)
+                                    .customFont(style: .body)
+                                    .padding(2)
+                            }
                         }
                     }
                 }

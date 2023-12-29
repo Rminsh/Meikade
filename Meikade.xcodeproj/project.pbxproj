@@ -42,6 +42,7 @@
 		C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */; };
 		C6A3A9B02B3AB537002EE6CF /* Mikhak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */; };
 		C6F6DC262B3CC6B700EF1493 /* PoetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6DC252B3CC6B700EF1493 /* PoetView.swift */; };
+		C6FB779C2B3EB8A70053B93D /* PoemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB779B2B3EB8A70053B93D /* PoemsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mikhak.ttf; sourceTree = "<group>"; };
 		C6F6DC252B3CC6B700EF1493 /* PoetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetView.swift; sourceTree = "<group>"; };
+		C6FB779B2B3EB8A70053B93D /* PoemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		C60801C72B35936400AEFE77 /* Poem */ = {
 			isa = PBXGroup;
 			children = (
+				C6FB779B2B3EB8A70053B93D /* PoemsListView.swift */,
 				C60801C82B35936E00AEFE77 /* PoemView.swift */,
 				C611556C2B3A0C830058E72A /* VersesThemeView.swift */,
 			);
@@ -204,11 +207,11 @@
 		C69945D02B333A3F008D475F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C69945D52B333A3F008D475F /* Endpoint.swift */,
+				C69945D32B333A3F008D475F /* HTTPClient.swift */,
 				C69945D12B333A3F008D475F /* HTTPContentType.swift */,
 				C69945D22B333A3F008D475F /* HTTPMethod.swift */,
-				C69945D32B333A3F008D475F /* HTTPClient.swift */,
 				C69945D42B333A3F008D475F /* RequestError.swift */,
-				C69945D52B333A3F008D475F /* Endpoint.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */,
 				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
+				C6FB779C2B3EB8A70053B93D /* PoemsListView.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
 				C66359E12B397C5A00F76709 /* Router.swift in Sources */,
 				C66359E72B398D2900F76709 /* Category.swift in Sources */,
