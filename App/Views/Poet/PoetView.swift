@@ -125,24 +125,16 @@ extension PoetView: View {
     var emptyStateView: some View {
         Group {
             if !loading && poet == nil, let emptyState {
-                ContentUnavailableView {
-                    Label(
-                        LocalizedStringKey(emptyState.title),
-                        systemImage: emptyState.icon
-                    )
-                    .customFont(style: .largeTitle)
-                } description: {
-                    Text(LocalizedStringKey(emptyState.subtitle))
-                        .customFont(style: .headline)
-                } actions: {
+                EmptyStateView(
+                    icon: emptyState.icon,
+                    title: LocalizedStringKey(emptyState.title),
+                    description: LocalizedStringKey(emptyState.subtitle),
+                    showAction: emptyState.showAction,
+                    actionTitle: "Try again"
+                ) {
                     if case EmptyState.network = emptyState {
-                        Button {
-                            Task {
-                                await getPoet()
-                            }
-                        } label: {
-                            Text("Try again")
-                                .customFont(style: .body)
+                        Task {
+                            await getPoet()
                         }
                     }
                 }

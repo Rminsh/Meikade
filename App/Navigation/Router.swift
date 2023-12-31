@@ -67,7 +67,11 @@ extension RouterView: View {
             case .poem(let poemID):
                 PoemView(poemType: .poem(id: poemID))
             default:
-                ContentUnavailableView("Nothing here", systemImage: "book.and.wrench", description: Text("Page not found: \(link ?? "")"))
+                EmptyStateView(
+                    icon: "book.and.wrench",
+                    title: "Nothing here",
+                    description: "Page not found: \(link ?? "")"
+                )
             }
         }
         .task {

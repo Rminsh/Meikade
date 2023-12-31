@@ -228,25 +228,15 @@ extension PoemView {
     var emptyStateView: some View {
         Group {
             if !loading && verses.isEmpty, let emptyState {
-                ContentUnavailableView {
-                    Label(
-                        LocalizedStringKey(emptyState.title),
-                        systemImage: emptyState.icon
-                    )
-                    .customFont(style: .largeTitle)
-                } description: {
-                    Text(LocalizedStringKey(emptyState.subtitle))
-                        .customFont(style: .headline)
-                } actions: {
-                    if case EmptyState.network = emptyState {
-                        Button {
-                            Task {
-                                await getData()
-                            }
-                        } label: {
-                            Text("Try again")
-                                .customFont(style: .body)
-                        }
+                EmptyStateView(
+                    icon: emptyState.icon,
+                    title: LocalizedStringKey(emptyState.title),
+                    description: LocalizedStringKey(emptyState.subtitle),
+                    showAction: emptyState.showAction,
+                    actionTitle: "Try again"
+                ) {
+                    Task {
+                        await getData()
                     }
                 }
             } else if loading {
