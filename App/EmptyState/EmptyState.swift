@@ -37,4 +37,13 @@ enum EmptyState: Equatable {
             return subtitle
         }
     }
+    
+    var showAction: Bool {
+        switch self {
+        case .empty:
+            return false
+        case .network:
+            return true
+        }
+    }
 }
