@@ -38,12 +38,13 @@ struct VersesThemeView: View {
                 .buttonBorderShape(.roundedRectangle(radius: 8))
                 #endif
                 .overlay {
-                    RoundedRectangle(cornerRadius: 8)
-                        #if os(iOS)
+                    #if os(iOS)
+                    RoundedRectangle(cornerRadius: 14)
                         .stroke(.accent, lineWidth: versesFont == font.rawValue ? 2 : 0)
-                        #else
+                    #else
+                    RoundedRectangle(cornerRadius: 8)
                         .stroke(lineWidth: versesFont == font.rawValue ? 2 : 0)
-                        #endif
+                    #endif
                 }
             }
         }
