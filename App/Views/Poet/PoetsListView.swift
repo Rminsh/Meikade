@@ -101,7 +101,7 @@ extension PoetsListView: View {
         .listStyle(.inset(alternatesRowBackgrounds: true))
         .environment(\.defaultMinListRowHeight, 60)
         #elseif os(iOS)
-        .toolbarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
         #endif
         .overlay {
             emptyStateView

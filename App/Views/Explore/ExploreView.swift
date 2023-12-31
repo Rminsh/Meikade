@@ -44,7 +44,7 @@ extension ExploreView: View {
             content
                 .navigationTitle("")
                 #if os(iOS)
-                .toolbarTitleDisplayMode(.inline)
+                .navigationBarTitleDisplayMode(.inline)
                 #endif
                 .overlay {
                     emptyStateView
