@@ -142,11 +142,19 @@ extension PoetsListView: View {
             item.font = UXFont.custom(style: .body)
         }
         #endif
+        #if os(visionOS)
+        .onChange(of: selectedType) {
+            Task {
+                await getPoets()
+            }
+        }
+        #else
         .onChange(of: selectedType) { _ in
             Task {
                 await getPoets()
             }
         }
+        #endif
     }
     
     var emptyStateView: some View {
