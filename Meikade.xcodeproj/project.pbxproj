@@ -38,6 +38,7 @@
 		C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C69945F82B336B7F008D475F /* Localizable.xcstrings */; };
 		C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C69945FB2B337042008D475F /* Vazirmatn.ttf */; };
 		C69946002B3370EF008D475F /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945FF2B3370EF008D475F /* CustomFont.swift */; };
+		C6A2E0202B41846A002256B8 /* ExploreSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2E01F2B41846A002256B8 /* ExploreSectionView.swift */; };
 		C6A3A9AA2B3AB02C002EE6CF /* Tanha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */; };
 		C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */; };
 		C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */; };
@@ -77,6 +78,7 @@
 		C69945FB2B337042008D475F /* Vazirmatn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazirmatn.ttf; sourceTree = "<group>"; };
 		C69945FD2B337075008D475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C69945FF2B3370EF008D475F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		C6A2E01F2B41846A002256B8 /* ExploreSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionView.swift; sourceTree = "<group>"; };
 		C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tanha.ttf; sourceTree = "<group>"; };
 		C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Behdad.ttf; sourceTree = "<group>"; };
 		C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				C69945F42B3365F4008D475F /* ExploreItemView.swift */,
+				C6A2E01F2B41846A002256B8 /* ExploreSectionView.swift */,
 				C69945F62B336699008D475F /* ExploreStaticView.swift */,
 				C69945BE2B32E8CD008D475F /* ExploreView.swift */,
 			);
@@ -377,6 +380,7 @@
 				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C6FB779C2B3EB8A70053B93D /* PoemsListView.swift in Sources */,
+				C6A2E0202B41846A002256B8 /* ExploreSectionView.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
 				C66359E12B397C5A00F76709 /* Router.swift in Sources */,
 				C66359E72B398D2900F76709 /* Category.swift in Sources */,
@@ -534,7 +538,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aseman.Meikade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,7 +575,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aseman.Meikade;
 				PRODUCT_NAME = "$(TARGET_NAME)";

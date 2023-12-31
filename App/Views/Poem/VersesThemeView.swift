@@ -34,7 +34,9 @@ struct VersesThemeView: View {
                     )
                 }
                 .buttonStyle(.bordered)
+                #if os(visionOS)
                 .buttonBorderShape(.roundedRectangle(radius: 8))
+                #endif
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         #if os(iOS)

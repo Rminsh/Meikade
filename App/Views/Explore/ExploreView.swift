@@ -103,7 +103,7 @@ extension ExploreView: View {
                             .padding(.horizontal)
                             #endif
                         } else {
-                            ScrollView(.horizontal) {
+                            ExploreSectionView {
                                 HStack {
                                     ForEach(section.modelData, id: \.id) { item in
                                         Button {
@@ -122,7 +122,6 @@ extension ExploreView: View {
                                 .padding(.horizontal)
                                 #endif
                             }
-                            .scrollClipDisabled()
                         }
                     } header: {
                         Text(section.section)
