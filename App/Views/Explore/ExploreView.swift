@@ -42,9 +42,11 @@ extension ExploreView: View {
     var body: some View {
         NavigationStack(path: $path) {
             content
-                .navigationTitle("")
                 #if os(iOS)
+                .navigationTitle("Meikade")
                 .navigationBarTitleDisplayMode(.inline)
+                #else
+                .navigationTitle("")
                 #endif
                 .overlay {
                     emptyStateView
@@ -60,6 +62,10 @@ extension ExploreView: View {
                     }
                     #endif
                 }
+                #if os(macOS)
+                .environment(\.locale, .init(identifier: "fa"))
+                .environment(\.layoutDirection, .rightToLeft)
+                #endif
         }
         .task {
             await getExplore()

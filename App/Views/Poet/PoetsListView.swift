@@ -98,9 +98,15 @@ extension PoetsListView: View {
             }
         }
         #if os(macOS)
+        .navigationTitle("")
         .listStyle(.inset(alternatesRowBackgrounds: true))
         .environment(\.defaultMinListRowHeight, 60)
-        #elseif os(iOS)
+        .environment(\.locale, .init(identifier: "fa"))
+        .environment(\.layoutDirection, .rightToLeft)
+        #else
+        .navigationTitle("Poets")
+        #endif
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
         .overlay {
@@ -114,7 +120,6 @@ extension PoetsListView: View {
         .task {
             await loadAll()
         }
-        .navigationTitle("")
     }
     
     var poetTypes: some View {
@@ -138,6 +143,8 @@ extension PoetsListView: View {
             )
         }
         #elseif os(macOS)
+        .environment(\.locale, .init(identifier: "fa"))
+        .environment(\.layoutDirection, .rightToLeft)
         .introspect(.picker(style: .segmented), on: .macOS(.v13...)) { item in
             item.font = UXFont.custom(style: .body)
         }

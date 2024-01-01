@@ -57,7 +57,13 @@ extension PoemsListView: View {
                 }
             }
         }
+        #if os(macOS)
         .navigationTitle("")
+        .environment(\.locale, .init(identifier: "fa"))
+        .environment(\.layoutDirection, .rightToLeft)
+        #else
+        .navigationTitle(title)
+        #endif
         .overlay(emptyStateView)
         .formStyle(.grouped)
         .toolbar {

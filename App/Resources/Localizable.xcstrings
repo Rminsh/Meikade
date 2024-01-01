@@ -198,7 +198,6 @@
       }
     },
     "Poets" : {
-      "extractionState" : "stale",
       "localizations" : {
         "fa" : {
           "stringUnit" : {

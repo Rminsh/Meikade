@@ -110,13 +110,17 @@ extension PoetView: View {
             }
         }
         .formStyle(.grouped)
+        #if os(iOS)
+        .navigationTitle(poet?.name ?? "")
+        .navigationBarTitleDisplayMode(.inline)
+        #elseif os(macOS)
+        .navigationTitle("")
+        .environment(\.locale, .init(identifier: "fa"))
+        .environment(\.layoutDirection, .rightToLeft)
+        #endif
         .overlay {
             emptyStateView
         }
-        .navigationTitle("")
-        #if os(iOS)
-        .navigationBarTitleDisplayMode(.inline)
-        #endif
         .task {
             await getPoet()
         }

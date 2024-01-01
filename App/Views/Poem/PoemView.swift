@@ -131,49 +131,50 @@ extension PoemView {
                 emptyStateView
             }
             .toolbar {
-                    ToolbarItem {
-                        if shareText != "" {
-                            ShareLink(item: shareText)
-                        }
+                ToolbarItem {
+                    if shareText != "" {
+                        ShareLink(item: shareText)
                     }
-                    ToolbarItem {
-                        Button(action: {showVersesTheme.toggle()}) {
-                            Label("Theme", systemImage: "textformat.alt")
-                        }
-                        .popover(isPresented: $showVersesTheme) {
-                            VersesThemeView()
-                                .presentationDetents([.fraction(0.2), .medium])
-                        }
-                    }
-                    
-                    #if os(iOS)
-                    ToolbarItem(placement: .principal) {
-                        VStack {
-                            Text(subtitle)
-                                .customFont(style: .subheadline)
-                            
-                            Text(title)
-                                .customFont(style: .headline, weight: .bold)
-                        }
-                    }
-                    #elseif os(visionOS)
-                    ToolbarItem(placement: .principal) {
-                        VStack(alignment: .leading) {
-                            Text(subtitle)
-                                .customFont(style: .subheadline)
-                            
-                            Text(title)
-                                .customFont(style: .headline, weight: .bold)
-                        }
-                    }
-                    #endif
                 }
-            #if os(macOS)
+                ToolbarItem {
+                    Button(action: {showVersesTheme.toggle()}) {
+                        Label("Theme", systemImage: "textformat.alt")
+                    }
+                    .popover(isPresented: $showVersesTheme) {
+                        VersesThemeView()
+                            .presentationDetents([.fraction(0.2), .medium])
+                    }
+                }
+                
+                #if os(iOS)
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text(subtitle)
+                            .customFont(style: .subheadline)
+                        
+                        Text(title)
+                            .customFont(style: .headline, weight: .bold)
+                    }
+                }
+                #elseif os(visionOS)
+                ToolbarItem(placement: .principal) {
+                    VStack(alignment: .leading) {
+                        Text(subtitle)
+                            .customFont(style: .subheadline)
+                        
+                        Text(title)
+                            .customFont(style: .headline, weight: .bold)
+                    }
+                }
+                #endif
+            }
             .navigationTitle(title)
+            #if os(macOS)
             .navigationSubtitle(subtitle)
+            .environment(\.locale, .init(identifier: "fa"))
+            .environment(\.layoutDirection, .rightToLeft)
             #elseif os(iOS)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarRole(.editor)
             #endif
             .task {
                 await getData()
