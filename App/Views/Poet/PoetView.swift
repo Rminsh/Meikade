@@ -47,23 +47,27 @@ extension PoetView: View {
         Form {
             if let poet {
                 Section {
-                    VStack(spacing: 5) {
-                        Text(poet.description)
-                            .customFont(style: .body)
-                            .lineLimit(descriptionExpanded ? nil : 3)
-                            .environment(\.layoutDirection, poet.description.isRTL ? .rightToLeft : .leftToRight)
-                        
-                        Button {
-                            withAnimation {
-                                descriptionExpanded.toggle()
+                    Group {
+                        if poet.description != "" && poet.description != "null" {
+                            VStack(spacing: 5) {
+                                Text(poet.description)
+                                    .customFont(style: .body)
+                                    .lineLimit(descriptionExpanded ? nil : 3)
+                                    .environment(\.layoutDirection, poet.description.isRTL ? .rightToLeft : .leftToRight)
+                                
+                                Button {
+                                    withAnimation {
+                                        descriptionExpanded.toggle()
+                                    }
+                                } label: {
+                                    Label(
+                                        descriptionExpanded ? "Less" : "More",
+                                        systemImage: descriptionExpanded ? "chevron.up" : "chevron.down"
+                                    )
+                                    .labelStyle(.iconOnly)
+                                    .customFont(style: .caption1)
+                                }
                             }
-                        } label: {
-                            Label(
-                                descriptionExpanded ? "Less" : "More",
-                                systemImage: descriptionExpanded ? "chevron.up" : "chevron.down"
-                            )
-                            .labelStyle(.iconOnly)
-                            .customFont(style: .caption1)
                         }
                     }
                     .listRowSeparator(.hidden, edges: .bottom)
@@ -75,7 +79,12 @@ extension PoetView: View {
                                     .resizable()
                             } else {
                                 Circle()
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(.accent.gradient)
+                                    .overlay {
+                                        Image(systemName: "person.bust.fill")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.white)
+                                    }
                             }
                         }
                         .aspectRatio(contentMode: .fit)
@@ -115,6 +124,8 @@ extension PoetView: View {
         .navigationBarTitleDisplayMode(.inline)
         #elseif os(macOS)
         .navigationTitle("")
+        .frame(maxWidth: 650)
+        .scrollIndicators(.hidden)
         .environment(\.locale, .init(identifier: "fa"))
         .environment(\.layoutDirection, .rightToLeft)
         #endif
