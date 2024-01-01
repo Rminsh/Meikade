@@ -64,6 +64,7 @@ extension PoemsListView: View {
         #else
         .navigationTitle(title)
         #endif
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay(emptyStateView)
         .formStyle(.grouped)
         .toolbar {
