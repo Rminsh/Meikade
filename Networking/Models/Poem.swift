@@ -8,7 +8,6 @@
 import Foundation
 
 struct Poem: Codable {
-    let categories: [Category]
     let poem: PoemDetail
     let poet: Poet
     let verses: [Verse]

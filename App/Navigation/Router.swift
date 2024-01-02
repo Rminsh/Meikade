@@ -25,10 +25,13 @@ enum Router {
 extension Router {
     static let poemRegex = /page\:\/poet\?id\=(\d+).+poemId\=(\d+)/
     static let onlineList = /popup\:\/lists\/online\?listId\=(\d+)/
+    static let categoriesRegex = /page\:\/poet\?id\=(\d+).+catId\=(\d+)/
     
     static func parse(link: String) async -> Router? {
         if let result = link.wholeMatch(of: poemRegex), let poemID = Int(result.2) {
             return .poem(poemID: poemID)
+        } else if let result = link.wholeMatch(of: categoriesRegex), let poetID = Int(result.1), let catID = Int(result.2) {
+            return .categories(poetID: poetID, parentID: catID)
         } else {
             return nil
         }
@@ -67,6 +70,8 @@ extension RouterView: View {
                 PoemView(poemType: .poem(id: Int.random(in: 2130..<2625)))
             case .poem(let poemID):
                 PoemView(poemType: .poem(id: poemID))
+            case .categories(let poetID, let parentID):
+                CatrgoriesListView(poetID: poetID, categoryID: parentID)
             default:
                 emptyState
             }

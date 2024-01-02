@@ -1,5 +1,5 @@
 //
-//  PoemsListView.swift
+//  CatrgoriesListView.swift
 //  Meikade
 //
 //  Created by Armin on 12/29/23.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct PoemsListView {
+struct CatrgoriesListView {
     var poetID: Int
     var categoryID: Int
     var title: String = ""
     
-    @State var poems: [PoemDetail] = []
+    @State var categories: [Category] = []
     
     @State var loading: Bool = false
     @State var emptyState: EmptyState? = nil
@@ -22,16 +22,15 @@ struct PoemsListView {
         
         let service = MeikadeService()
         do {
-            poems = try await service.getPoems(
+            categories = try await service.getCategories(
                 poetID: poetID,
-                categoryID: categoryID,
-                offset: 0
+                parentID: categoryID
             )
             
-            if poems.isEmpty {
+            if categories.isEmpty {
                 emptyState = .empty(
                     icon: "books.vertical",
-                    title: "Poems list is empty"
+                    title: "List is empty"
                 )
             }
         } catch {
@@ -45,14 +44,14 @@ struct PoemsListView {
     }
 }
 
-extension PoemsListView: View {
+extension CatrgoriesListView: View {
     var body: some View {
         Form {
-            ForEach(poems, id: \.id) { poem in
+            ForEach(categories, id: \.self) { category in
                 NavigationLink {
-                    PoemView(poemType: .poem(id: poem.id))
+                    RouterView(link: category.link)
                 } label: {
-                    Text(poem.title)
+                    Text(category.title)
                         .customFont(style: .body)
                 }
             }
@@ -80,7 +79,7 @@ extension PoemsListView: View {
     
     var emptyStateView: some View {
         Group {
-            if !loading && poems.isEmpty, let emptyState {
+            if !loading && categories.isEmpty, let emptyState {
                 EmptyStateView(
                     icon: emptyState.icon,
                     title: LocalizedStringKey(emptyState.title),
@@ -103,7 +102,7 @@ extension PoemsListView: View {
 
 #Preview {
     NavigationStack {
-        PoemsListView(
+        CatrgoriesListView(
             poetID: 2,
             categoryID: 24,
             title: "غزلیات"

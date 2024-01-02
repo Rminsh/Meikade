@@ -103,7 +103,7 @@ extension PoetView: View {
                     Section {
                         ForEach(categories, id: \.id) { category in
                             NavigationLink {
-                                PoemsListView(
+                                CatrgoriesListView(
                                     poetID: poetID,
                                     categoryID: category.id,
                                     title: category.title

@@ -24,14 +24,14 @@ struct Poet: Codable, Hashable {
 
 struct PoetCategory: Codable, Hashable {
     let id: Int
-        let poetID: Int
-        let title: String
-
-        enum CodingKeys: String, CodingKey {
-            case id = "id"
-            case poetID = "poet_id"
-            case title = "title"
-        }
+    let poetID: Int
+    let title: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case poetID = "poet_id"
+        case title = "title"
+    }
 }
 
 struct PoetResponse: Codable {
