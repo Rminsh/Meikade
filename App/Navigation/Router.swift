@@ -26,7 +26,7 @@ extension Router {
     static let poemRegex = /page\:\/poet\?id\=(\d+).+poemId\=(\d+)/
     static let onlineList = /popup\:\/lists\/online\?listId\=(\d+)/
     
-    static func parse(link: String) -> Router? {
+    static func parse(link: String) async -> Router? {
         if let result = link.wholeMatch(of: poemRegex), let poemID = Int(result.2) {
             return .poem(poemID: poemID)
         } else {
@@ -38,9 +38,10 @@ extension Router {
 struct RouterView {
     
     var link: String? = nil
+    @State var loading: Bool = true
     @State var route: Router? = nil
     
-    func getRoute(link: String) -> Router? {
+    func getRoute(link: String) async -> Router? {
         switch link {
         case "page:/poets":
             return .allPoets(typeID: 0)
@@ -49,7 +50,7 @@ struct RouterView {
         case "page:/poem/hafiz_faal":
             return .hafizFaal
         default:
-            return Router.parse(link: link)
+            return await Router.parse(link: link)
         }
     }
 }
@@ -67,16 +68,27 @@ extension RouterView: View {
             case .poem(let poemID):
                 PoemView(poemType: .poem(id: poemID))
             default:
+                emptyState
+            }
+        }
+        .task {
+            if let link {
+                route = await getRoute(link: link)
+            }
+            loading = false
+        }
+    }
+    
+    var emptyState: some View {
+        Group {
+            if loading {
+                ProgressView()
+            } else {
                 EmptyStateView(
                     icon: "book.and.wrench",
                     title: "Nothing here",
                     description: "Page not found: \(link ?? "")"
                 )
-            }
-        }
-        .task {
-            if let link {
-                route = getRoute(link: link)
             }
         }
     }
