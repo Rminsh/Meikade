@@ -183,34 +183,36 @@ extension PoemView {
     
     var content: some View {
         List {
-            ForEach(verses, id: \.id) { verse in
-                if let verseText = verse.text {
-                    Text(verseText)
-                        .textSelection(.enabled)
-                        #if os(iOS)
-                        .customFont(
-                            name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
-                            style: .body
-                        )
-                        #else
-                        .customFont(
-                            name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
-                            style: .title3
-                        )
-                        #endif
-                        .frame(
-                            maxWidth: .infinity,
-                            alignment: getPosition(verse.position)
-                        )
-                        .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(.init())
-                        .frame(maxWidth: 650)
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal)
-                        .padding(.vertical, 5)
+            Group {
+                ForEach(verses, id: \.id) { verse in
+                    if let verseText = verse.text {
+                        Text(verseText)
+                            .frame(
+                                maxWidth: .infinity,
+                                alignment: getPosition(verse.position)
+                            )
+                    }
                 }
             }
+            .textSelection(.enabled)
+            #if os(iOS)
+            .customFont(
+                name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                style: .body
+            )
+            #else
+            .customFont(
+                name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                style: .title3
+            )
+            #endif
+            .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.init())
+            .frame(maxWidth: 650)
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal)
+            .padding(.vertical, 5)
             
             if description != "" {
                 Section {
@@ -221,6 +223,10 @@ extension PoemView {
                         .customFont(style: .body)
                 }
                 .listSectionSeparator(.hidden, edges: .bottom)
+                .frame(maxWidth: 650)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
+                .padding(.vertical, 5)
             }
         }
         .listStyle(.plain)
