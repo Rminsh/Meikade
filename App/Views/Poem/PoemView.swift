@@ -43,6 +43,10 @@ struct PoemView: View {
         verses.first?.text?.isRTL ?? false
     }
     
+    var selectedFont: Fonts {
+        Fonts.getValue(name: versesFont) ?? .vazirmatn
+    }
+    
     func getData() async {
         switch poemType {
         case .poem(let id):
@@ -142,7 +146,7 @@ extension PoemView {
                     }
                     .popover(isPresented: $showVersesTheme) {
                         VersesThemeView()
-                            .presentationDetents([.fraction(0.2), .medium])
+                            .presentationDetents([.fraction(0.3), .medium])
                     }
                 }
                 
@@ -186,23 +190,27 @@ extension PoemView {
             Group {
                 ForEach(verses, id: \.id) { verse in
                     if let verseText = verse.text {
-                        Text(verseText)
-                            .frame(
-                                maxWidth: .infinity,
-                                alignment: getPosition(verse.position)
-                            )
+                        Group {
+                            Text(selectedFont.surroundedCharacter) +
+                            Text(verseText) +
+                            Text(selectedFont.surroundedCharacter)
+                        }
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: getPosition(verse.position)
+                        )
                     }
                 }
             }
             .textSelection(.enabled)
             #if os(iOS)
             .customFont(
-                name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                name: selectedFont,
                 style: .body
             )
             #else
             .customFont(
-                name: Fonts.getValue(name: versesFont) ?? .vazirmatn,
+                name: selectedFont,
                 style: .title3
             )
             #endif

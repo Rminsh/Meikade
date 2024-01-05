@@ -11,32 +11,41 @@ struct VersesThemeView: View {
     
     @AppStorage("versesFont") var versesFont: String = Fonts.vazirmatn.rawValue
     
+    #if os(macOS)
+    let columns = [
+        GridItem(.flexible(minimum: 84)),
+        GridItem(.flexible(minimum: 84)),
+        GridItem(.flexible(minimum: 84))
+    ]
+    #else
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    #endif
+    
     var body: some View {
-        HStack {
+        LazyVGrid(columns: columns) {
             ForEach(Fonts.allCases, id:\.hashValue) { font in
                 Button {
                     versesFont = font.rawValue
                 } label: {
-                    VStack {
-                        Text("Font")
-                        Text("قلم")
-                    }
-                    #if os(iOS)
-                    .padding()
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-                    #else
-                    .padding(4)
-                    #endif
-                    .customFont(
-                        name: Fonts(rawValue: font.rawValue) ?? .vazirmatn,
-                        style: .subheadline
-                    )
+                    Text("Font / قلم")
+                        #if os(iOS)
+                        .padding()
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                        #else
+                        .padding(4)
+                        #endif
+                        .customFont(
+                            name: Fonts(rawValue: font.rawValue) ?? .vazirmatn,
+                            style: .subheadline
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .contentShape(Rectangle())
                 }
-                .buttonStyle(.bordered)
-                #if os(visionOS)
-                .buttonBorderShape(.roundedRectangle(radius: 8))
-                #endif
                 .overlay {
                     #if os(iOS)
                     RoundedRectangle(cornerRadius: 14)
@@ -46,6 +55,17 @@ struct VersesThemeView: View {
                         .stroke(lineWidth: versesFont == font.rawValue ? 2 : 0)
                     #endif
                 }
+                #if os(macOS)
+                .background(Color(nsColor: .controlBackgroundColor))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .buttonStyle(.plain)
+                #else
+                .buttonStyle(.bordered)
+                #endif
+                #if os(visionOS)
+                .buttonBorderShape(.roundedRectangle(radius: 8))
+                #endif
+                
             }
         }
         .padding()
@@ -53,5 +73,7 @@ struct VersesThemeView: View {
 }
 
 #Preview {
-    PoemView(verses: Verse.preview, showVersesTheme: true)
+    NavigationStack {
+        PoemView(verses: Verse.preview, showVersesTheme: true)
+    }
 }

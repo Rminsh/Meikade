@@ -32,7 +32,7 @@ struct CustomFont: ViewModifier {
     func body(content: Content) -> some View {
         return content
             .font(
-                .custom(name.rawValue, size: UXFont.preferredFont(forTextStyle: style).pointSize)
+                .custom(name.rawValue, size: UXFont.preferredFont(forTextStyle: style).pointSize * name.pointSize)
                 .weight(weight)
             )
     }

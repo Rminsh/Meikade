@@ -43,6 +43,8 @@
 		C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */; };
 		C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */; };
 		C6A3A9B02B3AB537002EE6CF /* Mikhak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */; };
+		C6E9FFD72B47F04A00759894 /* Shekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */; };
+		C6E9FFD82B47F04A00759894 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */; };
 		C6F6DC262B3CC6B700EF1493 /* PoetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6DC252B3CC6B700EF1493 /* PoetView.swift */; };
 		C6FB779C2B3EB8A70053B93D /* CatrgoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Behdad.ttf; sourceTree = "<group>"; };
 		C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mikhak.ttf; sourceTree = "<group>"; };
+		C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shekasteh.ttf; sourceTree = "<group>"; };
+		C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
 		C6F6DC252B3CC6B700EF1493 /* PoetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetView.swift; sourceTree = "<group>"; };
 		C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatrgoriesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,7 +277,9 @@
 			isa = PBXGroup;
 			children = (
 				C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */,
+				C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */,
 				C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */,
+				C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */,
 				C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */,
 				C69945FB2B337042008D475F /* Vazirmatn.ttf */,
 			);
@@ -358,12 +364,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E9FFD82B47F04A00759894 /* DimaShekasteh.ttf in Resources */,
 				C69945FC2B337042008D475F /* Vazirmatn.ttf in Resources */,
 				C6A3A9AA2B3AB02C002EE6CF /* Tanha.ttf in Resources */,
 				C6A3A9B02B3AB537002EE6CF /* Mikhak.ttf in Resources */,
 				C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */,
 				C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */,
 				C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */,
+				C6E9FFD72B47F04A00759894 /* Shekasteh.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
