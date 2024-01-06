@@ -28,6 +28,14 @@ struct ExploreSectionView<Content: View>: View {
 
 #Preview {
     ExploreSectionView {
-        Image(systemName: "person.crop.circle")
+        HStack {
+            ForEach(0...20, id: \.self) { _ in
+                Image(systemName: "person.crop.circle")
+                    .font(.title)
+                    .padding()
+                    .background(.quaternary)
+            }
+        }
+        .padding()
     }
 }
