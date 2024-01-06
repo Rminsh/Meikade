@@ -67,7 +67,7 @@ extension RouterView: View {
             case .randomPoem:
                 PoemView(poemType: .random())
             case .hafizFaal:
-                PoemView(poemType: .poem(id: Int.random(in: 2130..<2625)))
+                HafezFaalView()
             case .poem(let poemID):
                 PoemView(poemType: .poem(id: poemID))
             case .categories(let poetID, let parentID):
