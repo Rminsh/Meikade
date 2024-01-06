@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "All Poets" : {
       "extractionState" : "manual",
@@ -65,7 +72,14 @@
       }
     },
     "Font / قلم" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Hafez Divination" : {
       "extractionState" : "manual",
@@ -90,6 +104,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "بستن"
+          }
+        }
+      }
+    },
+    "Make a wish and tap for a sign" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نیت کنید و اشارتی بفرمایید"
           }
         }
       }

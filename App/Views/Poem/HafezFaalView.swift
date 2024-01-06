@@ -28,7 +28,7 @@ struct HafezFaalView: View {
             
             Group {
                 if expanded {
-                    Text("نیت کنید و اشارتی بفرمایید")
+                    Text("Make a wish and tap for a sign")
                         .customFont(name: .shekasteh, style: .title1)
                         .foregroundStyle(.white)
                         .shadow(radius: 25)
@@ -69,7 +69,7 @@ struct HafezFaalView: View {
                             .resizable()
                             .blur(radius: 0.8)
                         
-                        Text("فال حافظ")
+                        Text("Hafez Divination")
                             .customFont(name: .shekasteh, style: .title1)
                             .foregroundStyle(.white)
                     }
