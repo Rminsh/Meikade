@@ -105,6 +105,7 @@
 		C6C034902B493E9D00C6444F /* PrismImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismImageView.swift; sourceTree = "<group>"; };
 		C6C034912B493E9D00C6444F /* PrismEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismEffect.swift; sourceTree = "<group>"; };
 		C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingButtonStyle.swift; sourceTree = "<group>"; };
+		C6D739F12B49AC4300FC23DC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shekasteh.ttf; sourceTree = "<group>"; };
 		C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
 		C6F6DC252B3CC6B700EF1493 /* PoetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetView.swift; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		C69945B02B32E8CD008D475F = {
 			isa = PBXGroup;
 			children = (
+				C6D739F12B49AC4300FC23DC /* Config.xcconfig */,
 				C69945BB2B32E8CD008D475F /* App */,
 				C69945CB2B333875008D475F /* Networking */,
 				C69945BA2B32E8CD008D475F /* Products */,
@@ -474,6 +476,7 @@
 /* Begin XCBuildConfiguration section */
 		C69945C62B32E8CE008D475F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -535,6 +538,7 @@
 		};
 		C69945C72B32E8CE008D475F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -588,12 +592,14 @@
 		};
 		C69945C92B32E8CE008D475F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Resources/Meikade.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(CONFIG_APP_BUNDLE_VERSION)";
+				DEVELOPMENT_TEAM = "$(CONFIG_DEV_TEAM)";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
@@ -611,9 +617,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aseman.Meikade;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = "$(CONFIG_APP_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID)";
+				PRODUCT_NAME = "$(CONFIG_APP_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -625,12 +631,14 @@
 		};
 		C69945CA2B32E8CE008D475F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Resources/Meikade.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "$(CONFIG_APP_BUNDLE_VERSION)";
+				DEVELOPMENT_TEAM = "$(CONFIG_DEV_TEAM)";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
@@ -648,9 +656,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aseman.Meikade;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = "$(CONFIG_APP_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID)";
+				PRODUCT_NAME = "$(CONFIG_APP_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
