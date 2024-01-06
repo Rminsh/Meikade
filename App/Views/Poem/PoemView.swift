@@ -226,15 +226,14 @@ extension PoemView {
                 Section {
                     Text(description)
                         .customFont(style: .body)
+                        .frame(maxWidth: 650)
+                        .frame(maxWidth: .infinity)
                 } header: {
                     Text("Phrase")
                         .customFont(style: .body)
                 }
                 .listSectionSeparator(.hidden, edges: .bottom)
-                .frame(maxWidth: 650)
-                .frame(maxWidth: .infinity)
                 .padding(.horizontal)
-                .padding(.vertical, 5)
             }
         }
         .listStyle(.plain)

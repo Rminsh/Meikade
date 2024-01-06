@@ -30,8 +30,10 @@ struct HafezFaalView: View {
                 if expanded {
                     Text("Make a wish and tap for a sign")
                         .customFont(name: .shekasteh, style: .title1)
+                        #if !os(visionOS)
                         .foregroundStyle(.white)
                         .shadow(radius: 25)
+                        #endif
                 } else {
                     ProgressView()
                         .tint(.accent)
@@ -40,6 +42,7 @@ struct HafezFaalView: View {
             }
             .padding()
         }
+        #if !os(visionOS)
         .background {
             Image(.cover)
                 .resizable()
@@ -49,10 +52,12 @@ struct HafezFaalView: View {
                 .padding(-8)
                 .ignoresSafeArea(.all)
         }
+        #endif
         .navigationTitle("")
         #if os(macOS)
         .presentedWindowStyle(.hiddenTitleBar)
         .presentedWindowToolbarStyle(.unified(showsTitle: false))
+        .environment(\.locale, .init(identifier: "fa"))
         #endif
     }
     
