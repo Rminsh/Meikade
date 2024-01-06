@@ -23,6 +23,7 @@ protocol MeikadeServiceable {
     
     // MARK: - Categories
     func getCategories(poetID: Int, parentID: Int) async throws -> [Category]
+    func getCategory(categoryID: Int) async throws -> CategoryResult
 }
 
 struct MeikadeService: HTTPClient, MeikadeServiceable {
@@ -86,10 +87,18 @@ struct MeikadeService: HTTPClient, MeikadeServiceable {
         ).result
     }
     
+    // MARK: - Categories
     func getCategories(poetID: Int, parentID: Int) async throws -> [Category] {
         return try await sendRequest(
             endpoint: MeikadeEndpoint.categories(poetID: poetID, parentID: parentID),
             responseModel: CategoriesResponse.self
         ).result.first?.modelData ?? []
+    }
+    
+    func getCategory(categoryID: Int) async throws -> CategoryResult {
+        return try await sendRequest(
+            endpoint: MeikadeEndpoint.category(categoryID: categoryID),
+            responseModel: CategoryResult.self
+        )
     }
 }
