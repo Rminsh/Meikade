@@ -13,6 +13,43 @@ struct Poem: Codable {
     let verses: [Verse]
 }
 
+extension Poem {
+    static let placeholder: Poem = .init(
+        poem: .init(
+            id: 1,
+            poetID: nil,
+            categoryID: nil,
+            title: "غزل شمارهٔ ۳۱۳",
+            phrase: nil,
+            views: 0
+        ),
+        poet: .init(
+            id: 0,
+            username: "حافظ",
+            name: "حافظ",
+            description: "",
+            image: "",
+            wikipedia: "",
+            color: "",
+            views: 0,
+            types: nil,
+            categories: nil
+        ),
+        verses: [
+            .init(
+                verseOrder: 1,
+                position: 0,
+                text: "بازآی ساقیا که هواخواه خدمتم"
+            ),
+            .init(
+                verseOrder: 2,
+                position: 1,
+                text: "مشتاق بندگی و دعاگوی دولتم"
+            )
+        ]
+    )
+}
+
 // MARK: - PoemDetail
 struct PoemDetail: Codable {
     let id: Int

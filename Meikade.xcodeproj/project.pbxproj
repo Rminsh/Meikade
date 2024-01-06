@@ -53,11 +53,65 @@
 		C6C034992B493E9D00C6444F /* PrismImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034902B493E9D00C6444F /* PrismImageView.swift */; };
 		C6C0349A2B493E9D00C6444F /* PrismEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034912B493E9D00C6444F /* PrismEffect.swift */; };
 		C6C0349C2B49525800C6444F /* ScalingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */; };
+		C6D739F92B49CC3B00FC23DC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */; };
+		C6D739FB2B49CC3B00FC23DC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D739FA2B49CC3B00FC23DC /* SwiftUI.framework */; };
+		C6D739FE2B49CC3B00FC23DC /* WidgetsBudle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D739FD2B49CC3B00FC23DC /* WidgetsBudle.swift */; };
+		C6D73A002B49CC3B00FC23DC /* VersesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D739FF2B49CC3B00FC23DC /* VersesWidget.swift */; };
+		C6D73A042B49CC3C00FC23DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D73A032B49CC3C00FC23DC /* Assets.xcassets */; };
+		C6D73A092B49CC3C00FC23DC /* MeikadeWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C6D73A0E2B49CD0E00FC23DC /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D42B333A3F008D475F /* RequestError.swift */; };
+		C6D73A0F2B49CD0E00FC23DC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D32B333A3F008D475F /* HTTPClient.swift */; };
+		C6D73A102B49CD0E00FC23DC /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D12B333A3F008D475F /* HTTPContentType.swift */; };
+		C6D73A112B49CD0E00FC23DC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D52B333A3F008D475F /* Endpoint.swift */; };
+		C6D73A122B49CD0E00FC23DC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D22B333A3F008D475F /* HTTPMethod.swift */; };
+		C6D73A132B49CD1200FC23DC /* MeikadeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945DB2B333B5C008D475F /* MeikadeEndpoint.swift */; };
+		C6D73A142B49CD1C00FC23DC /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
+		C6D73A152B49CD1C00FC23DC /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
+		C6D73A162B49CD1C00FC23DC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E62B398D2900F76709 /* Category.swift */; };
+		C6D73A172B49CD1C00FC23DC /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CA2B3593EF00AEFE77 /* Verse.swift */; };
+		C6D73A182B49CD1C00FC23DC /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945CD2B333895008D475F /* Explore.swift */; };
+		C6D73A192B49CD2000FC23DC /* MeikadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945DE2B333DFA008D475F /* MeikadeService.swift */; };
+		C6D73A1C2B49CEDF00FC23DC /* VersesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D73A1B2B49CEDF00FC23DC /* VersesProvider.swift */; };
+		C6D73A1F2B49D47300FC23DC /* Behdad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */; };
+		C6D73A202B49D47500FC23DC /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */; };
+		C6D73A212B49D47500FC23DC /* Tanha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9A92B3AB02C002EE6CF /* Tanha.ttf */; };
+		C6D73A222B49D47500FC23DC /* Mikhak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */; };
+		C6D73A232B49D47500FC23DC /* Vazirmatn.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C69945FB2B337042008D475F /* Vazirmatn.ttf */; };
+		C6D73A242B49D47500FC23DC /* Shekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */; };
+		C6D73A262B49D4B800FC23DC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */; };
+		C6D73A272B49D4B800FC23DC /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945FF2B3370EF008D475F /* CustomFont.swift */; };
+		C6D73A2A2B49D64C00FC23DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D73A292B49D64C00FC23DC /* Assets.xcassets */; };
+		C6D73A2B2B49D64C00FC23DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D73A292B49D64C00FC23DC /* Assets.xcassets */; };
+		C6D73A2C2B49D77300FC23DC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
 		C6E9FFD72B47F04A00759894 /* Shekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */; };
 		C6E9FFD82B47F04A00759894 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */; };
 		C6F6DC262B3CC6B700EF1493 /* PoetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6DC252B3CC6B700EF1493 /* PoetView.swift */; };
 		C6FB779C2B3EB8A70053B93D /* CatrgoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6D73A072B49CC3C00FC23DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C69945B12B32E8CD008D475F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6D739F52B49CC3B00FC23DC;
+			remoteInfo = WidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6D73A0D2B49CC3C00FC23DC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C6D73A092B49CC3C00FC23DC /* MeikadeWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C60801C82B35936E00AEFE77 /* PoemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemView.swift; sourceTree = "<group>"; };
@@ -106,6 +160,16 @@
 		C6C034912B493E9D00C6444F /* PrismEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismEffect.swift; sourceTree = "<group>"; };
 		C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingButtonStyle.swift; sourceTree = "<group>"; };
 		C6D739F12B49AC4300FC23DC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MeikadeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		C6D739FA2B49CC3B00FC23DC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		C6D739FD2B49CC3B00FC23DC /* WidgetsBudle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsBudle.swift; sourceTree = "<group>"; };
+		C6D739FF2B49CC3B00FC23DC /* VersesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesWidget.swift; sourceTree = "<group>"; };
+		C6D73A032B49CC3C00FC23DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6D73A052B49CC3C00FC23DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D73A062B49CC3C00FC23DC /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		C6D73A1B2B49CEDF00FC23DC /* VersesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesProvider.swift; sourceTree = "<group>"; };
+		C6D73A292B49D64C00FC23DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shekasteh.ttf; sourceTree = "<group>"; };
 		C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
 		C6F6DC252B3CC6B700EF1493 /* PoetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetView.swift; sourceTree = "<group>"; };
@@ -121,6 +185,15 @@
 				C69945EB2B334B26008D475F /* Nuke in Frameworks */,
 				C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */,
 				C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6D739F32B49CC3B00FC23DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6D739FB2B49CC3B00FC23DC /* SwiftUI.framework in Frameworks */,
+				C6D739F92B49CC3B00FC23DC /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +268,10 @@
 			children = (
 				C6D739F12B49AC4300FC23DC /* Config.xcconfig */,
 				C69945BB2B32E8CD008D475F /* App */,
+				C6D73A1D2B49D44600FC23DC /* Shared */,
 				C69945CB2B333875008D475F /* Networking */,
+				C6D739FC2B49CC3B00FC23DC /* Widget */,
+				C6D739F72B49CC3B00FC23DC /* Frameworks */,
 				C69945BA2B32E8CD008D475F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -204,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				C69945B92B32E8CD008D475F /* Meikade.app */,
+				C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				C63594102B416C5100274A70 /* EmptyState */,
-				C60801CC2B359A4D00AEFE77 /* Extensions */,
 				C69945FE2B3370E6008D475F /* General */,
 				C66359DF2B397B6A00F76709 /* Navigation */,
 				C69945F32B335CCE008D475F /* Resources */,
@@ -287,7 +363,6 @@
 		C69945F32B335CCE008D475F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C69945FA2B33703A008D475F /* Fonts */,
 				C69945C02B32E8CE008D475F /* Assets.xcassets */,
 				C69945FD2B337075008D475F /* Info.plist */,
 				C69945C22B32E8CE008D475F /* Meikade.entitlements */,
@@ -313,8 +388,6 @@
 			isa = PBXGroup;
 			children = (
 				C6C034872B493E9200C6444F /* Prism */,
-				C69945FF2B3370EF008D475F /* CustomFont.swift */,
-				C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */,
 				C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */,
 			);
 			path = General;
@@ -343,6 +416,72 @@
 			path = Templates;
 			sourceTree = "<group>";
 		};
+		C6D739F72B49CC3B00FC23DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */,
+				C6D739FA2B49CC3B00FC23DC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6D739FC2B49CC3B00FC23DC /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C6D73A282B49D4DC00FC23DC /* VersesWidget */,
+				C6D73A1A2B49CDFC00FC23DC /* Resources */,
+				C6D739FD2B49CC3B00FC23DC /* WidgetsBudle.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		C6D73A1A2B49CDFC00FC23DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6D73A032B49CC3C00FC23DC /* Assets.xcassets */,
+				C6D73A052B49CC3C00FC23DC /* Info.plist */,
+				C6D73A062B49CC3C00FC23DC /* Widget.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6D73A1D2B49D44600FC23DC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C60801CC2B359A4D00AEFE77 /* Extensions */,
+				C6D73A252B49D4AA00FC23DC /* General */,
+				C6D73A1E2B49D45700FC23DC /* Resources */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C6D73A1E2B49D45700FC23DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C69945FA2B33703A008D475F /* Fonts */,
+				C6D73A292B49D64C00FC23DC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6D73A252B49D4AA00FC23DC /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C69945FF2B3370EF008D475F /* CustomFont.swift */,
+				C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		C6D73A282B49D4DC00FC23DC /* VersesWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C6D73A1B2B49CEDF00FC23DC /* VersesProvider.swift */,
+				C6D739FF2B49CC3B00FC23DC /* VersesWidget.swift */,
+			);
+			path = VersesWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,10 +492,12 @@
 				C69945B52B32E8CD008D475F /* Sources */,
 				C69945B62B32E8CD008D475F /* Frameworks */,
 				C69945B72B32E8CD008D475F /* Resources */,
+				C6D73A0D2B49CC3C00FC23DC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C6D73A082B49CC3C00FC23DC /* PBXTargetDependency */,
 			);
 			name = Meikade;
 			packageProductDependencies = (
@@ -369,6 +510,23 @@
 			productReference = C69945B92B32E8CD008D475F /* Meikade.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C6D739F52B49CC3B00FC23DC /* WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6D73A0A2B49CC3C00FC23DC /* Build configuration list for PBXNativeTarget "WidgetExtension" */;
+			buildPhases = (
+				C6D739F22B49CC3B00FC23DC /* Sources */,
+				C6D739F32B49CC3B00FC23DC /* Frameworks */,
+				C6D739F42B49CC3B00FC23DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetExtension;
+			productName = WidgetExtension;
+			productReference = C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -380,6 +538,9 @@
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					C69945B82B32E8CD008D475F = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					C6D739F52B49CC3B00FC23DC = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -403,6 +564,7 @@
 			projectRoot = "";
 			targets = (
 				C69945B82B32E8CD008D475F /* Meikade */,
+				C6D739F52B49CC3B00FC23DC /* WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -419,7 +581,23 @@
 				C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */,
 				C69945F92B336B7F008D475F /* Localizable.xcstrings in Resources */,
 				C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */,
+				C6D73A2A2B49D64C00FC23DC /* Assets.xcassets in Resources */,
 				C6E9FFD72B47F04A00759894 /* Shekasteh.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6D739F42B49CC3B00FC23DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6D73A1F2B49D47300FC23DC /* Behdad.ttf in Resources */,
+				C6D73A212B49D47500FC23DC /* Tanha.ttf in Resources */,
+				C6D73A202B49D47500FC23DC /* DimaShekasteh.ttf in Resources */,
+				C6D73A232B49D47500FC23DC /* Vazirmatn.ttf in Resources */,
+				C6D73A042B49CC3C00FC23DC /* Assets.xcassets in Resources */,
+				C6D73A222B49D47500FC23DC /* Mikhak.ttf in Resources */,
+				C6D73A2B2B49D64C00FC23DC /* Assets.xcassets in Resources */,
+				C6D73A242B49D47500FC23DC /* Shekasteh.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +649,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C6D739F22B49CC3B00FC23DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6D73A262B49D4B800FC23DC /* Fonts.swift in Sources */,
+				C6D73A142B49CD1C00FC23DC /* Poem.swift in Sources */,
+				C6D73A272B49D4B800FC23DC /* CustomFont.swift in Sources */,
+				C6D73A112B49CD0E00FC23DC /* Endpoint.swift in Sources */,
+				C6D73A2C2B49D77300FC23DC /* String+Extensions.swift in Sources */,
+				C6D73A172B49CD1C00FC23DC /* Verse.swift in Sources */,
+				C6D73A0E2B49CD0E00FC23DC /* RequestError.swift in Sources */,
+				C6D73A1C2B49CEDF00FC23DC /* VersesProvider.swift in Sources */,
+				C6D73A102B49CD0E00FC23DC /* HTTPContentType.swift in Sources */,
+				C6D73A182B49CD1C00FC23DC /* Explore.swift in Sources */,
+				C6D73A0F2B49CD0E00FC23DC /* HTTPClient.swift in Sources */,
+				C6D73A152B49CD1C00FC23DC /* Poet.swift in Sources */,
+				C6D73A192B49CD2000FC23DC /* MeikadeService.swift in Sources */,
+				C6D73A122B49CD0E00FC23DC /* HTTPMethod.swift in Sources */,
+				C6D73A132B49CD1200FC23DC /* MeikadeEndpoint.swift in Sources */,
+				C6D739FE2B49CC3B00FC23DC /* WidgetsBudle.swift in Sources */,
+				C6D73A002B49CC3B00FC23DC /* VersesWidget.swift in Sources */,
+				C6D73A162B49CD1C00FC23DC /* Category.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6D73A082B49CC3C00FC23DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6D739F52B49CC3B00FC23DC /* WidgetExtension */;
+			targetProxy = C6D73A072B49CC3C00FC23DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C69945C62B32E8CE008D475F /* Debug */ = {
@@ -594,6 +805,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Resources/Meikade.entitlements;
@@ -633,6 +845,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Resources/Meikade.entitlements;
@@ -668,6 +881,80 @@
 			};
 			name = Release;
 		};
+		C6D73A0B2B49CC3C00FC23DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Widget/Resources/Widget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(CONFIG_APP_BUNDLE_VERSION)";
+				DEVELOPMENT_TEAM = "$(CONFIG_DEV_TEAM)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widget/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = "$(CONFIG_APP_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID).Widget";
+				PRODUCT_NAME = "$(CONFIG_WIDGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C6D73A0C2B49CC3C00FC23DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Widget/Resources/Widget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(CONFIG_APP_BUNDLE_VERSION)";
+				DEVELOPMENT_TEAM = "$(CONFIG_DEV_TEAM)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widget/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = "$(CONFIG_APP_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID).Widget";
+				PRODUCT_NAME = "$(CONFIG_WIDGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -685,6 +972,15 @@
 			buildConfigurations = (
 				C69945C92B32E8CE008D475F /* Debug */,
 				C69945CA2B32E8CE008D475F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6D73A0A2B49CC3C00FC23DC /* Build configuration list for PBXNativeTarget "WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6D73A0B2B49CC3C00FC23DC /* Debug */,
+				C6D73A0C2B49CC3C00FC23DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
