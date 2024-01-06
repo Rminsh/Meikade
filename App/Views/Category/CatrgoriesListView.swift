@@ -49,7 +49,10 @@ extension CatrgoriesListView: View {
         Form {
             ForEach(categories, id: \.self) { category in
                 NavigationLink {
-                    RouterView(link: category.link)
+                    RouterView(
+                        link: category.link,
+                        title: category.title
+                    )
                 } label: {
                     Text(category.title)
                         .customFont(style: .body)

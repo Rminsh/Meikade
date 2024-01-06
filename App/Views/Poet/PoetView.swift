@@ -12,6 +12,7 @@ struct PoetView {
     var poetID: Int
     
     @State var poet: Poet? = nil
+    @State var categories: [Category] = []
     @State var descriptionExpanded: Bool = false
     
     @State var loading: Bool = false
@@ -25,6 +26,31 @@ struct PoetView {
             let poetResult = try await service.getPoet(poetID: poetID)
             if poetResult.username != "" && poetResult.name != "" {
                 poet = poetResult
+                await getCategories()
+            } else {
+                emptyState = .empty(
+                    icon: "person.bust",
+                    title: "Poet not found"
+                )
+            }
+        } catch {
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
+            print(error)
+            #endif
+        }
+        
+        loading = false
+    }
+    
+    func getCategories() async {
+        loading = true
+        
+        let service = MeikadeService()
+        do {
+            let result = try await service.getCategories(poetID: poetID, parentID: nil)
+            if !result.isEmpty {
+                categories = result
             } else {
                 emptyState = .empty(
                     icon: "person.bust",
@@ -99,13 +125,12 @@ extension PoetView: View {
                     .frame(maxWidth: .infinity)
                 }
                 
-                if let categories = poet.categories {
-                    Section {
-                        ForEach(categories, id: \.id) { category in
+                Section {
+                    ForEach(categories, id: \.self) { category in
+                        if !category.isUnlisted {
                             NavigationLink {
-                                CatrgoriesListView(
-                                    poetID: poetID,
-                                    categoryID: category.id,
+                                RouterView(
+                                    link: category.link,
                                     title: category.title
                                 )
                             } label: {

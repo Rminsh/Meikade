@@ -39,8 +39,8 @@ extension Router {
 }
     
 struct RouterView {
-    
     var link: String? = nil
+    var title: String? = nil
     @State var loading: Bool = true
     @State var route: Router? = nil
     
@@ -50,7 +50,8 @@ struct RouterView {
             return .allPoets(typeID: 0)
         case "page:/poem/random":
             return .randomPoem
-        case "page:/poem/hafiz_faal":
+        case "page:/poem/hafiz_faal",
+             "page:/poet?id=2\u{0026}catId=10001":
             return .hafizFaal
         default:
             return await Router.parse(link: link)
@@ -71,7 +72,7 @@ extension RouterView: View {
             case .poem(let poemID):
                 PoemView(poemType: .poem(id: poemID))
             case .categories(let poetID, let parentID):
-                CatrgoriesListView(poetID: poetID, categoryID: parentID)
+                CatrgoriesListView(poetID: poetID, categoryID: parentID, title: title ?? "")
             default:
                 emptyState
             }

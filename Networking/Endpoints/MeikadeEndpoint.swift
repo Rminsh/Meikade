@@ -19,7 +19,7 @@ enum MeikadeEndpoint {
     case randomPoem(verseLimit: Int, verseOffset: Int, poetID: Int?)
     case verses(poemID: Int)
     case category(categoryID: Int)
-    case categories(poetID: Int, parentID: Int)
+    case categories(poetID: Int, parentID: Int?)
 }
 
 extension MeikadeEndpoint: Endpoint {
@@ -112,10 +112,13 @@ extension MeikadeEndpoint: Endpoint {
                 .init(name: "category_id", value: String(categoryID))
             ]
         case .categories(let poetID, let parentID):
-            return [
+            var params: [URLQueryItem] = [
                 .init(name: "poet_id", value: String(poetID)),
-                .init(name: "parent_id", value: String(parentID))
             ]
+            if let parentID {
+                params.append(.init(name: "parent_id", value: String(parentID)))
+            }
+            return params
         default:
             return nil
         }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RegexBuilder
 
 struct Category: Codable, Hashable {
     let title: String
@@ -23,6 +24,15 @@ struct Category: Codable, Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(title)
+    }
+    
+    var isUnlisted: Bool {
+        let categoriesRegex = /page\:\/poet\?id\=(\d+).+catId\=-(\d+)/
+        if let result = link.wholeMatch(of: categoriesRegex), let catID = Int(result.2) {
+            return catID == 1
+        } else {
+            return false
+        }
     }
 }
 
