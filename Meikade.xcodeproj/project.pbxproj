@@ -58,7 +58,7 @@
 		C6D739FE2B49CC3B00FC23DC /* WidgetsBudle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D739FD2B49CC3B00FC23DC /* WidgetsBudle.swift */; };
 		C6D73A002B49CC3B00FC23DC /* VersesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D739FF2B49CC3B00FC23DC /* VersesWidget.swift */; };
 		C6D73A042B49CC3C00FC23DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D73A032B49CC3C00FC23DC /* Assets.xcassets */; };
-		C6D73A092B49CC3C00FC23DC /* MeikadeWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C6D73A092B49CC3C00FC23DC /* MeikadeWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C6D73A0E2B49CD0E00FC23DC /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D42B333A3F008D475F /* RequestError.swift */; };
 		C6D73A0F2B49CD0E00FC23DC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D32B333A3F008D475F /* HTTPClient.swift */; };
 		C6D73A102B49CD0E00FC23DC /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945D12B333A3F008D475F /* HTTPContentType.swift */; };
@@ -121,6 +121,7 @@
 		C63594112B416C5E00274A70 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		C64749C42B3C0E1100AD4807 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetsListView.swift; sourceTree = "<group>"; };
+		C64F90DA2B4A948500FB6BC2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C66359E02B397C5A00F76709 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C66359E22B398CA200F76709 /* Poet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poet.swift; sourceTree = "<group>"; };
 		C66359E42B398CF800F76709 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 		C69945B02B32E8CD008D475F = {
 			isa = PBXGroup;
 			children = (
+				C64F90DA2B4A948500FB6BC2 /* README.md */,
 				C6D739F12B49AC4300FC23DC /* Config.xcconfig */,
 				C69945BB2B32E8CD008D475F /* App */,
 				C6D73A1D2B49D44600FC23DC /* Shared */,
@@ -679,6 +681,10 @@
 /* Begin PBXTargetDependency section */
 		C6D73A082B49CC3C00FC23DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+			);
 			target = C6D739F52B49CC3B00FC23DC /* WidgetExtension */;
 			targetProxy = C6D73A072B49CC3C00FC23DC /* PBXContainerItemProxy */;
 		};
