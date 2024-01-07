@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MeikadeServiceable {
-    func getExplore() async throws -> Explore
+    func getExplore() async throws -> [ExploreSection]
     
     // MARK: - Poems
     func getPoem(poemID: Int, verseLimit: Int, verseOffset: Int) async throws -> Poem
@@ -27,11 +27,11 @@ protocol MeikadeServiceable {
 }
 
 struct MeikadeService: HTTPClient, MeikadeServiceable {
-    func getExplore() async throws -> Explore {
+    func getExplore() async throws -> [ExploreSection] {
         return try await sendRequest(
             endpoint: MeikadeEndpoint.explore,
             responseModel: Explore.self
-        )
+        ).sections
     }
     
     // MARK: - Poems

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExploreView {
     
-    @State var explore: Explore? = nil
+    @State var exploreSections: [ExploreSection] = []
     @State private var path = NavigationPath()
     
     @State var loading: Bool = false
@@ -20,8 +20,8 @@ struct ExploreView {
         
         let service = MeikadeService()
         do {
-            explore = try await service.getExplore()
-            if explore?.sections.isEmpty ?? false {
+            exploreSections = try await service.getExplore()
+            if exploreSections.isEmpty {
                 emptyState = .empty(
                     icon: "text.book.closed",
                     title: "Nothing here"
@@ -85,67 +85,65 @@ extension ExploreView: View {
     
     var content: some View {
         List {
-            if let sections = explore?.sections {
-                ForEach(sections, id: \.id) { section in
-                    Section {
-                        if section.type == "static" {
+            ForEach(exploreSections, id: \.id) { section in
+                Section {
+                    if section.type == "static" {
+                        HStack {
+                            ForEach(section.modelData, id: \.id) { item in
+                                Button {
+                                    path.append(item.link)
+                                } label: {
+                                    ExploreStaticView(item: item)
+                                }
+                                #if os(visionOS)
+                                .buttonBorderShape(.roundedRectangle(radius: 21))
+                                #endif
+                                .buttonStyle(.plain)
+                                .padding(.horizontal, 4)
+                            }
+                        }
+                        .frame(maxWidth: 500)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        #if os(iOS)
+                        .padding(.horizontal)
+                        #endif
+                    } else {
+                        ExploreSectionView {
                             HStack {
                                 ForEach(section.modelData, id: \.id) { item in
                                     Button {
                                         path.append(item.link)
                                     } label: {
-                                        ExploreStaticView(item: item)
+                                        ExploreItemView(item: item)
                                     }
                                     #if os(visionOS)
                                     .buttonBorderShape(.roundedRectangle(radius: 21))
-                                    #endif
+                                    #else
                                     .buttonStyle(.plain)
-                                    .padding(.horizontal, 4)
+                                    #endif
                                 }
                             }
-                            .frame(maxWidth: 500)
-                            .frame(maxWidth: .infinity, alignment: .center)
                             #if os(iOS)
                             .padding(.horizontal)
                             #endif
-                        } else {
-                            ExploreSectionView {
-                                HStack {
-                                    ForEach(section.modelData, id: \.id) { item in
-                                        Button {
-                                            path.append(item.link)
-                                        } label: {
-                                            ExploreItemView(item: item)
-                                        }
-                                        #if os(visionOS)
-                                        .buttonBorderShape(.roundedRectangle(radius: 21))
-                                        #else
-                                        .buttonStyle(.plain)
-                                        #endif
-                                    }
-                                }
-                                #if os(iOS)
-                                .padding(.horizontal)
-                                #endif
-                            }
                         }
-                    } header: {
-                        Text(section.section)
-                            .customFont(style: .body)
-                            #if os(iOS)
-                            .padding(.horizontal)
-                            #endif
-                            .padding(.bottom, 2)
-                            .listRowSeparator(.hidden)
-                            .listSectionSeparator(.hidden)
                     }
-                    .listRowInsets(.init())
-                    .listRowSeparator(.hidden)
-                    .listSectionSeparator(.hidden)
-                    .listSectionSeparatorTint(Color.clear)
-                    .listRowSeparatorTint(Color.clear)
-                    .listRowBackground(Color.clear)
+                } header: {
+                    Text(section.section)
+                        .customFont(style: .body)
+                        #if os(iOS)
+                        .padding(.horizontal)
+                        #endif
+                        .padding(.bottom, 2)
+                        .listRowSeparator(.hidden)
+                        .listSectionSeparator(.hidden)
                 }
+                .listRowInsets(.init())
+                .listRowSeparator(.hidden)
+                .listSectionSeparator(.hidden)
+                .listSectionSeparatorTint(Color.clear)
+                .listRowSeparatorTint(Color.clear)
+                .listRowBackground(Color.clear)
             }
         }
         #if os(macOS)
@@ -160,7 +158,7 @@ extension ExploreView: View {
     
     var emptyStateView: some View {
         Group {
-            if !loading && explore == nil, let emptyState {
+            if !loading && exploreSections.isEmpty, let emptyState {
                 EmptyStateView(
                     icon: emptyState.icon,
                     title: LocalizedStringKey(emptyState.title),
