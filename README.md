@@ -1,10 +1,13 @@
 ![Meikade-icon](App/Resources/Assets.xcassets/AppIcon.appiconset/128x128.png)
 #  Meikade
+[![Platform](http://img.shields.io/badge/Platform-iOS/iPadOS/macOS/visionOS-blue.svg)](https://developer.apple.com/iphone/index.action)
+![License](https://img.shields.io/github/license/rminsh/meikade)
 
 Meikade is a collection of Persian poetry. ([Original project](https://github.com/Aseman-Land/Meikade))
 This project is based on the original Meikade but entirely built in SwiftUI, making it fast, lightweight, and easier to run on other apple operation systems like visionOS or macOS.
 
-⚠️ This project is a work in progress and does not have all the original features of the Meikade app (yet!). 
+> [!IMPORTANT]
+> ⚠️ This project is a work in progress and does not have all the original features of the Meikade app (yet!). 
 
 
 
