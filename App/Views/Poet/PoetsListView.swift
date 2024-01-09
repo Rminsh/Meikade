@@ -123,7 +123,7 @@ extension PoetsListView: View {
     }
     
     var poetTypes: some View {
-        Picker("Types", selection: $selectedType) {
+        Picker("Poet Types", selection: $selectedType) {
             ForEach(types, id: \.id) { type in
                 Text(LocalizedStringKey(type.nameEN))
                     .customFont(style: .body)

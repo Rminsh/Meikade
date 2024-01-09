@@ -12,6 +12,10 @@
 		C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
 		C611556D2B3A0C830058E72A /* VersesThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611556C2B3A0C830058E72A /* VersesThemeView.swift */; };
 		C63594122B416C5E00274A70 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63594112B416C5E00274A70 /* EmptyStateView.swift */; };
+		C6404F122B4C71810096E833 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6404F112B4C71810096E833 /* Panel.swift */; };
+		C6404F182B4C72D00096E833 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6404F162B4C72CF0096E833 /* Sidebar.swift */; };
+		C6404F192B4C72D00096E833 /* TabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6404F172B4C72CF0096E833 /* TabNavigation.swift */; };
+		C6404F1B2B4C73370096E833 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6404F1A2B4C73370096E833 /* MainView.swift */; };
 		C64749C52B3C0E1100AD4807 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C42B3C0E1100AD4807 /* EmptyState.swift */; };
 		C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */; };
 		C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */; };
@@ -119,6 +123,10 @@
 		C60801CD2B359A5700AEFE77 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		C611556C2B3A0C830058E72A /* VersesThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesThemeView.swift; sourceTree = "<group>"; };
 		C63594112B416C5E00274A70 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		C6404F112B4C71810096E833 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		C6404F162B4C72CF0096E833 /* Sidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		C6404F172B4C72CF0096E833 /* TabNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavigation.swift; sourceTree = "<group>"; };
+		C6404F1A2B4C73370096E833 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C64749C42B3C0E1100AD4807 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetsListView.swift; sourceTree = "<group>"; };
 		C64F90DA2B4A948500FB6BC2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -251,7 +259,11 @@
 		C66359DF2B397B6A00F76709 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				C6404F1A2B4C73370096E833 /* MainView.swift */,
+				C6404F112B4C71810096E833 /* Panel.swift */,
 				C66359E02B397C5A00F76709 /* Router.swift */,
+				C6404F162B4C72CF0096E833 /* Sidebar.swift */,
+				C6404F172B4C72CF0096E833 /* TabNavigation.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -615,6 +627,7 @@
 				C60801C92B35936E00AEFE77 /* PoemView.swift in Sources */,
 				C69945F52B3365F4008D475F /* ExploreItemView.swift in Sources */,
 				C6F6DC262B3CC6B700EF1493 /* PoetView.swift in Sources */,
+				C6404F122B4C71810096E833 /* Panel.swift in Sources */,
 				C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */,
 				C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */,
 				C6C0349C2B49525800C6444F /* ScalingButtonStyle.swift in Sources */,
@@ -625,6 +638,7 @@
 				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
 				C6C034972B493E9D00C6444F /* PrismColorView.swift in Sources */,
 				C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */,
+				C6404F182B4C72D00096E833 /* Sidebar.swift in Sources */,
 				C6C0349A2B493E9D00C6444F /* PrismEffect.swift in Sources */,
 				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
@@ -635,6 +649,7 @@
 				C66359E12B397C5A00F76709 /* Router.swift in Sources */,
 				C66359E72B398D2900F76709 /* Category.swift in Sources */,
 				C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */,
+				C6404F192B4C72D00096E833 /* TabNavigation.swift in Sources */,
 				C63594122B416C5E00274A70 /* EmptyStateView.swift in Sources */,
 				C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */,
 				C69945DC2B333B5C008D475F /* MeikadeEndpoint.swift in Sources */,
@@ -645,6 +660,7 @@
 				C6C034922B493E9D00C6444F /* PrismConfiguration.swift in Sources */,
 				C69945F72B336699008D475F /* ExploreStaticView.swift in Sources */,
 				C69945D72B333A3F008D475F /* HTTPMethod.swift in Sources */,
+				C6404F1B2B4C73370096E833 /* MainView.swift in Sources */,
 				C69945DF2B333DFA008D475F /* MeikadeService.swift in Sources */,
 				C6C034862B493D0100C6444F /* HafezFaalView.swift in Sources */,
 				C69945CE2B333895008D475F /* Explore.swift in Sources */,

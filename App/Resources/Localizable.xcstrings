@@ -71,6 +71,16 @@
         }
       }
     },
+    "Explore" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "کاوش"
+          }
+        }
+      }
+    },
     "Font / قلم" : {
       "localizations" : {
         "fa" : {
@@ -221,6 +231,9 @@
         }
       }
     },
+    "Poet Types" : {
+
+    },
     "Poets" : {
       "localizations" : {
         "fa" : {
@@ -280,10 +293,25 @@
       }
     },
     "Types" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نوع شاعر"
+          }
+        }
+      }
     },
     "Unexpected Status Code (status) occured" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطای ناشناخته"
+          }
+        }
+      }
     },
     "Users" : {
       "extractionState" : "manual",

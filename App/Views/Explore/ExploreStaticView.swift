@@ -29,8 +29,8 @@ struct ExploreStaticView: View {
                 .fontWeight(.medium)
                 .foregroundStyle(.white)
         }
-        .aspectRatio(1, contentMode: .fit)
         .clipShape(RoundedRectangle(cornerRadius: 21))
+        .aspectRatio(contentMode: .fit)
     }
 }
 

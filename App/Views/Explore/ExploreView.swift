@@ -20,7 +20,12 @@ struct ExploreView {
         
         let service = MeikadeService()
         do {
-            exploreSections = try await service.getExplore()
+            let result = try await service.getExplore()
+            exploreSections = result.filter {
+                $0.section != "کاوش در لیست‌های کاربران" &&
+                $0.section != "User lists" &&
+                $0.type != "static"
+            }
             if exploreSections.isEmpty {
                 emptyState = .empty(
                     icon: "text.book.closed",
@@ -61,6 +66,14 @@ extension ExploreView: View {
                         logo
                     }
                     #endif
+                    
+                    ToolbarItem(placement: .navigation) {
+                        Button {
+                            path.append("page:/poem/random")
+                        } label: {
+                            Label("Random Poem", systemImage: "shuffle")
+                        }
+                    }
                 }
                 #if os(macOS)
                 .environment(\.locale, .init(identifier: "fa"))
@@ -81,52 +94,31 @@ extension ExploreView: View {
             #else
             .font(.largeTitle)
             #endif
+            .foregroundStyle(.accent.gradient)
     }
     
     var content: some View {
         List {
             ForEach(exploreSections, id: \.id) { section in
                 Section {
-                    if section.type == "static" {
+                    ExploreSectionView {
                         HStack {
                             ForEach(section.modelData, id: \.id) { item in
                                 Button {
                                     path.append(item.link)
                                 } label: {
-                                    ExploreStaticView(item: item)
+                                    ExploreItemView(item: item)
                                 }
                                 #if os(visionOS)
                                 .buttonBorderShape(.roundedRectangle(radius: 21))
-                                #endif
+                                #else
                                 .buttonStyle(.plain)
-                                .padding(.horizontal, 4)
+                                #endif
                             }
                         }
-                        .frame(maxWidth: 500)
-                        .frame(maxWidth: .infinity, alignment: .center)
                         #if os(iOS)
                         .padding(.horizontal)
                         #endif
-                    } else {
-                        ExploreSectionView {
-                            HStack {
-                                ForEach(section.modelData, id: \.id) { item in
-                                    Button {
-                                        path.append(item.link)
-                                    } label: {
-                                        ExploreItemView(item: item)
-                                    }
-                                    #if os(visionOS)
-                                    .buttonBorderShape(.roundedRectangle(radius: 21))
-                                    #else
-                                    .buttonStyle(.plain)
-                                    #endif
-                                }
-                            }
-                            #if os(iOS)
-                            .padding(.horizontal)
-                            #endif
-                        }
                     }
                 } header: {
                     Text(section.section)
