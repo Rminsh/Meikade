@@ -89,6 +89,7 @@
 		C6D73A2C2B49D77300FC23DC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
 		C6E9FFD72B47F04A00759894 /* Shekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */; };
 		C6E9FFD82B47F04A00759894 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */; };
+		C6F5647A2B4E97F000D2C97A /* VersesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F564792B4E97F000D2C97A /* VersesView.swift */; };
 		C6F6DC262B3CC6B700EF1493 /* PoetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6DC252B3CC6B700EF1493 /* PoetView.swift */; };
 		C6FB779C2B3EB8A70053B93D /* CatrgoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */; };
 /* End PBXBuildFile section */
@@ -181,6 +182,7 @@
 		C6D73A292B49D64C00FC23DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shekasteh.ttf; sourceTree = "<group>"; };
 		C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
+		C6F564792B4E97F000D2C97A /* VersesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesView.swift; sourceTree = "<group>"; };
 		C6F6DC252B3CC6B700EF1493 /* PoetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetView.swift; sourceTree = "<group>"; };
 		C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatrgoriesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,8 +284,8 @@
 				C64F90DA2B4A948500FB6BC2 /* README.md */,
 				C6D739F12B49AC4300FC23DC /* Config.xcconfig */,
 				C69945BB2B32E8CD008D475F /* App */,
-				C6D73A1D2B49D44600FC23DC /* Shared */,
 				C69945CB2B333875008D475F /* Networking */,
+				C6D73A1D2B49D44600FC23DC /* Shared */,
 				C6D739FC2B49CC3B00FC23DC /* Widget */,
 				C6D739F72B49CC3B00FC23DC /* Frameworks */,
 				C69945BA2B32E8CD008D475F /* Products */,
@@ -442,8 +444,8 @@
 		C6D739FC2B49CC3B00FC23DC /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				C6D73A282B49D4DC00FC23DC /* VersesWidget */,
 				C6D73A1A2B49CDFC00FC23DC /* Resources */,
+				C6D73A282B49D4DC00FC23DC /* VersesWidget */,
 				C6D739FD2B49CC3B00FC23DC /* WidgetsBudle.swift */,
 			);
 			path = Widget;
@@ -492,6 +494,7 @@
 			children = (
 				C6D73A1B2B49CEDF00FC23DC /* VersesProvider.swift */,
 				C6D739FF2B49CC3B00FC23DC /* VersesWidget.swift */,
+				C6F564792B4E97F000D2C97A /* VersesView.swift */,
 			);
 			path = VersesWidget;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				C6D73A1C2B49CEDF00FC23DC /* VersesProvider.swift in Sources */,
 				C6D73A102B49CD0E00FC23DC /* HTTPContentType.swift in Sources */,
 				C6D73A182B49CD1C00FC23DC /* Explore.swift in Sources */,
+				C6F5647A2B4E97F000D2C97A /* VersesView.swift in Sources */,
 				C6D73A0F2B49CD0E00FC23DC /* HTTPClient.swift in Sources */,
 				C6D73A152B49CD1C00FC23DC /* Poet.swift in Sources */,
 				C6D73A192B49CD2000FC23DC /* MeikadeService.swift in Sources */,
@@ -916,7 +920,7 @@
 				INFOPLIST_FILE = Widget/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -927,7 +931,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = "$(CONFIG_APP_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID).Widget";
 				PRODUCT_NAME = "$(CONFIG_WIDGET_NAME)";
@@ -953,7 +957,7 @@
 				INFOPLIST_FILE = Widget/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -964,7 +968,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = "$(CONFIG_APP_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID).Widget";
 				PRODUCT_NAME = "$(CONFIG_WIDGET_NAME)";
