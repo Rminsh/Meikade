@@ -10,7 +10,6 @@ import SwiftUI
 struct Sidebar: View {
     
     @State var selection: Panel? = .explore
-    @State private var path = NavigationPath()
     
     var body: some View {
         NavigationSplitView {
@@ -26,9 +25,7 @@ struct Sidebar: View {
             .listStyle(.sidebar)
             .navigationTitle("")
         } detail: {
-            NavigationStack(path: $path) {
-                selection?.view()
-            }
+            selection?.view()
         }
         #if os(macOS)
         .frame(minWidth: 700)

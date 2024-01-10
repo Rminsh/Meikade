@@ -41,9 +41,13 @@ extension Panel {
         case .explore:
             ExploreView()
         case .poets:
-            PoetsListView()
+            NavigationStack {
+                PoetsListView()
+            }
         case .hafezDivination:
-            HafezFaalView()
+            NavigationStack {
+                HafezFaalView()
+            }
         }
     }
 }
