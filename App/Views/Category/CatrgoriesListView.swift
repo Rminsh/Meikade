@@ -28,10 +28,7 @@ struct CatrgoriesListView {
             )
             
             if categories.isEmpty {
-                emptyState = .empty(
-                    icon: "books.vertical",
-                    title: "List is empty"
-                )
+                emptyState = .categoryEmpty
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)

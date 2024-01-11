@@ -28,10 +28,7 @@ struct PoetView {
                 poet = poetResult
                 await getCategories()
             } else {
-                emptyState = .empty(
-                    icon: "person.bust",
-                    title: "Poet not found"
-                )
+                emptyState = .poetEmpty
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)
@@ -52,10 +49,7 @@ struct PoetView {
             if !result.isEmpty {
                 categories = result
             } else {
-                emptyState = .empty(
-                    icon: "person.bust",
-                    title: "Poet not found"
-                )
+                emptyState = .poetEmpty
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)

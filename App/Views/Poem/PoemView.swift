@@ -278,10 +278,6 @@ extension PoemView {
     }
 }
 
-extension EmptyState {
-    static let poemEmpty = EmptyState.empty(icon: "text.book.closed", title: "Poem not found")
-}
-
 #Preview {
     NavigationStack {
         PoemView(

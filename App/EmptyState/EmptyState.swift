@@ -47,3 +47,10 @@ enum EmptyState: Equatable {
         }
     }
 }
+
+extension EmptyState {
+    static let poetEmpty = EmptyState.empty(icon: "person.bust", title: "Poet not found")
+    static let exploreEmpty = EmptyState.empty(icon: "text.book.closed",title: "Nothing here")
+    static let poemEmpty = EmptyState.empty(icon: "text.book.closed", title: "Poem not found")
+    static let categoryEmpty = EmptyState.empty(icon: "books.vertical", title: "List is empty")
+}

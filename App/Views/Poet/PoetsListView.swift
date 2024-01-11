@@ -44,10 +44,7 @@ struct PoetsListView {
             )
             
             if poets.isEmpty {
-                emptyState = .empty(
-                    icon: "person.bust",
-                    title: "Nobody found"
-                )
+                emptyState = .poetEmpty
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)

@@ -27,10 +27,7 @@ struct ExploreView {
                 $0.type != "static"
             }
             if exploreSections.isEmpty {
-                emptyState = .empty(
-                    icon: "text.book.closed",
-                    title: "Nothing here"
-                )
+                emptyState = .exploreEmpty
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)
