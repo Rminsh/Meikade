@@ -23,6 +23,14 @@
 		C66359E32B398CA200F76709 /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
 		C66359E52B398CF800F76709 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
 		C66359E72B398D2900F76709 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E62B398D2900F76709 /* Category.swift */; };
+		C67CCE642B4F377D002B358B /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, ); productRef = C67CCE632B4F377D002B358B /* RichTextKit */; };
+		C67CCE662B4FDB57002B358B /* Verse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */; };
+		C67CCE672B4FDB5C002B358B /* Verse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */; };
+		C67CCE692B502863002B358B /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE682B502863002B358B /* RichText.swift */; };
+		C67CCE6B2B504FDD002B358B /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE6A2B504FDD002B358B /* Types.swift */; };
+		C67CCE6C2B5050B6002B358B /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE6A2B504FDD002B358B /* Types.swift */; };
+		C67CCE6E2B5050F1002B358B /* NSColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE6D2B5050F1002B358B /* NSColor+Extensions.swift */; };
+		C67CCE6F2B5050F1002B358B /* NSColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE6D2B5050F1002B358B /* NSColor+Extensions.swift */; };
 		C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BC2B32E8CD008D475F /* MeikadeApp.swift */; };
 		C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69945BE2B32E8CD008D475F /* ExploreView.swift */; };
 		C69945C12B32E8CE008D475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69945C02B32E8CE008D475F /* Assets.xcassets */; };
@@ -135,6 +143,10 @@
 		C66359E22B398CA200F76709 /* Poet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poet.swift; sourceTree = "<group>"; };
 		C66359E42B398CF800F76709 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 		C66359E62B398D2900F76709 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Verse+Extensions.swift"; sourceTree = "<group>"; };
+		C67CCE682B502863002B358B /* RichText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
+		C67CCE6A2B504FDD002B358B /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		C67CCE6D2B5050F1002B358B /* NSColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Extensions.swift"; sourceTree = "<group>"; };
 		C69945B92B32E8CD008D475F /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69945BC2B32E8CD008D475F /* MeikadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeikadeApp.swift; sourceTree = "<group>"; };
 		C69945BE2B32E8CD008D475F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -195,6 +207,7 @@
 				C69945EF2B334B26008D475F /* NukeUI in Frameworks */,
 				C69945EB2B334B26008D475F /* Nuke in Frameworks */,
 				C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */,
+				C67CCE642B4F377D002B358B /* RichTextKit in Frameworks */,
 				C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +230,7 @@
 				C6C034852B493D0100C6444F /* HafezFaalView.swift */,
 				C60801C82B35936E00AEFE77 /* PoemView.swift */,
 				C611556C2B3A0C830058E72A /* VersesThemeView.swift */,
+				C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */,
 			);
 			path = Poem;
 			sourceTree = "<group>";
@@ -224,6 +238,7 @@
 		C60801CC2B359A4D00AEFE77 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C67CCE6D2B5050F1002B358B /* NSColor+Extensions.swift */,
 				C60801CD2B359A5700AEFE77 /* String+Extensions.swift */,
 			);
 			path = Extensions;
@@ -404,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				C6C034872B493E9200C6444F /* Prism */,
+				C67CCE682B502863002B358B /* RichText.swift */,
 				C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */,
 			);
 			path = General;
@@ -485,6 +501,7 @@
 			children = (
 				C69945FF2B3370EF008D475F /* CustomFont.swift */,
 				C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */,
+				C67CCE6A2B504FDD002B358B /* Types.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -522,6 +539,7 @@
 				C69945EC2B334B26008D475F /* NukeExtensions */,
 				C69945EE2B334B26008D475F /* NukeUI */,
 				C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */,
+				C67CCE632B4F377D002B358B /* RichTextKit */,
 			);
 			productName = Meikade;
 			productReference = C69945B92B32E8CD008D475F /* Meikade.app */;
@@ -575,6 +593,7 @@
 			packageReferences = (
 				C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */,
 				C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				C67CCE622B4F377D002B358B /* XCRemoteSwiftPackageReference "RichTextKit" */,
 			);
 			productRefGroup = C69945BA2B32E8CD008D475F /* Products */;
 			projectDirPath = "";
@@ -637,6 +656,7 @@
 				C611556D2B3A0C830058E72A /* VersesThemeView.swift in Sources */,
 				C69946002B3370EF008D475F /* CustomFont.swift in Sources */,
 				C6C034932B493E9D00C6444F /* PrismCanvas.swift in Sources */,
+				C67CCE662B4FDB57002B358B /* Verse+Extensions.swift in Sources */,
 				C6C034962B493E9D00C6444F /* PrismGradientView.swift in Sources */,
 				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
 				C6C034972B493E9D00C6444F /* PrismColorView.swift in Sources */,
@@ -644,18 +664,21 @@
 				C6404F182B4C72D00096E833 /* Sidebar.swift in Sources */,
 				C6C0349A2B493E9D00C6444F /* PrismEffect.swift in Sources */,
 				C60801CB2B3593EF00AEFE77 /* Verse.swift in Sources */,
+				C67CCE692B502863002B358B /* RichText.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C6FB779C2B3EB8A70053B93D /* CatrgoriesListView.swift in Sources */,
 				C6A2E0202B41846A002256B8 /* ExploreSectionView.swift in Sources */,
 				C6C034942B493E9D00C6444F /* PrismView.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
 				C66359E12B397C5A00F76709 /* Router.swift in Sources */,
+				C67CCE6E2B5050F1002B358B /* NSColor+Extensions.swift in Sources */,
 				C66359E72B398D2900F76709 /* Category.swift in Sources */,
 				C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */,
 				C6404F192B4C72D00096E833 /* TabNavigation.swift in Sources */,
 				C63594122B416C5E00274A70 /* EmptyStateView.swift in Sources */,
 				C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */,
 				C69945DC2B333B5C008D475F /* MeikadeEndpoint.swift in Sources */,
+				C67CCE6B2B504FDD002B358B /* Types.swift in Sources */,
 				C6C034982B493E9D00C6444F /* PrismGlassView.swift in Sources */,
 				C66359E32B398CA200F76709 /* Poet.swift in Sources */,
 				C66359E52B398CF800F76709 /* Poem.swift in Sources */,
@@ -675,12 +698,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6D73A262B49D4B800FC23DC /* Fonts.swift in Sources */,
+				C67CCE672B4FDB5C002B358B /* Verse+Extensions.swift in Sources */,
 				C6D73A142B49CD1C00FC23DC /* Poem.swift in Sources */,
+				C67CCE6C2B5050B6002B358B /* Types.swift in Sources */,
 				C6D73A272B49D4B800FC23DC /* CustomFont.swift in Sources */,
 				C6D73A112B49CD0E00FC23DC /* Endpoint.swift in Sources */,
 				C6D73A2C2B49D77300FC23DC /* String+Extensions.swift in Sources */,
 				C6D73A172B49CD1C00FC23DC /* Verse.swift in Sources */,
 				C6D73A0E2B49CD0E00FC23DC /* RequestError.swift in Sources */,
+				C67CCE6F2B5050F1002B358B /* NSColor+Extensions.swift in Sources */,
 				C6D73A1C2B49CEDF00FC23DC /* VersesProvider.swift in Sources */,
 				C6D73A102B49CD0E00FC23DC /* HTTPContentType.swift in Sources */,
 				C6D73A182B49CD1C00FC23DC /* Explore.swift in Sources */,
@@ -1022,6 +1048,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		C67CCE622B4F377D002B358B /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
 		C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke/";
@@ -1037,6 +1071,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = SwiftUIIntrospect;
+		};
+		C67CCE632B4F377D002B358B /* RichTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C67CCE622B4F377D002B358B /* XCRemoteSwiftPackageReference "RichTextKit" */;
+			productName = RichTextKit;
 		};
 		C69945EA2B334B26008D475F /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;

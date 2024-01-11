@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum PoemType {
-    case poem(id: Int)
-    case random(poetID: Int? = nil)
-}
-
 struct PoemView: View {
     
     var poemType: PoemType? = nil
@@ -45,6 +40,34 @@ struct PoemView: View {
     
     var selectedFont: Fonts {
         Fonts.getValue(name: versesFont) ?? .vazirmatn
+    }
+    
+    var attributedVerses: NSAttributedString {
+        let result = NSMutableAttributedString()
+        for verse in verses {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = verse.nsPosition
+            paragraphStyle.paragraphSpacing = 8
+            
+            #if os(iOS)
+            let font = UXFont.custom(name: selectedFont, style: .body)
+            #else
+            let font = UXFont.custom(name: selectedFont, style: .title3)
+            #endif
+            
+            let verseAttributedString = NSAttributedString(
+                string: verse.text ?? "",
+                attributes: [
+                    .font: font,
+                    .foregroundColor: UXColor.label,
+                    .paragraphStyle: paragraphStyle,
+                ]
+            )
+            result.append(verseAttributedString)
+            result.append(NSAttributedString(string: "\n"))
+        }
+        
+        return result
     }
     
     func getData() async {
@@ -111,21 +134,6 @@ struct PoemView: View {
         }
         loading = false
     }
-    
-    func getPosition(_ position: Int) -> Alignment {
-        switch position {
-        case 0:
-            return .leading
-        case 1:
-            return .trailing
-        case 2:
-            return .center
-        case -5:
-            return .leading
-        default:
-            return .leading
-        }
-    }
 }
 
 extension PoemView {
@@ -187,6 +195,15 @@ extension PoemView {
     
     var content: some View {
         List {
+            poemVerses
+            poemDescription
+        }
+        .listStyle(.plain)
+    }
+    
+    var poemVerses: some View {
+        Group {
+            #if os(visionOS) || os(macOS)
             Group {
                 ForEach(verses, id: \.id) { verse in
                     if let verseText = verse.text {
@@ -197,31 +214,33 @@ extension PoemView {
                         }
                         .frame(
                             maxWidth: .infinity,
-                            alignment: getPosition(verse.position)
+                            alignment: verse.alignment
                         )
                     }
                 }
             }
             .textSelection(.enabled)
-            #if os(iOS)
-            .customFont(
-                name: selectedFont,
-                style: .body
-            )
-            #else
             .customFont(
                 name: selectedFont,
                 style: .title3
             )
-            #endif
             .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
-            .listRowSeparator(.hidden)
-            .listRowInsets(.init())
             .frame(maxWidth: 650)
             .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .padding(.vertical, 5)
-            
+            #else
+            RichText(attributedVerses)
+                .frame(maxWidth: 650)
+                .frame(maxWidth: .infinity)
+            #endif
+        }
+        .listRowSeparator(.hidden)
+        .listRowInsets(.init())
+    }
+    
+    var poemDescription: some View {
+        Group {
             if description != "" {
                 Section {
                     Text(description)
@@ -236,7 +255,6 @@ extension PoemView {
                 .padding(.horizontal)
             }
         }
-        .listStyle(.plain)
     }
     
     var emptyStateView: some View {

@@ -76,3 +76,8 @@ struct PoemResponse: Codable {
 struct PoemsResponse: Codable {
     let result: [PoemDetail]
 }
+
+enum PoemType {
+    case poem(id: Int)
+    case random(poetID: Int? = nil)
+}

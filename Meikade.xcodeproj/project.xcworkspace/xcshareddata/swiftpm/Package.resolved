@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "richtextkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielsaidi/RichTextKit",
+      "state" : {
+        "revision" : "38d0e2cdcb9f860b339ba99b6b1a354fdf0ace8c",
+        "version" : "0.9.5"
+      }
+    },
+    {
       "identity" : "swiftui-introspect",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/siteline/SwiftUI-Introspect",

@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-#if os(macOS)
-public typealias UXFont = NSFont
-#else
-public typealias UXFont = UIFont
-#endif
-
 extension UXFont {
-    static func custom(style: UXFont.TextStyle) -> UXFont {
+    static func custom(name: Fonts = .vazirmatn, style: UXFont.TextStyle) -> UXFont {
         return UXFont(
-            name: Fonts.vazirmatn.rawValue,
-            size: UXFont.preferredFont(forTextStyle: style).pointSize
+            name: name.rawValue,
+            size: UXFont.preferredFont(forTextStyle: style).pointSize * name.pointSize
         )!
     }
 }
