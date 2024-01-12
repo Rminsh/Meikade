@@ -10,21 +10,6 @@ import WidgetKit
 
 struct VersesView {
     var entry: VersesEntry
-    
-    func getPosition(_ position: Int) -> Alignment {
-        switch position {
-        case 0:
-            return .leading
-        case 1:
-            return .trailing
-        case 2:
-            return .center
-        case -5:
-            return .leading
-        default:
-            return .leading
-        }
-    }
 }
  
 extension VersesView: View {
@@ -64,7 +49,7 @@ extension VersesView: View {
                                 .shadow(radius: 5)
                                 .frame(
                                     maxWidth: .infinity,
-                                    alignment: getPosition(verse.position)
+                                    alignment: verse.alignment
                                 )
                         }
                     }

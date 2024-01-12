@@ -230,7 +230,6 @@
 				C6C034852B493D0100C6444F /* HafezFaalView.swift */,
 				C60801C82B35936E00AEFE77 /* PoemView.swift */,
 				C611556C2B3A0C830058E72A /* VersesThemeView.swift */,
-				C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */,
 			);
 			path = Poem;
 			sourceTree = "<group>";
@@ -240,6 +239,7 @@
 			children = (
 				C67CCE6D2B5050F1002B358B /* NSColor+Extensions.swift */,
 				C60801CD2B359A5700AEFE77 /* String+Extensions.swift */,
+				C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
