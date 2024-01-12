@@ -36,12 +36,9 @@ extension VersesView: View {
                         backCover
                     }
             } else {
-                ZStack {
-                    backCover
-                    
-                    content
-                        .padding()
-                }
+                content
+                    .padding()
+                    .background(backCover)
             }
         }
     }
