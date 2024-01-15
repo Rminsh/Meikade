@@ -6,7 +6,7 @@
 //
 
 #if os(iOS) || os(visionOS)
-import Foundation
+import UIKit
 
 extension UINavigationController {
     open override func viewWillLayoutSubviews() {
