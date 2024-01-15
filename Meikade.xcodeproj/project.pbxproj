@@ -59,10 +59,6 @@
 		C6C034922B493E9D00C6444F /* PrismConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034882B493E9D00C6444F /* PrismConfiguration.swift */; };
 		C6C034932B493E9D00C6444F /* PrismCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034892B493E9D00C6444F /* PrismCanvas.swift */; };
 		C6C034942B493E9D00C6444F /* PrismView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0348A2B493E9D00C6444F /* PrismView.swift */; };
-		C6C034962B493E9D00C6444F /* PrismGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0348D2B493E9D00C6444F /* PrismGradientView.swift */; };
-		C6C034972B493E9D00C6444F /* PrismColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0348E2B493E9D00C6444F /* PrismColorView.swift */; };
-		C6C034982B493E9D00C6444F /* PrismGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0348F2B493E9D00C6444F /* PrismGlassView.swift */; };
-		C6C034992B493E9D00C6444F /* PrismImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034902B493E9D00C6444F /* PrismImageView.swift */; };
 		C6C0349A2B493E9D00C6444F /* PrismEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034912B493E9D00C6444F /* PrismEffect.swift */; };
 		C6C0349C2B49525800C6444F /* ScalingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */; };
 		C6D739F92B49CC3B00FC23DC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */; };
@@ -175,10 +171,6 @@
 		C6C034882B493E9D00C6444F /* PrismConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismConfiguration.swift; sourceTree = "<group>"; };
 		C6C034892B493E9D00C6444F /* PrismCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismCanvas.swift; sourceTree = "<group>"; };
 		C6C0348A2B493E9D00C6444F /* PrismView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismView.swift; sourceTree = "<group>"; };
-		C6C0348D2B493E9D00C6444F /* PrismGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismGradientView.swift; sourceTree = "<group>"; };
-		C6C0348E2B493E9D00C6444F /* PrismColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismColorView.swift; sourceTree = "<group>"; };
-		C6C0348F2B493E9D00C6444F /* PrismGlassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismGlassView.swift; sourceTree = "<group>"; };
-		C6C034902B493E9D00C6444F /* PrismImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismImageView.swift; sourceTree = "<group>"; };
 		C6C034912B493E9D00C6444F /* PrismEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismEffect.swift; sourceTree = "<group>"; };
 		C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingButtonStyle.swift; sourceTree = "<group>"; };
 		C6D739F12B49AC4300FC23DC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -428,24 +420,12 @@
 		C6C034872B493E9200C6444F /* Prism */ = {
 			isa = PBXGroup;
 			children = (
-				C6C0348C2B493E9D00C6444F /* Templates */,
 				C6C034892B493E9D00C6444F /* PrismCanvas.swift */,
 				C6C034882B493E9D00C6444F /* PrismConfiguration.swift */,
 				C6C034912B493E9D00C6444F /* PrismEffect.swift */,
 				C6C0348A2B493E9D00C6444F /* PrismView.swift */,
 			);
 			path = Prism;
-			sourceTree = "<group>";
-		};
-		C6C0348C2B493E9D00C6444F /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				C6C0348D2B493E9D00C6444F /* PrismGradientView.swift */,
-				C6C0348E2B493E9D00C6444F /* PrismColorView.swift */,
-				C6C0348F2B493E9D00C6444F /* PrismGlassView.swift */,
-				C6C034902B493E9D00C6444F /* PrismImageView.swift */,
-			);
-			path = Templates;
 			sourceTree = "<group>";
 		};
 		C6D739F72B49CC3B00FC23DC /* Frameworks */ = {
@@ -657,9 +637,7 @@
 				C69946002B3370EF008D475F /* CustomFont.swift in Sources */,
 				C6C034932B493E9D00C6444F /* PrismCanvas.swift in Sources */,
 				C67CCE662B4FDB57002B358B /* Verse+Extensions.swift in Sources */,
-				C6C034962B493E9D00C6444F /* PrismGradientView.swift in Sources */,
 				C69945DA2B333A3F008D475F /* Endpoint.swift in Sources */,
-				C6C034972B493E9D00C6444F /* PrismColorView.swift in Sources */,
 				C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */,
 				C6404F182B4C72D00096E833 /* Sidebar.swift in Sources */,
 				C6C0349A2B493E9D00C6444F /* PrismEffect.swift in Sources */,
@@ -679,10 +657,8 @@
 				C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */,
 				C69945DC2B333B5C008D475F /* MeikadeEndpoint.swift in Sources */,
 				C67CCE6B2B504FDD002B358B /* Types.swift in Sources */,
-				C6C034982B493E9D00C6444F /* PrismGlassView.swift in Sources */,
 				C66359E32B398CA200F76709 /* Poet.swift in Sources */,
 				C66359E52B398CF800F76709 /* Poem.swift in Sources */,
-				C6C034992B493E9D00C6444F /* PrismImageView.swift in Sources */,
 				C6C034922B493E9D00C6444F /* PrismConfiguration.swift in Sources */,
 				C69945F72B336699008D475F /* ExploreStaticView.swift in Sources */,
 				C69945D72B333A3F008D475F /* HTTPMethod.swift in Sources */,
