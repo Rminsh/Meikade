@@ -49,6 +49,16 @@
         }
       }
     },
+    "Close" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بستن"
+          }
+        }
+      }
+    },
     "Connection error" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -232,7 +242,14 @@
       }
     },
     "Poet Types" : {
-
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نوع شاعر"
+          }
+        }
+      }
     },
     "Poets" : {
       "localizations" : {
@@ -288,17 +305,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "تلاش دوباره"
-          }
-        }
-      }
-    },
-    "Types" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نوع شاعر"
           }
         }
       }
