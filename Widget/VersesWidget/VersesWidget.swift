@@ -12,9 +12,9 @@ struct VersesWidget: Widget {
     let kind: String = "VersesWidget"
     
     let families: [WidgetFamily] = [
-            .systemSmall,
-            .systemMedium,
-        ]
+        .systemSmall,
+        .systemMedium,
+    ]
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: VersesProvider()) { entry in

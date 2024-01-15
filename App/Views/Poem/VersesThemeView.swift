@@ -9,7 +9,6 @@ import SwiftUI
 
 struct VersesThemeView {
     
-    @Environment(\.presentationMode) var presentationMode
     @AppStorage("versesFont") var versesFont: String = Fonts.vazirmatn.rawValue
     
     #if os(macOS)
@@ -30,25 +29,6 @@ struct VersesThemeView {
 extension VersesThemeView: View {
     
     var body: some View {
-        NavigationStack {
-            content
-                .toolbar {
-                    ToolbarItem {
-                        Button {
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Label("Close", systemImage: "xmark.circle.fill")
-                                .font(.title3)
-                        }
-                        .foregroundStyle(.secondary)
-                        .symbolRenderingMode(.hierarchical)
-                        .buttonStyle(.borderless)
-                    }
-                }
-        }
-    }
-    
-    var content: some View {
         LazyVGrid(columns: columns) {
             ForEach(Fonts.allCases, id:\.hashValue) { font in
                 Button {

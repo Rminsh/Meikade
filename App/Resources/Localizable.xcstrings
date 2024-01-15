@@ -49,16 +49,6 @@
         }
       }
     },
-    "Close" : {
-      "localizations" : {
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "بستن"
-          }
-        }
-      }
-    },
     "Connection error" : {
       "extractionState" : "manual",
       "localizations" : {
