@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "muzeiswiftapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Rminsh/MuzeiSwiftAPI.git",
+      "state" : {
+        "revision" : "57297e4b3cf9eeefe8db9b8f896ce360bf438b5d",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "nuke",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kean/Nuke/",

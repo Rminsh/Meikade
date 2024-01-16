@@ -54,5 +54,9 @@ struct VersesEntryView: View {
 #Preview(as: .systemSmall) {
     VersesWidget()
 } timeline: {
-    VersesEntry(date: .now, poem: .placeholder)
+    VersesEntry(
+        date: .now,
+        poem: .placeholder,
+        image: nil
+    )
 }

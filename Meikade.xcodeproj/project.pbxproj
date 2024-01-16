@@ -21,6 +21,9 @@
 		C64749C52B3C0E1100AD4807 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C42B3C0E1100AD4807 /* EmptyState.swift */; };
 		C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */; };
 		C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */; };
+		C660DD4F2B57094600CEAE55 /* MuzeiSwiftAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C660DD4E2B57094600CEAE55 /* MuzeiSwiftAPI */; };
+		C660DD512B570DFF00CEAE55 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660DD502B570DFF00CEAE55 /* ImageFetcher.swift */; };
+		C660DD522B570DFF00CEAE55 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660DD502B570DFF00CEAE55 /* ImageFetcher.swift */; };
 		C66359E12B397C5A00F76709 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E02B397C5A00F76709 /* Router.swift */; };
 		C66359E32B398CA200F76709 /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
 		C66359E52B398CF800F76709 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
@@ -137,6 +140,7 @@
 		C64749C42B3C0E1100AD4807 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetsListView.swift; sourceTree = "<group>"; };
 		C64F90DA2B4A948500FB6BC2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C660DD502B570DFF00CEAE55 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		C66359E02B397C5A00F76709 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C66359E22B398CA200F76709 /* Poet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poet.swift; sourceTree = "<group>"; };
 		C66359E42B398CF800F76709 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C660DD4F2B57094600CEAE55 /* MuzeiSwiftAPI in Frameworks */,
 				C6D739FB2B49CC3B00FC23DC /* SwiftUI.framework in Frameworks */,
 				C6D739F92B49CC3B00FC23DC /* WidgetKit.framework in Frameworks */,
 			);
@@ -490,6 +495,7 @@
 			children = (
 				C69945FF2B3370EF008D475F /* CustomFont.swift */,
 				C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */,
+				C660DD502B570DFF00CEAE55 /* ImageFetcher.swift */,
 				C67CCE6A2B504FDD002B358B /* Types.swift */,
 			);
 			path = General;
@@ -548,6 +554,9 @@
 			dependencies = (
 			);
 			name = WidgetExtension;
+			packageProductDependencies = (
+				C660DD4E2B57094600CEAE55 /* MuzeiSwiftAPI */,
+			);
 			productName = WidgetExtension;
 			productReference = C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -584,6 +593,7 @@
 				C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */,
 				C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				C67CCE622B4F377D002B358B /* XCRemoteSwiftPackageReference "RichTextKit" */,
+				C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */,
 			);
 			productRefGroup = C69945BA2B32E8CD008D475F /* Products */;
 			projectDirPath = "";
@@ -656,6 +666,7 @@
 				C67CCE692B502863002B358B /* RichText.swift in Sources */,
 				C69945D62B333A3F008D475F /* HTTPContentType.swift in Sources */,
 				C6FB779C2B3EB8A70053B93D /* CatrgoriesListView.swift in Sources */,
+				C660DD512B570DFF00CEAE55 /* ImageFetcher.swift in Sources */,
 				C6A2E0202B41846A002256B8 /* ExploreSectionView.swift in Sources */,
 				C6C034942B493E9D00C6444F /* PrismView.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
@@ -695,6 +706,7 @@
 				C6D73A1C2B49CEDF00FC23DC /* VersesProvider.swift in Sources */,
 				C6D73A102B49CD0E00FC23DC /* HTTPContentType.swift in Sources */,
 				C6D73A182B49CD1C00FC23DC /* Explore.swift in Sources */,
+				C660DD522B570DFF00CEAE55 /* ImageFetcher.swift in Sources */,
 				C6F5647A2B4E97F000D2C97A /* VersesView.swift in Sources */,
 				C6D73A0F2B49CD0E00FC23DC /* HTTPClient.swift in Sources */,
 				C6D73A152B49CD1C00FC23DC /* Poet.swift in Sources */,
@@ -1036,6 +1048,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Rminsh/MuzeiSwiftAPI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		C67CCE622B4F377D002B358B /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
@@ -1059,6 +1079,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = SwiftUIIntrospect;
+		};
+		C660DD4E2B57094600CEAE55 /* MuzeiSwiftAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */;
+			productName = MuzeiSwiftAPI;
 		};
 		C67CCE632B4F377D002B358B /* RichTextKit */ = {
 			isa = XCSwiftPackageProductDependency;

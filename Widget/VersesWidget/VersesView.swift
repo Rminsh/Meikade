@@ -29,11 +29,28 @@ extension VersesView: View {
     }
     
     var backCover: some View {
-        Image(.cover)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .blur(radius: entry.poem == nil ? 0 : 2)
-            .padding(-10)
+        Group {
+            if let image = entry.image {
+                Group {
+                    #if os(macOS)
+                    Image(nsImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    #else
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    #endif
+                }
+                .blur(radius: entry.poem == nil ? 0 : 4)
+            } else {
+                Image(.cover)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .blur(radius: entry.poem == nil ? 0 : 2)
+            }
+        }
+        .padding(-10)
     }
     
     var content: some View {
@@ -76,6 +93,7 @@ extension VersesView: View {
         }
         .foregroundStyle(.white)
         .environment(\.layoutDirection, .rightToLeft)
+        .shadow(radius: 2)
     }
 }
 
@@ -83,5 +101,9 @@ extension VersesView: View {
 #Preview(as: .systemSmall) {
     VersesWidget()
 } timeline: {
-    VersesEntry(date: .now, poem: .placeholder)
+    VersesEntry(
+        date: .now,
+        poem: .placeholder,
+        image: nil
+    )
 }
