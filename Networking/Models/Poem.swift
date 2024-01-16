@@ -14,6 +14,26 @@ struct Poem: Codable {
 }
 
 extension Poem {
+    private static let poemKey = "cachedPoemKey"
+    
+    static func loadCachedPoem() -> Poem? {
+        if let data = UserDefaults.standard.data(forKey: poemKey),
+           let cachedPoem = try? JSONDecoder().decode(Poem.self, from: data) {
+            return cachedPoem
+        }
+        return nil
+    }
+    
+    static func cachePoem(_ poem: Poem?) {
+        if let poem, let data = try? JSONEncoder().encode(poem) {
+            UserDefaults.standard.set(data, forKey: poemKey)
+        } else {
+            UserDefaults.standard.removeObject(forKey: poemKey)
+        }
+    }
+}
+
+extension Poem {
     static let placeholder: Poem = .init(
         poem: .init(
             id: 1,
