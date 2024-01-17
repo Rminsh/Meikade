@@ -42,15 +42,15 @@ extension VersesView: View {
                         .aspectRatio(contentMode: .fill)
                     #endif
                 }
-                .blur(radius: entry.poem == nil ? 0 : 4)
             } else {
                 Image(.cover)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .blur(radius: entry.poem == nil ? 0 : 2)
             }
         }
+        .blur(radius: entry.poem == nil ? 0 : 4)
         .padding(-10)
+        .overlay(Color.black.opacity(0.35))
     }
     
     var content: some View {
