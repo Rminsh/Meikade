@@ -29,14 +29,14 @@ This project is based on the original Meikade but entirely built in SwiftUI, mak
 
 ### Mac OS
 <p align="center">
-    <img alt="Calendar Example 1" src="Previews/mac_1.PNG"/>
-    <img alt="Calendar Example 1" src="Previews/mac_2.PNG"/>
+    <img alt="Calendar Example 1" src="Previews/mac_1.png"/>
+    <img alt="Calendar Example 1" src="Previews/mac_2.png"/>
 </p>
 
 ### Vision OS
 <p align="center">
-    <img alt="Calendar Example 1" src="Previews/vision_1.PNG"/>
-    <img alt="Calendar Example 1" src="Previews/vision_2.PNG"/>
+    <img alt="Calendar Example 1" src="Previews/vision_1.png"/>
+    <img alt="Calendar Example 1" src="Previews/vision_2.png"/>
 </p>
 
 ## ⚒️ Building the project
