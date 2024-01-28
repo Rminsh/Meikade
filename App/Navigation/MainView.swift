@@ -22,15 +22,13 @@ struct MainView: View {
                 TabNavigation()
             } else {
                 Sidebar()
+                    .environment(\.locale, .init(identifier: "fa"))
+                    .environment(\.layoutDirection, .rightToLeft)
             }
             #else
             Sidebar()
             #endif
         }
-        #if !os(macOS)
-        .environment(\.locale, .init(identifier: "fa"))
-        .environment(\.layoutDirection, .rightToLeft)
-        #endif
     }
 }
 
