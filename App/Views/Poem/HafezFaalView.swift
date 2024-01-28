@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HafezFaalView: View {
+struct HafezFaalView {
     
     @State var expanded = true
     @State var showPoem = false
@@ -18,6 +18,29 @@ struct HafezFaalView: View {
         shadowOpacity: 0.25
     )
     
+    func expandBook() {
+        withAnimation(.spring()) {
+            if expanded {
+                configuration.tilt = 0.5
+                configuration.extrusion = 20
+                configuration.shadowOpacity = 0.25
+            } else {
+                configuration.tilt = 0
+                configuration.extrusion = 0
+                configuration.shadowOpacity = 0
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    showPoem = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        expanded = true
+                    }
+                }
+            }
+        }
+    }
+}
+
+extension HafezFaalView: View {
     var body: some View {
         VStack {
             hafezBook
@@ -91,26 +114,15 @@ struct HafezFaalView: View {
             }
             .buttonStyle(.scaling)
         }
-        .onChange(of: expanded) { newValue in
-            withAnimation(.spring()) {
-                if newValue {
-                    configuration.tilt = 0.5
-                    configuration.extrusion = 20
-                    configuration.shadowOpacity = 0.25
-                } else {
-                    configuration.tilt = 0
-                    configuration.extrusion = 0
-                    configuration.shadowOpacity = 0
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        showPoem = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            expanded = true
-                        }
-                    }
-                }
-            }
+        #if os(visionOS)
+        .onChange(of: expanded) {
+            expandBook()
         }
+        #else
+        .onChange(of: expanded) { newValue in
+            expandBook()
+        }
+        #endif
         .environment(\.layoutDirection, .leftToRight)
     }
 }
