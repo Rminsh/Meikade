@@ -1,6 +1,11 @@
-![Meikade-icon](App/Resources/Assets.xcassets/AppIcon.appiconset/128x128.png)
-#  Meikade
-[![Platform](http://img.shields.io/badge/Platform-iOS/iPadOS/macOS/visionOS-blue.svg)](https://developer.apple.com/iphone/index.action)
+<p align="center">
+    <img src="App/Resources/Assets.xcassets/AppIcon.appiconset/128x128@2x.png" alt="Meikade logo" width="128" />
+</p>
+<h1 align="center">Meikade</h1>
+
+[![iOS 16.0+](https://img.shields.io/badge/iOS-16.0+-27ae60.svg)](https://developer.apple.com/ios/)
+[![macOS 13.0+](https://img.shields.io/badge/macOS-13.0+-2980b9.svg)](https://developer.apple.com/macos/)
+[![visionOS 1.0+](https://img.shields.io/badge/visionOS-1.0+-8e44ad.svg)](https://developer.apple.com/visionos/)
 ![License](https://img.shields.io/github/license/rminsh/meikade)
 
 Meikade is a collection of Persian poetry. ([Original project](https://github.com/Aseman-Land/Meikade))
@@ -10,6 +15,29 @@ This project is based on the original Meikade but entirely built in SwiftUI, mak
 > ⚠️ This project is a work in progress and does not have all the original features of the Meikade app (yet!). 
 
 
+
+## 📱 Previews
+### iOS
+<p align="center">
+    <img alt="Calendar Example 1" src="Previews/ios_1.PNG" width="48%"/>
+    <img alt="Calendar Example 1" src="Previews/ios_2.PNG" width="48%"/>
+</p>
+<p align="center">
+    <img alt="Calendar Example 1" src="Previews/ios_3.PNG" width="48%"/>
+    <img alt="Calendar Example 1" src="Previews/ios_4.PNG" width="48%"/>
+</p>
+
+### Mac OS
+<p align="center">
+    <img alt="Calendar Example 1" src="Previews/mac_1.PNG"/>
+    <img alt="Calendar Example 1" src="Previews/mac_2.PNG"/>
+</p>
+
+### Vision OS
+<p align="center">
+    <img alt="Calendar Example 1" src="Previews/vision_1.PNG"/>
+    <img alt="Calendar Example 1" src="Previews/vision_2.PNG"/>
+</p>
 
 ## ⚒️ Building the project
 
