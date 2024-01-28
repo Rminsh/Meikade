@@ -19,24 +19,28 @@ This project is based on the original Meikade but entirely built in SwiftUI, mak
 ## 📱 Previews
 ### iOS
 <p align="center">
-    <img alt="Calendar Example 1" src="Previews/ios_1.PNG" width="48%"/>
-    <img alt="Calendar Example 1" src="Previews/ios_2.PNG" width="48%"/>
+    <img alt="iOS Preview" src="Previews/ios_1.PNG" width="48%"/>
+    <img alt="iOS Preview" src="Previews/ios_2.PNG" width="48%"/>
 </p>
 <p align="center">
-    <img alt="Calendar Example 1" src="Previews/ios_3.PNG" width="48%"/>
-    <img alt="Calendar Example 1" src="Previews/ios_4.PNG" width="48%"/>
+    <img alt="iOS Preview" src="Previews/ios_5.PNG" width="48%"/>
+    <img alt="iOS Preview" src="Previews/ios_6.PNG" width="48%"/>
+</p>
+<p align="center">
+    <img alt="Widget Preview" src="Previews/ios_3.PNG" width="48%"/>
+    <img alt="Widget Preview" src="Previews/ios_4.PNG" width="48%"/>
 </p>
 
 ### Mac OS
 <p align="center">
-    <img alt="Calendar Example 1" src="Previews/mac_1.png"/>
-    <img alt="Calendar Example 1" src="Previews/mac_2.png"/>
+    <img alt="macOS Preview" src="Previews/mac_1.png"/>
+    <img alt="macOS Preview" src="Previews/mac_2.png"/>
 </p>
 
 ### Vision OS
 <p align="center">
-    <img alt="Calendar Example 1" src="Previews/vision_1.png"/>
-    <img alt="Calendar Example 1" src="Previews/vision_2.png"/>
+    <img alt="visionOS Preview" src="Previews/vision_1.png"/>
+    <img alt="visionOS Preview" src="Previews/vision_2.png"/>
 </p>
 
 ## ⚒️ Building the project
