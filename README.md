@@ -11,13 +11,10 @@
 Meikade is a collection of Persian poetry. ([Original project](https://github.com/Aseman-Land/Meikade))
 This project is based on the original Meikade but entirely built in SwiftUI, making it fast, lightweight, and easier to run on other apple operation systems like visionOS or macOS.
 
-> [!IMPORTANT]
-> ⚠️ This project is a work in progress and does not have all the original features of the Meikade app (yet!). 
 
 
-
-## 📱 Previews
-### iOS
+## 🖼️ Previews
+### 📱 iOS
 <p align="center">
     <img alt="iOS Preview" src="Previews/ios_1.PNG" width="48%"/>
     <img alt="iOS Preview" src="Previews/ios_2.PNG" width="48%"/>
@@ -31,13 +28,13 @@ This project is based on the original Meikade but entirely built in SwiftUI, mak
     <img alt="Widget Preview" src="Previews/ios_4.PNG" width="48%"/>
 </p>
 
-### Mac OS
+### 🖥️ Mac OS
 <p align="center">
     <img alt="macOS Preview" src="Previews/mac_1.png"/>
     <img alt="macOS Preview" src="Previews/mac_2.png"/>
 </p>
 
-### Vision OS
+### 🥽 Vision OS
 <p align="center">
     <img alt="visionOS Preview" src="Previews/vision_1.png"/>
     <img alt="visionOS Preview" src="Previews/vision_2.png"/>
@@ -58,10 +55,6 @@ Want to contribute? I would really appreciate a hand with the development to add
 Feel free to Fork, edit, then pull!
 
 
-
-## 🧭 A note on the architecture
-It's a great starting point for learning SwiftUI. The app covers many of the basic concepts of SwiftUI, such as building layouts, working with data, and handling user interaction. By exploring the code, you can understand how to use SwiftUI in your daily life. Plus, the open-source nature of Meikade means you can see how real-world applications are built and get a sense of best practices for using SwiftUI.
-The architecture is MV (Model-View) for keeping it simple ([more info](https://developer.apple.com/forums/thread/699003)). 
 
 ## ✌🏻 Donation
 
