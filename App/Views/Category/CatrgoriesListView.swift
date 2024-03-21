@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CatrgoriesListView {
-    var poetID: Int
-    var categoryID: Int
+    let poetID: Int
+    let categoryID: Int
     var title: String = ""
     
     @State var categories: [Category] = []
@@ -73,7 +73,9 @@ extension CatrgoriesListView: View {
             }
         }
         .task {
-            await getPoems()
+            if categories.isEmpty {
+                await getPoems()
+            }
         }
     }
     
