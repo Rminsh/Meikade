@@ -129,4 +129,5 @@ extension HafezFaalView: View {
 
 #Preview {
     HafezFaalView()
+        .environment(\.locale, .init(identifier: "fa"))
 }
