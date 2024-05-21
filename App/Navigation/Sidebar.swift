@@ -18,7 +18,6 @@ struct Sidebar: View {
                     NavigationLink(value: item) {
                         Label(item.title, systemImage: item.icon)
                             .customFont(style: .body)
-                            .environment(\.locale, .init(identifier: "fa"))
                     }
                 }
             }

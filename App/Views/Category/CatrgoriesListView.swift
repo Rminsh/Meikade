@@ -58,8 +58,6 @@ extension CatrgoriesListView: View {
         }
         #if os(macOS)
         .navigationTitle("")
-        .environment(\.locale, .init(identifier: "fa"))
-        .environment(\.layoutDirection, .rightToLeft)
         #else
         .navigationTitle(title)
         #endif
@@ -109,10 +107,5 @@ extension CatrgoriesListView: View {
             categoryID: 24,
             title: "غزلیات"
         )
-        #if os(macOS)
-        .frame(width: 450, height: 450)
-        #else
-        .navigationBarTitleDisplayMode(.inline)
-        #endif
     }
 }

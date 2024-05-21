@@ -145,8 +145,6 @@ extension PoetView: View {
         .navigationTitle("")
         .frame(maxWidth: 650)
         .scrollIndicators(.hidden)
-        .environment(\.locale, .init(identifier: "fa"))
-        .environment(\.layoutDirection, .rightToLeft)
         #endif
         .overlay {
             emptyStateView

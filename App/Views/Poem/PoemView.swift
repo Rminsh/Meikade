@@ -183,8 +183,6 @@ extension PoemView {
             .navigationTitle(title)
             #if os(macOS)
             .navigationSubtitle(subtitle)
-            .environment(\.locale, .init(identifier: "fa"))
-            .environment(\.layoutDirection, .rightToLeft)
             #elseif os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif

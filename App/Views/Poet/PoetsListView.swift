@@ -98,8 +98,6 @@ extension PoetsListView: View {
         .navigationTitle("")
         .listStyle(.inset(alternatesRowBackgrounds: true))
         .environment(\.defaultMinListRowHeight, 60)
-        .environment(\.locale, .init(identifier: "fa"))
-        .environment(\.layoutDirection, .rightToLeft)
         #else
         .navigationTitle("Poets")
         #endif
@@ -140,8 +138,6 @@ extension PoetsListView: View {
             )
         }
         #elseif os(macOS)
-        .environment(\.locale, .init(identifier: "fa"))
-        .environment(\.layoutDirection, .rightToLeft)
         .introspect(.picker(style: .segmented), on: .macOS(.v13...)) { item in
             item.font = UXFont.custom(style: .body)
         }

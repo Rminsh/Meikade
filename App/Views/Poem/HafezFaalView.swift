@@ -80,7 +80,6 @@ extension HafezFaalView: View {
         #if os(macOS)
         .presentedWindowStyle(.hiddenTitleBar)
         .presentedWindowToolbarStyle(.unified(showsTitle: false))
-        .environment(\.locale, .init(identifier: "fa"))
         #endif
     }
     

@@ -72,10 +72,6 @@ extension ExploreView: View {
                         }
                     }
                 }
-                #if os(macOS)
-                .environment(\.locale, .init(identifier: "fa"))
-                .environment(\.layoutDirection, .rightToLeft)
-                #endif
         }
         .task {
             await getExplore()
