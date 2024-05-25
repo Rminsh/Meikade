@@ -41,14 +41,6 @@ extension HafezFaalView: View {
                 HStack(spacing: 0) {
                     Rectangle()
                         .fill(Color.accent.gradient)
-                        .clipShape(
-                            .rect(
-                                topLeadingRadius: 0,
-                                bottomLeadingRadius: 0,
-                                bottomTrailingRadius: 20,
-                                topTrailingRadius: 20
-                            )
-                        )
                         .frame(maxWidth: 10, maxHeight: proxy.size.height * 0.8)
                     
                     Rectangle()
@@ -74,16 +66,9 @@ extension HafezFaalView: View {
                     
                     Rectangle()
                         .fill(Color.accent.gradient)
-                        .clipShape(
-                            .rect(
-                                topLeadingRadius: 20,
-                                bottomLeadingRadius: 20,
-                                bottomTrailingRadius: 0,
-                                topTrailingRadius: 0
-                            )
-                        )
                         .frame(maxWidth: 10, maxHeight: proxy.size.height * 0.8)
                 }
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .environment(\.colorScheme , .light)
                 
@@ -107,6 +92,7 @@ extension HafezFaalView: View {
                             if let selectedPoem {
                                 Text((selectedPoem - 2129).formatted())
                                     .offset(y: -5)
+                                    .foregroundStyle(.black)
                             }
                         }
                         .opacity(fingerLocation == nil ? 0 : 1)
@@ -125,8 +111,6 @@ extension HafezFaalView: View {
                 }
                 .gesture(fingerDrag)
                 .environment(\.layoutDirection , .leftToRight)
-                .environment(\.colorScheme , .light)
-                
             }
         }
         .background {
