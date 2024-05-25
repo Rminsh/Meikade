@@ -8,65 +8,118 @@
 import SwiftUI
 
 struct HafezFaalView {
-    
-    @State var expanded = true
     @State var showPoem = false
-    @State var configuration = PrismConfiguration(
-        tilt: 0.5,
-        size: CGSize(width: 120, height: 180),
-        extrusion: 20,
-        shadowOpacity: 0.25
-    )
+    @State var selectedPoem: Int? = nil
+    @GestureState var fingerLocation: CGPoint? = nil
     
-    func expandBook() {
-        withAnimation(.spring()) {
-            if expanded {
-                configuration.tilt = 0.5
-                configuration.extrusion = 20
-                configuration.shadowOpacity = 0.25
-            } else {
-                configuration.tilt = 0
-                configuration.extrusion = 0
-                configuration.shadowOpacity = 0
+    var fingerDrag: some Gesture {
+        DragGesture()
+            .updating($fingerLocation) { (value, fingerLocation, transaction) in
+                fingerLocation = value.location
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            }
+            .onEnded { value in
+                if selectedPoem != nil {
+                    print((selectedPoem ?? -1) - 2129)
                     showPoem = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        expanded = true
-                    }
                 }
             }
-        }
     }
 }
 
 extension HafezFaalView: View {
     var body: some View {
-        VStack {
-            hafezBook
-                .frame(maxHeight: .infinity)
-                .navigationDestination(isPresented: $showPoem) {
-                    PoemView(poemType: .poem(id: Int.random(in: 2130..<2625)))
+        GeometryReader { proxy in
+            ZStack {
+                /// Cover of the book
+                HStack(spacing: 0) {
+                    Rectangle()
+                        .fill(Color.accent.gradient)
+                        .clipShape(
+                            .rect(
+                                topLeadingRadius: 0,
+                                bottomLeadingRadius: 0,
+                                bottomTrailingRadius: 20,
+                                topTrailingRadius: 20
+                            )
+                        )
+                        .frame(maxWidth: 10, maxHeight: proxy.size.height * 0.8)
+                    
+                    Rectangle()
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(
+                                    colors: [
+                                        .red,
+                                        .accent,
+                                        .accent,
+                                        .accent,
+                                        .accent,
+                                        .accent,
+                                        .accent,
+                                        .red,
+                                    ]
+                                ),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(maxWidth: min(proxy.size.width * 0.6, 350), maxHeight: proxy.size.height * 0.8)
+                    
+                    Rectangle()
+                        .fill(Color.accent.gradient)
+                        .clipShape(
+                            .rect(
+                                topLeadingRadius: 20,
+                                bottomLeadingRadius: 20,
+                                bottomTrailingRadius: 0,
+                                topTrailingRadius: 0
+                            )
+                        )
+                        .frame(maxWidth: 10, maxHeight: proxy.size.height * 0.8)
                 }
-            
-            Group {
-                if expanded {
-                    Text("Make a wish and tap for a sign")
-                        .customFont(name: .shekasteh, style: .title1)
-                        #if !os(visionOS)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .environment(\.colorScheme , .light)
+                
+                /// Pages of the book
+                HStack(spacing: 0) {
+                    ForEach(0...30, id: \.self) { _ in
+                        Rectangle()
+                            .fill(.white)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        Divider()
+                    }
+                }
+                .frame(maxWidth: min(proxy.size.width * 0.6, 350), maxHeight: proxy.size.height * 0.78)
+                .overlay(alignment: .top) {
+                    Image(systemName: "bubble.middle.bottom.fill")
+                        .font(.system(size: 54))
                         .foregroundStyle(.white)
-                        .shadow(radius: 25)
-                        #endif
-                } else {
-                    ProgressView()
-                        .tint(.accent)
-                        .offset(y: -32)
+                        .frame(width: 40, height: 54)
+                        .shadow(radius: 2)
+                        .overlay(alignment: .center) {
+                            if let selectedPoem {
+                                Text((selectedPoem - 2129).formatted())
+                                    .offset(y: -5)
+                            }
+                        }
+                        .opacity(fingerLocation == nil ? 0 : 1)
+                        .position(x: min(max(fingerLocation?.x ?? 0 , 0), min(proxy.size.width * 0.6, 350)))
+                        .offset(y: -28)
+                        .onChange(of: fingerLocation) { _ in
+                            if let x = fingerLocation?.x, x >= 0, x <= min(proxy.size.width * 0.6, 350) {
+                                selectedPoem = Int.random(in: 2130..<2625)
+                            }
+                        }
                 }
+                .gesture(fingerDrag)
+                .environment(\.layoutDirection , .leftToRight)
+                .environment(\.colorScheme , .light)
+                
             }
-            .padding()
         }
-        #if !os(visionOS)
         .background {
+            #if !os(visionOS)
             Image(.cover)
                 .resizable()
                 .grayscale(1)
@@ -74,55 +127,16 @@ extension HafezFaalView: View {
                 .blur(radius: 5)
                 .padding(-8)
                 .ignoresSafeArea(.all)
+            #endif
         }
-        #endif
+        .navigationDestination(isPresented: $showPoem) {
+            PoemView(poemType: .poem(id: selectedPoem ?? 0))
+        }
         .navigationTitle("")
         #if os(macOS)
         .presentedWindowStyle(.hiddenTitleBar)
         .presentedWindowToolbarStyle(.unified(showsTitle: false))
         #endif
-    }
-    
-    var hafezBook: some View {
-        PrismCanvas(tilt: configuration.tilt) {
-            Button {
-                withAnimation {
-                    expanded = false
-                }
-            } label: {
-                PrismView(configuration: configuration) {
-                    ZStack {
-                        Image(.cover)
-                            .resizable()
-                            .blur(radius: 0.8)
-                        
-                        Text("Hafez Divination")
-                            .customFont(name: .shekasteh, style: .title1)
-                            .foregroundStyle(.white)
-                    }
-                } left: {
-                    Rectangle()
-                        .fill(Color.white.gradient)
-                } right: {
-                    Image(.cover)
-                        .resizable()
-                        .blur(radius: 1)
-                }
-                .offset(y: 20)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-            .buttonStyle(.scaling)
-        }
-        #if os(visionOS)
-        .onChange(of: expanded) {
-            expandBook()
-        }
-        #else
-        .onChange(of: expanded) { newValue in
-            expandBook()
-        }
-        #endif
-        .environment(\.layoutDirection, .leftToRight)
     }
 }
 
