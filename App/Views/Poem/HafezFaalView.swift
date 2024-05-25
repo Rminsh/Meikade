@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct HafezFaalView {
-    @State var showPoem = false
-    @State var selectedPoem: Int? = nil
-    @GestureState var fingerLocation: CGPoint? = nil
+    @State private var showPoem = false
+    @State private var selectedPoem: Int? = nil
+    @GestureState private var fingerLocation: CGPoint? = nil
     
-    var fingerDrag: some Gesture {
+    private var position: Int? {
+        if let fingerLocation {
+            return Int(fingerLocation.x / 10)
+        } else {
+            return nil
+        }
+    }
+    
+    private var fingerDrag: some Gesture {
         DragGesture()
             .updating($fingerLocation) { (value, fingerLocation, transaction) in
                 fingerLocation = value.location
-                
             }
             .onEnded { value in
                 if selectedPoem != nil {
-                    print((selectedPoem ?? -1) - 2129)
                     showPoem = true
                 }
             }
@@ -106,9 +112,14 @@ extension HafezFaalView: View {
                         .opacity(fingerLocation == nil ? 0 : 1)
                         .position(x: min(max(fingerLocation?.x ?? 0 , 0), min(proxy.size.width * 0.6, 350)))
                         .offset(y: -28)
-                        .onChange(of: fingerLocation) { _ in
-                            if let x = fingerLocation?.x, x >= 0, x <= min(proxy.size.width * 0.6, 350) {
+                        .onChange(of: position) { _ in
+                            if let x = fingerLocation?.x,
+                               x >= 0,
+                               x <= min(proxy.size.width * 0.6, 350) {
                                 selectedPoem = Int.random(in: 2130..<2625)
+                                #if os(iOS)
+                                HapticFeedback.shared.start(.soft)
+                                #endif
                             }
                         }
                 }
