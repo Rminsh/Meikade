@@ -20,6 +20,8 @@ enum MeikadeEndpoint {
     case verses(poemID: Int)
     case category(categoryID: Int)
     case categories(poetID: Int, parentID: Int?)
+    case searchPoets(query: String)
+    case searchVerses(query: String, poetID: Int)
 }
 
 extension MeikadeEndpoint: Endpoint {
@@ -49,6 +51,10 @@ extension MeikadeEndpoint: Endpoint {
             return "/api/main/category"
         case .categories:
             return "/api/main/categories"
+        case .searchPoets:
+            return "/api/main/search/poets"
+        case .searchVerses:
+            return "/api/main/search/verses"
         }
     }
     
@@ -119,6 +125,15 @@ extension MeikadeEndpoint: Endpoint {
                 params.append(.init(name: "parent_id", value: String(parentID)))
             }
             return params
+        case .searchPoets(let query):
+            return [
+                .init(name: "query", value: query)
+            ]
+        case .searchVerses(let query, let poetID):
+            return [
+                .init(name: "query", value: query),
+                .init(name: "poet_id", value: String(poetID))
+            ]
         default:
             return nil
         }
