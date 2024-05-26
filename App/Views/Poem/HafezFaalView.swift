@@ -36,12 +36,15 @@ struct HafezFaalView {
 extension HafezFaalView: View {
     var body: some View {
         GeometryReader { proxy in
+            let bookHeight = proxy.size.height * 0.8
+            let bookInnerWidth = min(proxy.size.width * 0.5, 300)
+            
             ZStack {
                 /// Cover of the book
                 HStack(spacing: 0) {
                     Rectangle()
                         .fill(Color.accent.gradient)
-                        .frame(maxWidth: 10, maxHeight: proxy.size.height * 0.8)
+                        .frame(maxWidth: 10, maxHeight: bookHeight)
                     
                     Rectangle()
                         .fill(
@@ -62,7 +65,7 @@ extension HafezFaalView: View {
                                 endPoint: .trailing
                             )
                         )
-                        .frame(maxWidth: min(proxy.size.width * 0.6, 350), maxHeight: proxy.size.height * 0.8)
+                        .frame(maxWidth: bookInnerWidth, maxHeight: bookHeight)
                     
                     Rectangle()
                         .fill(Color.accent.gradient)
@@ -74,14 +77,25 @@ extension HafezFaalView: View {
                 
                 /// Pages of the book
                 HStack(spacing: 0) {
-                    ForEach(0...30, id: \.self) { _ in
+                    ForEach(0...50, id: \.self) { _ in
                         Rectangle()
                             .fill(.white)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                         Divider()
                     }
                 }
-                .frame(maxWidth: min(proxy.size.width * 0.6, 350), maxHeight: proxy.size.height * 0.78)
+                .overlay(alignment: .bottom) {
+                    Rectangle()
+                        .fill(.accent.gradient)
+                        .environment(\.colorScheme , .light)
+                        .frame(maxWidth: 5)
+                        .opacity(fingerLocation == nil ? 0 : 1)
+                        .position(
+                            x: min(max(fingerLocation?.x ?? 0 , 0), bookInnerWidth),
+                            y: bookHeight * 0.975 / 2
+                        )
+                }
+                .frame(maxWidth: bookInnerWidth, maxHeight: bookHeight * 0.975)
                 .overlay(alignment: .top) {
                     Image(systemName: "bubble.middle.bottom.fill")
                         .font(.system(size: 54))
@@ -96,12 +110,12 @@ extension HafezFaalView: View {
                             }
                         }
                         .opacity(fingerLocation == nil ? 0 : 1)
-                        .position(x: min(max(fingerLocation?.x ?? 0 , 0), min(proxy.size.width * 0.6, 350)))
+                        .position(x: min(max(fingerLocation?.x ?? 0 , 0), bookInnerWidth))
                         .offset(y: -28)
                         .onChange(of: position) { _ in
                             if let x = fingerLocation?.x,
                                x >= 0,
-                               x <= min(proxy.size.width * 0.6, 350) {
+                               x <= bookInnerWidth {
                                 selectedPoem = Int.random(in: 2130..<2625)
                                 #if os(iOS)
                                 HapticFeedback.shared.start(.soft)
