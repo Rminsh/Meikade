@@ -34,6 +34,7 @@ struct PoetsListView {
     }
     
     func getPoets() async {
+        poets.removeAll()
         loading = true
         let service = MeikadeService()
         do {
@@ -102,6 +103,7 @@ extension PoetsListView: View {
         .navigationTitle("Poets")
         #endif
         #if os(iOS)
+        .listStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
         #endif
         .overlay {
