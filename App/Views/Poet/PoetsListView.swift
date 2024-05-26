@@ -115,7 +115,9 @@ extension PoetsListView: View {
             }
         }
         .task {
-            await loadAll()
+            if poets.isEmpty {
+                await loadAll()
+            }
         }
     }
     

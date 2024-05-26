@@ -74,7 +74,9 @@ extension ExploreView: View {
                 }
         }
         .task {
-            await getExplore()
+            if exploreSections.isEmpty {
+                await getExplore()
+            }
         }
     }
     
