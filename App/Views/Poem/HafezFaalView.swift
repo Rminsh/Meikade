@@ -35,6 +35,39 @@ struct HafezFaalView {
 
 extension HafezFaalView: View {
     var body: some View {
+        VStack(spacing: 0) {
+            book
+            
+            Text("Make a wish and tap for a sign")
+                .customFont(name: .shekasteh, style: .subheadline)
+                .foregroundStyle(.white)
+                .padding(.bottom)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            #if !os(visionOS)
+            Image(.cover)
+                .resizable()
+                .grayscale(1)
+                .aspectRatio(contentMode: .fill)
+                .blur(radius: 5)
+                .padding(-8)
+                .ignoresSafeArea(.all)
+            #endif
+        }
+        .navigationDestination(isPresented: $showPoem) {
+            PoemView(poemType: .poem(id: selectedPoem ?? 0))
+        }
+        #if os(macOS)
+        .navigationTitle("")
+        .toolbarBackground(Color.clear, for: .windowToolbar)
+        #else
+        .navigationTitle("Hafez Divination")
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
+    }
+    
+    var book: some View {
         GeometryReader { proxy in
             let bookHeight = proxy.size.height * 0.8
             let bookInnerWidth = min(proxy.size.width * 0.5, 300)
@@ -127,29 +160,12 @@ extension HafezFaalView: View {
                 .environment(\.layoutDirection , .leftToRight)
             }
         }
-        .background {
-            #if !os(visionOS)
-            Image(.cover)
-                .resizable()
-                .grayscale(1)
-                .aspectRatio(contentMode: .fill)
-                .blur(radius: 5)
-                .padding(-8)
-                .ignoresSafeArea(.all)
-            #endif
-        }
-        .navigationDestination(isPresented: $showPoem) {
-            PoemView(poemType: .poem(id: selectedPoem ?? 0))
-        }
-        .navigationTitle("")
-        #if os(macOS)
-        .presentedWindowStyle(.hiddenTitleBar)
-        .presentedWindowToolbarStyle(.unified(showsTitle: false))
-        #endif
     }
 }
 
 #Preview {
-    HafezFaalView()
-        .environment(\.locale, .init(identifier: "fa"))
+    NavigationStack {
+        HafezFaalView()
+            .environment(\.locale, .init(identifier: "fa"))
+    }
 }
