@@ -58,6 +58,7 @@
 		C6A3A9AC2B3AB2E2002EE6CF /* Behdad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */; };
 		C6A3A9AE2B3AB415002EE6CF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */; };
 		C6A3A9B02B3AB537002EE6CF /* Mikhak.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */; };
+		C6AA9CFC2C0481E50076A20E /* BookSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA9CFB2C0481E50076A20E /* BookSelectorView.swift */; };
 		C6B64CC42C023FF9006E87C7 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B64CC32C023FF9006E87C7 /* HapticFeedback.swift */; };
 		C6C034862B493D0100C6444F /* HafezFaalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034852B493D0100C6444F /* HafezFaalView.swift */; };
 		C6C0349C2B49525800C6444F /* ScalingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */; };
@@ -169,6 +170,7 @@
 		C6A3A9AB2B3AB2E2002EE6CF /* Behdad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Behdad.ttf; sourceTree = "<group>"; };
 		C6A3A9AD2B3AB415002EE6CF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C6A3A9AF2B3AB537002EE6CF /* Mikhak.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mikhak.ttf; sourceTree = "<group>"; };
+		C6AA9CFB2C0481E50076A20E /* BookSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectorView.swift; sourceTree = "<group>"; };
 		C6B64CC32C023FF9006E87C7 /* HapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		C6C034852B493D0100C6444F /* HafezFaalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HafezFaalView.swift; sourceTree = "<group>"; };
 		C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingButtonStyle.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 		C69945FE2B3370E6008D475F /* General */ = {
 			isa = PBXGroup;
 			children = (
+				C6AA9CFB2C0481E50076A20E /* BookSelectorView.swift */,
 				C6B64CC32C023FF9006E87C7 /* HapticFeedback.swift */,
 				C67CCE682B502863002B358B /* RichText.swift */,
 				C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */,
@@ -654,6 +657,7 @@
 				C66359E12B397C5A00F76709 /* Router.swift in Sources */,
 				C67CCE6E2B5050F1002B358B /* NSColor+Extensions.swift in Sources */,
 				C66359E72B398D2900F76709 /* Category.swift in Sources */,
+				C6AA9CFC2C0481E50076A20E /* BookSelectorView.swift in Sources */,
 				C69945BD2B32E8CD008D475F /* MeikadeApp.swift in Sources */,
 				C6404F192B4C72D00096E833 /* TabNavigation.swift in Sources */,
 				C63594122B416C5E00274A70 /* EmptyStateView.swift in Sources */,
