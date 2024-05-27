@@ -61,7 +61,6 @@
 		C6AA9CFC2C0481E50076A20E /* BookSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AA9CFB2C0481E50076A20E /* BookSelectorView.swift */; };
 		C6B64CC42C023FF9006E87C7 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B64CC32C023FF9006E87C7 /* HapticFeedback.swift */; };
 		C6C034862B493D0100C6444F /* HafezFaalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C034852B493D0100C6444F /* HafezFaalView.swift */; };
-		C6C0349C2B49525800C6444F /* ScalingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */; };
 		C6D739F92B49CC3B00FC23DC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */; };
 		C6D739FB2B49CC3B00FC23DC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D739FA2B49CC3B00FC23DC /* SwiftUI.framework */; };
 		C6D739FE2B49CC3B00FC23DC /* WidgetsBudle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D739FD2B49CC3B00FC23DC /* WidgetsBudle.swift */; };
@@ -173,7 +172,6 @@
 		C6AA9CFB2C0481E50076A20E /* BookSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectorView.swift; sourceTree = "<group>"; };
 		C6B64CC32C023FF9006E87C7 /* HapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		C6C034852B493D0100C6444F /* HafezFaalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HafezFaalView.swift; sourceTree = "<group>"; };
-		C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingButtonStyle.swift; sourceTree = "<group>"; };
 		C6D739F12B49AC4300FC23DC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MeikadeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
@@ -423,7 +421,6 @@
 				C6AA9CFB2C0481E50076A20E /* BookSelectorView.swift */,
 				C6B64CC32C023FF9006E87C7 /* HapticFeedback.swift */,
 				C67CCE682B502863002B358B /* RichText.swift */,
-				C6C0349B2B49525800C6444F /* ScalingButtonStyle.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -638,7 +635,6 @@
 				C6404F122B4C71810096E833 /* Panel.swift in Sources */,
 				C69945BF2B32E8CD008D475F /* ExploreView.swift in Sources */,
 				C60801CE2B359A5700AEFE77 /* String+Extensions.swift in Sources */,
-				C6C0349C2B49525800C6444F /* ScalingButtonStyle.swift in Sources */,
 				C611556D2B3A0C830058E72A /* VersesThemeView.swift in Sources */,
 				C69946002B3370EF008D475F /* CustomFont.swift in Sources */,
 				C67CCE662B4FDB57002B358B /* Verse+Extensions.swift in Sources */,
