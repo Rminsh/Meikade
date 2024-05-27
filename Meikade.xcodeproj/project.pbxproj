@@ -28,7 +28,7 @@
 		C66359E32B398CA200F76709 /* Poet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E22B398CA200F76709 /* Poet.swift */; };
 		C66359E52B398CF800F76709 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E42B398CF800F76709 /* Poem.swift */; };
 		C66359E72B398D2900F76709 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66359E62B398D2900F76709 /* Category.swift */; };
-		C67CCE642B4F377D002B358B /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, ); productRef = C67CCE632B4F377D002B358B /* RichTextKit */; };
+		C67CCE642B4F377D002B358B /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = C67CCE632B4F377D002B358B /* RichTextKit */; };
 		C67CCE662B4FDB57002B358B /* Verse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */; };
 		C67CCE672B4FDB5C002B358B /* Verse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE652B4FDB57002B358B /* Verse+Extensions.swift */; };
 		C67CCE692B502863002B358B /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67CCE682B502863002B358B /* RichText.swift */; };

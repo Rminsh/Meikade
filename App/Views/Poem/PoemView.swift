@@ -201,7 +201,7 @@ extension PoemView {
     
     var poemVerses: some View {
         Group {
-            #if os(visionOS) || os(macOS)
+            #if os(macOS)
             Group {
                 ForEach(verses, id: \.id) { verse in
                     if let verseText = verse.text {

@@ -5,7 +5,6 @@
 //  Created by Armin on 1/11/24.
 //
 
-#if !os(visionOS)
 import SwiftUI
 import RichTextKit
 
@@ -48,4 +47,3 @@ struct RichText: UXViewRepresentable {
 #Preview {
     RichText(NSAttributedString("Hello world"))
 }
-#endif
