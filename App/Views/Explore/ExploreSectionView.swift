@@ -15,8 +15,10 @@ struct ExploreSectionView<Content: View>: View {
             if #available(iOS 17.0, macOS 14.0, visionOS 1.0, *) {
                 ScrollView(.horizontal) {
                     content()
+                        .scrollTargetLayout()
                 }
                 .scrollClipDisabled()
+                .scrollTargetBehavior(.viewAligned)
             } else {
                 ScrollView(.horizontal) {
                     content()

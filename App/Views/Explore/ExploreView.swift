@@ -97,7 +97,7 @@ extension ExploreView: View {
             ForEach(exploreSections, id: \.id) { section in
                 Section {
                     ExploreSectionView {
-                        HStack {
+                        LazyHStack {
                             ForEach(section.modelData, id: \.id) { item in
                                 Button {
                                     path.append(item.link)
