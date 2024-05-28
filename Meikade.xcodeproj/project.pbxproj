@@ -1035,7 +1035,7 @@
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.3;
+				minimumVersion = 1.1.4;
 			};
 		};
 		C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */ = {
@@ -1059,7 +1059,7 @@
 			repositoryURL = "https://github.com/kean/Nuke/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 12.5.0;
+				minimumVersion = 12.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
