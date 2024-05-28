@@ -150,7 +150,9 @@ extension PoetView: View {
             emptyStateView
         }
         .task {
-            await getPoet()
+            if poet == nil || categories.isEmpty {
+                await getPoet()
+            }
         }
     }
     
