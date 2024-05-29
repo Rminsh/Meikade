@@ -43,7 +43,7 @@ struct CatrgoriesListView {
 
 extension CatrgoriesListView: View {
     var body: some View {
-        Form {
+        List {
             ForEach(categories, id: \.self) { category in
                 NavigationLink {
                     RouterView(
@@ -58,12 +58,16 @@ extension CatrgoriesListView: View {
         }
         #if os(macOS)
         .navigationTitle("")
+        .listStyle(.inset(alternatesRowBackgrounds: true))
+        .environment(\.defaultMinListRowHeight, 32)
         #else
         .navigationTitle(title)
         #endif
+        #if os(iOS)
+        .listStyle(.plain)
+        #endif
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay(emptyStateView)
-        .formStyle(.grouped)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(title)
