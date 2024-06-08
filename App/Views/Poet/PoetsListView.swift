@@ -42,7 +42,9 @@ struct PoetsListView {
                 limit: 100,
                 offset: 0,
                 typeID: selectedType ?? 0
-            )
+            ).sorted {
+                $0.title.localizedStandardCompare($1.title) == .orderedAscending
+            }
             
             if poets.isEmpty {
                 emptyState = .poetEmpty
