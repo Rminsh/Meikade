@@ -84,16 +84,16 @@ extension PoetsListView: View {
                                     }
                                 }
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 48, height: 48)
+                                .frame(width: 42, height: 42)
                                 .clipShape(.circle)
                                 .shadow(radius: 1)
                             }
                             
                             Text(poet.title)
                                 .customFont(style: .body)
-                                .padding(5)
                         }
                     }
+                    .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
                 }
             }
         }
