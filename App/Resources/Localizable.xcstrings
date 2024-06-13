@@ -149,7 +149,7 @@
       }
     },
     "Network error" : {
-      "comment" : "Invalid URL\n   no response",
+      "comment" : "Invalid URL\nno response",
       "localizations" : {
         "fa" : {
           "stringUnit" : {
@@ -300,6 +300,7 @@
       }
     },
     "Unexpected Status Code (status) occured" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fa" : {
           "stringUnit" : {
