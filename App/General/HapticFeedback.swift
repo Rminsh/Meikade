@@ -23,6 +23,7 @@ struct HapticFeedback {
         case warning
     }
     
+    @MainActor
     func start(_ type: HapticType) -> Void {
         switch type {
         case .light:

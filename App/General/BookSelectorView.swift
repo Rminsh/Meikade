@@ -119,7 +119,9 @@ extension BookSelectorView: View {
                                x <= bookInnerWidth {
                                 selectedPoem = Int.random(in: 2130..<2625)
                                 #if os(iOS)
-                                HapticFeedback.shared.start(.soft)
+                                DispatchQueue.main.async {
+                                    HapticFeedback.shared.start(.soft)
+                                }
                                 #endif
                             }
                         }
