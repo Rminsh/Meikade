@@ -23,14 +23,17 @@ enum Router {
 }
 
 extension Router {
-    static let poemRegex = /page\:\/poet\?id\=(\d+).+poemId\=(\d+)/
-    static let onlineList = /popup\:\/lists\/online\?listId\=(\d+)/
-    static let categoriesRegex = /page\:\/poet\?id\=(\d+).+catId\=(\d+)/
+    /// poemRegex = /page\:\/poet\?id\=(\d+).+poemId\=(\d+)/
+    /// onlineList = /popup\:\/lists\/online\?listId\=(\d+)/
+    /// categoriesRegex = /page\:\/poet\?id\=(\d+).+catId\=(\d+)/
     
     static func parse(link: String) async -> Router? {
-        if let result = link.wholeMatch(of: poemRegex), let poemID = Int(result.2) {
+        if let result = link.wholeMatch(of: /page\:\/poet\?id\=(\d+).+poemId\=(\d+)/),
+           let poemID = Int(result.2) {
             return .poem(poemID: poemID)
-        } else if let result = link.wholeMatch(of: categoriesRegex), let poetID = Int(result.1), let catID = Int(result.2) {
+        } else if let result = link.wholeMatch(of: /page\:\/poet\?id\=(\d+).+catId\=(\d+)/),
+                  let poetID = Int(result.1),
+                  let catID = Int(result.2) {
             return .categories(poetID: poetID, parentID: catID)
         } else {
             return nil
