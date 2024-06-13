@@ -52,7 +52,7 @@ extension CatrgoriesListView: View {
                     )
                 } label: {
                     Text(category.title)
-                        .customFont(style: .body)
+                        .font(.customFont(style: .body))
                 }
             }
         }
@@ -71,7 +71,7 @@ extension CatrgoriesListView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(title)
-                    .customFont(style: .title3, weight: .bold)
+                    .font(.customFont(style: .title3, weight: .bold))
             }
         }
         .task {
@@ -81,6 +81,7 @@ extension CatrgoriesListView: View {
         }
     }
     
+    @MainActor
     var emptyStateView: some View {
         Group {
             if !loading && categories.isEmpty, let emptyState {

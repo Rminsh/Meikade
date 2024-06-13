@@ -88,6 +88,7 @@ extension RouterView: View {
         }
     }
     
+    @MainActor
     var emptyState: some View {
         Group {
             if loading {

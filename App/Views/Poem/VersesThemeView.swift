@@ -42,10 +42,10 @@ extension VersesThemeView: View {
                         #else
                         .padding(4)
                         #endif
-                        .customFont(
+                        .font(.customFont(
                             name: Fonts(rawValue: font.rawValue) ?? .vazirmatn,
                             style: .subheadline
-                        )
+                        ))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .contentShape(Rectangle())
                 }

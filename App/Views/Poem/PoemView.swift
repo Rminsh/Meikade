@@ -162,20 +162,20 @@ extension PoemView {
                 ToolbarItem(placement: .principal) {
                     VStack {
                         Text(subtitle)
-                            .customFont(style: .subheadline)
+                            .font(.customFont(style: .subheadline))
                         
                         Text(title)
-                            .customFont(style: .headline, weight: .bold)
+                            .font(.customFont(style: .headline, weight: .bold))
                     }
                 }
                 #elseif os(visionOS)
                 ToolbarItem(placement: .principal) {
                     VStack(alignment: .leading) {
                         Text(subtitle)
-                            .customFont(style: .subheadline)
+                            .font(.customFont(style: .subheadline))
                         
                         Text(title)
-                            .customFont(style: .headline, weight: .bold)
+                            .font(.customFont(style: .headline, weight: .bold))
                     }
                 }
                 #endif
@@ -218,10 +218,7 @@ extension PoemView {
                 }
             }
             .textSelection(.enabled)
-            .customFont(
-                name: selectedFont,
-                style: .title3
-            )
+            .font(.customFont(name: selectedFont, style: .title3))
             .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
             .frame(maxWidth: 650)
             .frame(maxWidth: .infinity)
@@ -242,12 +239,12 @@ extension PoemView {
             if description != "" {
                 Section {
                     Text(description)
-                        .customFont(style: .body)
+                        .font(.customFont(style: .body))
                         .frame(maxWidth: 650)
                         .frame(maxWidth: .infinity)
                 } header: {
                     Text("Phrase")
-                        .customFont(style: .body)
+                        .font(.customFont(style: .body))
                 }
                 .listSectionSeparator(.hidden, edges: .bottom)
                 .padding(.horizontal)

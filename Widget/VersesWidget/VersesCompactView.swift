@@ -32,7 +32,7 @@ extension VersesCompactView: View {
                     ForEach(poem.verses, id: \.id) { verse in
                         if let verseText = verse.text {
                             Text(verseText)
-                                .customFont(name: .dimaShekasteh, style: .body)
+                                .font(.customFont(name: .dimaShekasteh, style: .body))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.55)
                                 .shadow(radius: 5)

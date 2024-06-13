@@ -53,6 +53,7 @@ extension VersesView: View {
         .overlay(Color.black.opacity(0.35))
     }
     
+    @MainActor
     var content: some View {
         VStack {
             if let poem = entry.poem {
@@ -60,7 +61,7 @@ extension VersesView: View {
                     ForEach(poem.verses, id: \.id) { verse in
                         if let verseText = verse.text {
                             Text(verseText)
-                                .customFont(name: .dimaShekasteh, style: .callout)
+                                .font(.customFont(name: .dimaShekasteh, style: .callout))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.4)
                                 .shadow(radius: 5)
@@ -76,7 +77,7 @@ extension VersesView: View {
                 HStack {
                     Text(poem.poem.title)
                         .foregroundStyle(.secondary)
-                        .customFont(style: .caption2)
+                        .font(.customFont(style: .caption2))
                         .lineLimit(1)
                         .minimumScaleFactor(0.4)
                     
@@ -84,7 +85,7 @@ extension VersesView: View {
                     
                     Text(poem.poet.name)
                         .foregroundStyle(.secondary)
-                        .customFont(style: .caption2, weight: .bold)
+                        .font(.customFont(style: .caption2, weight: .bold))
                         .lineLimit(1)
                         .minimumScaleFactor(0.4)
                 }

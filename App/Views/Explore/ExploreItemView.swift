@@ -31,13 +31,13 @@ struct ExploreItemView: View {
             
             VStack(alignment: .leading) {
                 Text(item.title)
-                    .customFont(style: .body)
+                    .font(.customFont(style: .body))
                     .fontWeight(.semibold)
                     .lineLimit(2)
                     .foregroundStyle(.primary)
                 
                 Text(item.subtitle)
-                    .customFont(style: .body)
+                    .font(.customFont(style: .body))
                     .foregroundStyle(.secondary)
             }
             .frame(width: 130, alignment: .leading)

@@ -90,7 +90,7 @@ extension PoetsListView: View {
                             }
                             
                             Text(poet.title)
-                                .customFont(style: .body)
+                                .font(.customFont(style: .body))
                         }
                     }
                     .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
@@ -123,11 +123,12 @@ extension PoetsListView: View {
         }
     }
     
+    @MainActor
     var poetTypes: some View {
         Picker("Poet Types", selection: $selectedType) {
             ForEach(types, id: \.id) { type in
                 Text(LocalizedStringKey(type.nameEN))
-                    .customFont(style: .body)
+                    .font(.customFont(style: .body))
                     .tag(type.id)
             }
         }
@@ -163,6 +164,7 @@ extension PoetsListView: View {
         #endif
     }
     
+    @MainActor
     var emptyStateView: some View {
         Group {
             if !loading && poets.isEmpty , let emptyState {

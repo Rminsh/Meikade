@@ -21,7 +21,7 @@ extension HafezFaalView: View {
             )
             
             Text("Make a wish and tap for a sign")
-                .customFont(name: .shekasteh, style: .subheadline)
+                .font(.customFont(name: .shekasteh, style: .subheadline))
                 .foregroundStyle(.white)
                 .padding(.bottom)
         }

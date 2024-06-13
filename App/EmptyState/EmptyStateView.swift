@@ -22,15 +22,15 @@ struct EmptyStateView: View {
             if #available(iOS 17.0, macOS 14.0, visionOS 1.0, *) {
                 ContentUnavailableView {
                     Label(title, systemImage: icon)
-                        .customFont(style: .largeTitle)
+                        .font(.customFont(style: .largeTitle))
                 } description: {
                     Text(description)
-                        .customFont(style: .headline)
+                        .font(.customFont(style: .headline))
                 } actions: {
                     if let actionTitle, let action, showAction {
                         Button(action: action) {
                             Text(actionTitle)
-                                .customFont(style: .body)
+                                .font(.customFont(style: .body))
                         }
                     }
                 }
@@ -54,7 +54,7 @@ struct EmptyStateView: View {
                 
             
             Text(title)
-                .customFont(style: .largeTitle)
+                .font(.customFont(style: .largeTitle))
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .padding(.all, 12)
@@ -65,13 +65,13 @@ struct EmptyStateView: View {
                 #endif
             
             Text(description)
-                .customFont(style: .headline)
+                .font(.customFont(style: .headline))
                 .foregroundStyle(.secondary)
             
             if let actionTitle, let action, showAction {
                 Button(action: action) {
                     Text(actionTitle)
-                        .customFont(style: .body)
+                        .font(.customFont(style: .body))
                 }
                 .padding(.top, 6)
             }

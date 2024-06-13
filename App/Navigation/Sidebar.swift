@@ -17,7 +17,7 @@ struct Sidebar: View {
                 ForEach(Panel.allCases, id: \.self) { item in
                     NavigationLink(value: item) {
                         Label(item.title, systemImage: item.icon)
-                            .customFont(style: .body)
+                            .font(.customFont(style: .body))
                     }
                 }
             }

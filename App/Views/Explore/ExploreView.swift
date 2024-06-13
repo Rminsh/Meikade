@@ -92,6 +92,7 @@ extension ExploreView: View {
             .foregroundStyle(.accent.gradient)
     }
     
+    @MainActor
     var content: some View {
         List {
             ForEach(exploreSections, id: \.id) { section in
@@ -117,7 +118,7 @@ extension ExploreView: View {
                     }
                 } header: {
                     Text(section.section)
-                        .customFont(style: .body)
+                        .font(.customFont(style: .body))
                         #if os(iOS)
                         .padding(.horizontal)
                         #endif
@@ -143,6 +144,7 @@ extension ExploreView: View {
         }
     }
     
+    @MainActor
     var emptyStateView: some View {
         Group {
             if !loading && exploreSections.isEmpty, let emptyState {

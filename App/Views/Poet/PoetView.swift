@@ -71,7 +71,7 @@ extension PoetView: View {
                         if poet.description != "" && poet.description != "null" {
                             VStack(spacing: 5) {
                                 Text(poet.description)
-                                    .customFont(style: .body)
+                                    .font(.customFont(style: .body))
                                     .lineLimit(descriptionExpanded ? nil : 3)
                                     .environment(\.layoutDirection, poet.description.isRTL ? .rightToLeft : .leftToRight)
                                 
@@ -85,7 +85,7 @@ extension PoetView: View {
                                         systemImage: descriptionExpanded ? "chevron.up" : "chevron.down"
                                     )
                                     .labelStyle(.iconOnly)
-                                    .customFont(style: .caption1)
+                                    .font(.customFont(style: .caption1))
                                 }
                             }
                         }
@@ -113,7 +113,7 @@ extension PoetView: View {
                         .shadow(radius: 1)
                         
                         Text(poet.name)
-                            .customFont(style: .title1, weight: .bold)
+                            .font(.customFont(style: .title1, weight: .bold))
                     }
                     .foregroundStyle(.primary)
                     .frame(maxWidth: .infinity)
@@ -129,7 +129,7 @@ extension PoetView: View {
                                 )
                             } label: {
                                 Text(category.title)
-                                    .customFont(style: .body)
+                                    .font(.customFont(style: .body))
                                     .padding(2)
                             }
                         }
@@ -156,6 +156,7 @@ extension PoetView: View {
         }
     }
     
+    @MainActor
     var emptyStateView: some View {
         Group {
             if !loading && poet == nil, let emptyState {
