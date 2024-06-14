@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Poem: Codable {
+struct Poem: Codable, Sendable {
     let poem: PoemDetail
     let poet: Poet
     let verses: [Verse]
@@ -71,7 +71,7 @@ extension Poem {
 }
 
 // MARK: - PoemDetail
-struct PoemDetail: Codable {
+struct PoemDetail: Codable, Sendable {
     let id: Int
     let poetID: Int?
     let categoryID: Int?

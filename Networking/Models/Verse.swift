@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Verse: Codable {
+public struct Verse: Codable, Sendable {
     let id = UUID()
     let verseOrder: Int
     let position: Int

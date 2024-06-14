@@ -9,7 +9,7 @@ import Foundation
 import RegexBuilder
 
 // MARK: - Poet
-struct Poet: Codable, Hashable {
+struct Poet: Codable, Hashable, Sendable {
     let id: Int
     let username: String
     let name: String
@@ -22,7 +22,7 @@ struct Poet: Codable, Hashable {
     let categories: [PoetCategory]?
 }
 
-struct PoetCategory: Codable, Hashable {
+struct PoetCategory: Codable, Hashable, Sendable {
     let id: Int
     let poetID: Int
     let title: String
@@ -77,7 +77,7 @@ struct PoetDetails: Codable {
 }
 
 // MARK: - Poet type
-struct PoetType: Codable, Hashable, Identifiable {
+struct PoetType: Codable, Hashable, Identifiable, Sendable {
     let id: Int?
     let name: String
     let nameEN: String
