@@ -20,7 +20,6 @@
 		C645507C2B551C1F00A6D190 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C645507B2B551C1F00A6D190 /* UINavigationController+Extensions.swift */; };
 		C64749C52B3C0E1100AD4807 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C42B3C0E1100AD4807 /* EmptyState.swift */; };
 		C64749C82B3C1D3C00AD4807 /* PoetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64749C72B3C1D3C00AD4807 /* PoetsListView.swift */; };
-		C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */; };
 		C660DD4F2B57094600CEAE55 /* MuzeiSwiftAPI in Frameworks */ = {isa = PBXBuildFile; productRef = C660DD4E2B57094600CEAE55 /* MuzeiSwiftAPI */; };
 		C660DD512B570DFF00CEAE55 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660DD502B570DFF00CEAE55 /* ImageFetcher.swift */; };
 		C660DD522B570DFF00CEAE55 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660DD502B570DFF00CEAE55 /* ImageFetcher.swift */; };
@@ -93,6 +92,7 @@
 		C6D73A2C2B49D77300FC23DC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60801CD2B359A5700AEFE77 /* String+Extensions.swift */; };
 		C6E9FFD72B47F04A00759894 /* Shekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */; };
 		C6E9FFD82B47F04A00759894 /* DimaShekasteh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */; };
+		C6EA39742C25EC5A002395A3 /* NSSegmentedControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA39732C25EC53002395A3 /* NSSegmentedControl+Extensions.swift */; };
 		C6F5647A2B4E97F000D2C97A /* VersesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F564792B4E97F000D2C97A /* VersesView.swift */; };
 		C6F6DC262B3CC6B700EF1493 /* PoetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6DC252B3CC6B700EF1493 /* PoetView.swift */; };
 		C6FB779C2B3EB8A70053B93D /* CatrgoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */; };
@@ -185,6 +185,7 @@
 		C6D73A292B49D64C00FC23DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6E9FFD52B47F04A00759894 /* Shekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shekasteh.ttf; sourceTree = "<group>"; };
 		C6E9FFD62B47F04A00759894 /* DimaShekasteh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DimaShekasteh.ttf; sourceTree = "<group>"; };
+		C6EA39732C25EC53002395A3 /* NSSegmentedControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSegmentedControl+Extensions.swift"; sourceTree = "<group>"; };
 		C6F564792B4E97F000D2C97A /* VersesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesView.swift; sourceTree = "<group>"; };
 		C6F6DC252B3CC6B700EF1493 /* PoetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetView.swift; sourceTree = "<group>"; };
 		C6FB779B2B3EB8A70053B93D /* CatrgoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatrgoriesListView.swift; sourceTree = "<group>"; };
@@ -199,7 +200,6 @@
 				C69945EB2B334B26008D475F /* Nuke in Frameworks */,
 				C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */,
 				C67CCE642B4F377D002B358B /* RichTextKit in Frameworks */,
-				C64749CB2B3C549A00AD4807 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				C67CCE6D2B5050F1002B358B /* NSColor+Extensions.swift */,
+				C6EA39732C25EC53002395A3 /* NSSegmentedControl+Extensions.swift */,
 				C645507B2B551C1F00A6D190 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
@@ -517,7 +518,6 @@
 				C69945EA2B334B26008D475F /* Nuke */,
 				C69945EC2B334B26008D475F /* NukeExtensions */,
 				C69945EE2B334B26008D475F /* NukeUI */,
-				C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */,
 				C67CCE632B4F377D002B358B /* RichTextKit */,
 			);
 			productName = Meikade;
@@ -574,7 +574,6 @@
 			mainGroup = C69945B02B32E8CD008D475F;
 			packageReferences = (
 				C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */,
-				C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				C67CCE622B4F377D002B358B /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */,
 			);
@@ -650,6 +649,7 @@
 				C660DD512B570DFF00CEAE55 /* ImageFetcher.swift in Sources */,
 				C6A2E0202B41846A002256B8 /* ExploreSectionView.swift in Sources */,
 				C69945D82B333A3F008D475F /* HTTPClient.swift in Sources */,
+				C6EA39742C25EC5A002395A3 /* NSSegmentedControl+Extensions.swift in Sources */,
 				C66359E12B397C5A00F76709 /* Router.swift in Sources */,
 				C67CCE6E2B5050F1002B358B /* NSColor+Extensions.swift in Sources */,
 				C66359E72B398D2900F76709 /* Category.swift in Sources */,
@@ -1030,14 +1030,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.4;
-			};
-		};
 		C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Rminsh/MuzeiSwiftAPI.git";
@@ -1065,11 +1057,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C64749CA2B3C549A00AD4807 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C64749C92B3C549A00AD4807 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = SwiftUIIntrospect;
-		};
 		C660DD4E2B57094600CEAE55 /* MuzeiSwiftAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C660DD4D2B57094600CEAE55 /* XCRemoteSwiftPackageReference "MuzeiSwiftAPI" */;

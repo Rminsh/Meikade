@@ -5,7 +5,7 @@
 //  Created by Armin on 1/15/24.
 //
 
-#if os(iOS) || os(visionOS)
+#if canImport(UIKit)
 import UIKit
 
 extension UINavigationController {
@@ -14,6 +14,7 @@ extension UINavigationController {
         navigationBar.topItem?.backButtonDisplayMode = .minimal
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.clear]
         
+        // Tabbar custom appearance
         let tabBarAppearance = UITabBarAppearance()
         let fontAttribute: [NSAttributedString.Key : Any] = [.font: UXFont.custom(style: .caption2)]
         tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = fontAttribute
@@ -24,6 +25,9 @@ extension UINavigationController {
         tabBarAppearance.inlineLayoutAppearance.selected.titleTextAttributes = fontAttribute
         tabBarController?.tabBar.standardAppearance = tabBarAppearance
         tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
+        
+        // Segmented picker appearance
+        UISegmentedControl.appearance().setTitleTextAttributes([.font: UXFont.custom(style: .caption1)], for: .normal)
     }
 }
 #endif

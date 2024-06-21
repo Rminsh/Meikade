@@ -7,7 +7,6 @@
 
 import NukeUI
 import SwiftUI
-@_spi(Advanced) import SwiftUIIntrospect
 
 struct PoetsListView {
     @State var types: [PoetType] = []
@@ -133,22 +132,6 @@ extension PoetsListView: View {
             }
         }
         .pickerStyle(.segmented)
-        #if os(iOS) || os(visionOS)
-        .introspect(
-            .picker(style: .segmented),
-            on: .iOS(.v16...), .visionOS(.v1...)
-        ) { item in
-            let font = UXFont.custom(style: .caption1)
-            item.setTitleTextAttributes(
-                [NSAttributedString.Key.font: font],
-                for: .normal
-            )
-        }
-        #elseif os(macOS)
-        .introspect(.picker(style: .segmented), on: .macOS(.v13...)) { item in
-            item.font = UXFont.custom(style: .body)
-        }
-        #endif
         #if os(visionOS)
         .onChange(of: selectedType) {
             Task {
