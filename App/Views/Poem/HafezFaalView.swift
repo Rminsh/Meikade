@@ -47,7 +47,9 @@ extension HafezFaalView: View {
         .navigationDestination(isPresented: $showPoem) {
             if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
                 PoemView(poemType: .poem(id: selectedPoem ?? 0))
+                    #if !os(macOS)
                     .navigationTransition(.zoom(sourceID: 1, in: container))
+                    #endif
             } else {
                 PoemView(poemType: .poem(id: selectedPoem ?? 0))
             }
