@@ -15,6 +15,8 @@ struct ExploreView {
     @State var loading: Bool = false
     @State var emptyState: EmptyState? = nil
     
+    @Namespace var container
+    
     func getExplore() async {
         loading = true
         
@@ -103,7 +105,12 @@ extension ExploreView: View {
                                 Button {
                                     path.append(item.link)
                                 } label: {
-                                    ExploreItemView(item: item)
+                                    if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
+                                        ExploreItemView(item: item)
+                                            .matchedTransitionSource(id: item.link, in: container)
+                                    } else {
+                                        ExploreItemView(item: item)
+                                    }
                                 }
                                 #if os(visionOS)
                                 .buttonBorderShape(.roundedRectangle(radius: 21))
@@ -140,7 +147,14 @@ extension ExploreView: View {
         .listStyle(.grouped)
         #endif
         .navigationDestination(for: String.self) { link in
-            RouterView(link: link)
+            if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
+                RouterView(link: link)
+                    #if !os(macOS)
+                    .navigationTransition(.zoom(sourceID: link, in: container))
+                    #endif
+            } else {
+                RouterView(link: link)
+            }
         }
     }
     
