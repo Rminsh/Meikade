@@ -10,6 +10,7 @@ import SwiftUI
 struct HafezFaalView {
     @State private var showPoem = false
     @State private var selectedPoem: Int? = nil
+    @Namespace var container
 }
 
 extension HafezFaalView: View {
@@ -19,6 +20,12 @@ extension HafezFaalView: View {
                 showDetail: $showPoem,
                 selectedPoem: $selectedPoem
             )
+            .background {
+                if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
+                    Color.clear
+                        .matchedTransitionSource(id: 1, in: container)
+                }
+            }
             
             Text("Make a wish and tap for a sign")
                 .font(.customFont(name: .shekasteh, style: .subheadline))
@@ -38,7 +45,12 @@ extension HafezFaalView: View {
             #endif
         }
         .navigationDestination(isPresented: $showPoem) {
-            PoemView(poemType: .poem(id: selectedPoem ?? 0))
+            if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
+                PoemView(poemType: .poem(id: selectedPoem ?? 0))
+                    .navigationTransition(.zoom(sourceID: 1, in: container))
+            } else {
+                PoemView(poemType: .poem(id: selectedPoem ?? 0))
+            }
         }
         #if os(macOS)
         .navigationTitle("")
