@@ -117,12 +117,12 @@ extension BookSelectorView: View {
                             if let x = fingerLocation?.x,
                                x >= 0,
                                x <= bookInnerWidth {
-                                selectedPoem = Int.random(in: 2130..<2625)
-                                #if os(iOS)
                                 DispatchQueue.main.async {
+                                    selectedPoem = Int.random(in: 2130..<2625)
+                                    #if os(iOS)
                                     HapticFeedback.shared.start(.soft)
+                                    #endif
                                 }
-                                #endif
                             }
                         }
                 }

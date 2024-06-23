@@ -84,7 +84,10 @@ struct PoemView: View {
     }
     
     func getPoem(id: Int) async {
-        loading = true
+        DispatchQueue.main.async {
+            loading = true
+        }
+        
         let service = MeikadeService()
         do {
             let poem = try await service.getPoem(
@@ -92,13 +95,16 @@ struct PoemView: View {
                 verseLimit: 200,
                 verseOffset: 0
             )
-            title = poem.poem.title
-            subtitle = poem.poet.name
-            verses = poem.verses
-            description = poem.poem.phrase ?? ""
             
-            if poem.verses.isEmpty {
-                emptyState = .poemEmpty
+            DispatchQueue.main.async {
+                title = poem.poem.title
+                subtitle = poem.poet.name
+                verses = poem.verses
+                description = poem.poem.phrase ?? ""
+                
+                if poem.verses.isEmpty {
+                    emptyState = .poemEmpty
+                }
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)
@@ -106,11 +112,16 @@ struct PoemView: View {
             print(error)
             #endif
         }
-        loading = false
+        DispatchQueue.main.async {
+            loading = false
+        }
     }
     
     func getRandomPoem() async {
-        loading = true
+        DispatchQueue.main.async {
+            loading = true
+        }
+        
         let service = MeikadeService()
         do {
             let poem = try await service.getRandomPoem(
@@ -118,13 +129,15 @@ struct PoemView: View {
                 verseOffset: 0
             )
             
-            title = poem.poem.title
-            subtitle = poem.poet.name
-            verses = poem.verses
-            description = poem.poem.phrase ?? ""
-            
-            if poem.verses.isEmpty {
-                emptyState = .poemEmpty
+            DispatchQueue.main.async {
+                title = poem.poem.title
+                subtitle = poem.poet.name
+                verses = poem.verses
+                description = poem.poem.phrase ?? ""
+                
+                if poem.verses.isEmpty {
+                    emptyState = .poemEmpty
+                }
             }
         } catch {
             emptyState = .network(subtitle: error.localizedDescription)
@@ -132,7 +145,10 @@ struct PoemView: View {
             print(error)
             #endif
         }
-        loading = false
+        
+        DispatchQueue.main.async {
+            loading = false
+        }
     }
 }
 
