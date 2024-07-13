@@ -5,7 +5,6 @@
 //  Created by Armin on 1/8/24.
 //
 
-#if !os(macOS)
 import SwiftUI
 
 struct TabNavigation: View {
@@ -31,4 +30,3 @@ struct TabNavigation: View {
 #Preview {
     TabNavigation()
 }
-#endif
