@@ -19,7 +19,7 @@ struct EmptyStateView: View {
     
     var body: some View {
         Group {
-            if #available(iOS 17.0, macOS 14.0, visionOS 1.0, *) {
+            if #available(iOS 17.0, macOS 14.0, visionOS 1.0, watchOS 10.0, *) {
                 ContentUnavailableView {
                     Label(title, systemImage: icon)
                         .font(.customFont(style: .largeTitle))

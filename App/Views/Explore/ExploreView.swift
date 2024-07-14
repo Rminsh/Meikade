@@ -105,7 +105,7 @@ extension ExploreView: View {
                                 Button {
                                     path.append(item.link)
                                 } label: {
-                                    if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
+                                    if #available(iOS 18.0, macOS 15.0, visionOS 2.0, watchOS 11.0, *) {
                                         ExploreItemView(item: item)
                                             .matchedTransitionSource(id: item.link, in: container)
                                     } else {
@@ -147,7 +147,7 @@ extension ExploreView: View {
         .listStyle(.grouped)
         #endif
         .navigationDestination(for: String.self) { link in
-            if #available(iOS 18.0, macOS 15.0, visionOS 2.0, *) {
+            if #available(iOS 18.0, macOS 15.0, visionOS 2.0, watchOS 11.0, *) {
                 RouterView(link: link)
                     #if !os(macOS)
                     .navigationTransition(.zoom(sourceID: link, in: container))

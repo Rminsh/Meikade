@@ -21,7 +21,9 @@ struct Sidebar: View {
                     }
                 }
             }
+            #if !os(watchOS)
             .listStyle(.sidebar)
+            #endif
             .navigationTitle("")
         } detail: {
             selection?.view()
