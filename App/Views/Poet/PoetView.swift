@@ -71,8 +71,13 @@ extension PoetView: View {
                         if poet.description != "" && poet.description != "null" {
                             VStack(spacing: 5) {
                                 Text(poet.description)
+                                    #if os(watchOS)
+                                    .font(.customFont(style: .callout))
+                                    .lineLimit(descriptionExpanded ? nil : 2)
+                                    #else
                                     .font(.customFont(style: .body))
                                     .lineLimit(descriptionExpanded ? nil : 3)
+                                    #endif
                                     .environment(\.layoutDirection, poet.description.isRTL ? .rightToLeft : .leftToRight)
                                 
                                 Button {
@@ -90,7 +95,9 @@ extension PoetView: View {
                             }
                         }
                     }
+                    #if !os(watchOS)
                     .listRowSeparator(.hidden, edges: .bottom)
+                    #endif
                 } header: {
                     VStack {
                         LazyImage(url: URL(string: "https://meikade.com/offlines/thumbs/\(poetID).png")) { state in
@@ -113,7 +120,12 @@ extension PoetView: View {
                         .shadow(radius: 1)
                         
                         Text(poet.name)
+                            #if os(watchOS)
+                            .font(.customFont(style: .title3, weight: .bold))
+                            .padding(.bottom, 5)
+                            #else
                             .font(.customFont(style: .title1, weight: .bold))
+                            #endif
                     }
                     .foregroundStyle(.primary)
                     .frame(maxWidth: .infinity)
@@ -138,7 +150,7 @@ extension PoetView: View {
             }
         }
         .formStyle(.grouped)
-        #if os(iOS)
+        #if os(iOS) || os(watchOS)
         .navigationTitle(poet?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
         #elseif os(macOS)
