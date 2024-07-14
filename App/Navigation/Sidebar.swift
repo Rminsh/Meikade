@@ -21,10 +21,19 @@ struct Sidebar: View {
                     }
                 }
             }
-            #if !os(watchOS)
+            #if os(watchOS)
+            .navigationTitle("Meikade")
+            .containerBackground(for: .navigation) {
+                Image(.cover)
+                    .aspectRatio(contentMode: .fill)
+                    .opacity(0.5)
+                    .blur(radius: 5)
+            }
+            #else
+            .navigationTitle("")
             .listStyle(.sidebar)
             #endif
-            .navigationTitle("")
+            
         } detail: {
             selection?.view()
         }
