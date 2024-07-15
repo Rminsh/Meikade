@@ -227,7 +227,11 @@ extension PoemView {
             poemVerses
             poemDescription
         }
+        #if os(watchOS)
+        .listStyle(.elliptical)
+        #else
         .listStyle(.plain)
+        #endif
     }
     
     var poemVerses: some View {
@@ -266,7 +270,7 @@ extension PoemView {
             #endif
         }
         #if os(watchOS)
-        .listRowBackground(Color.clear)
+        .listItemTint(.clear)
         #else
         .listRowSeparator(.hidden)
         #endif
