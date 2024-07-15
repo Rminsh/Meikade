@@ -161,9 +161,23 @@ extension PoemView {
             .toolbar {
                 ToolbarItem {
                     if shareText != "" {
-                        ShareLink(item: shareText)
+                        ShareLink(item: shareText) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                                .font(.customFont(style: .body))
+                        }
                     }
                 }
+                #if os(watchOS)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {showVersesTheme.toggle()}) {
+                        Label("Theme", systemImage: "textformat.alt")
+                            .font(.customFont(style: .body))
+                    }
+                    .sheet(isPresented: $showVersesTheme) {
+                        VersesThemeView()
+                    }
+                }
+                #else
                 ToolbarItem {
                     Button(action: {showVersesTheme.toggle()}) {
                         Label("Theme", systemImage: "textformat.alt")
@@ -173,6 +187,7 @@ extension PoemView {
                             .presentationDetents([.fraction(0.35), .medium])
                     }
                 }
+                #endif
                 
                 #if os(iOS)
                 ToolbarItem(placement: .principal) {
@@ -217,7 +232,7 @@ extension PoemView {
     
     var poemVerses: some View {
         Group {
-            #if os(macOS)
+            #if os(macOS) || os(watchOS)
             Group {
                 ForEach(verses, id: \.id) { verse in
                     if let verseText = verse.text {
@@ -233,20 +248,28 @@ extension PoemView {
                     }
                 }
             }
+            .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
+            #if os(watchOS)
+            .font(.customFont(name: selectedFont, style: .body))
+            #else
             .textSelection(.enabled)
             .font(.customFont(name: selectedFont, style: .title3))
-            .environment(\.layoutDirection, isRTL ? .rightToLeft : .leftToRight)
             .frame(maxWidth: 650)
             .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .padding(.vertical, 5)
+            #endif
             #else
             RichText(attributedVerses)
                 .frame(maxWidth: 650)
                 .frame(maxWidth: .infinity)
             #endif
         }
+        #if os(watchOS)
+        .listRowBackground(Color.clear)
+        #else
         .listRowSeparator(.hidden)
+        #endif
         .listRowInsets(.init())
     }
     
@@ -262,8 +285,10 @@ extension PoemView {
                     Text("Phrase")
                         .font(.customFont(style: .body))
                 }
+                #if !os(watchOS)
                 .listSectionSeparator(.hidden, edges: .bottom)
                 .padding(.horizontal)
+                #endif
             }
         }
     }
