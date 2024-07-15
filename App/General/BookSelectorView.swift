@@ -32,20 +32,32 @@ struct BookSelectorView {
                 }
             }
     }
+    
+    #if os(watchOS)
+    let maxPageCount: Int = 30
+    let bookThickness: CGFloat = 5
+    #else
+    let maxPageCount: Int = 50
+    let bookThickness: CGFloat = 10
+    #endif
 }
     
 extension BookSelectorView: View {
     var body: some View {
         GeometryReader { proxy in
+            #if os(watchOS)
+            let bookHeight = proxy.size.height
+            #else
             let bookHeight = proxy.size.height * 0.8
+            #endif
             let bookInnerWidth = min(proxy.size.width * 0.5, 300)
             
             ZStack {
                 /// Cover of the book
                 HStack(spacing: 0) {
                     Rectangle()
-                        .fill(Color.accent.gradient)
-                        .frame(maxWidth: 10, maxHeight: bookHeight)
+                        .fill(.book.gradient)
+                        .frame(maxWidth: bookThickness, maxHeight: bookHeight)
                     
                     Rectangle()
                         .fill(
@@ -53,12 +65,12 @@ extension BookSelectorView: View {
                                 gradient: Gradient(
                                     colors: [
                                         .red,
-                                        .accent,
-                                        .accent,
-                                        .accent,
-                                        .accent,
-                                        .accent,
-                                        .accent,
+                                        .book,
+                                        .book,
+                                        .book,
+                                        .book,
+                                        .book,
+                                        .book,
                                         .red,
                                     ]
                                 ),
@@ -69,16 +81,16 @@ extension BookSelectorView: View {
                         .frame(maxWidth: bookInnerWidth, maxHeight: bookHeight)
                     
                     Rectangle()
-                        .fill(Color.accent.gradient)
-                        .frame(maxWidth: 10, maxHeight: proxy.size.height * 0.8)
+                        .fill(.book.gradient)
+                        .frame(maxWidth: bookThickness, maxHeight: bookHeight)
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .clipShape(RoundedRectangle(cornerRadius: bookThickness))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .environment(\.colorScheme , .light)
                 
                 /// Pages of the book
                 HStack(spacing: 0) {
-                    ForEach(0...50, id: \.self) { _ in
+                    ForEach(0...maxPageCount, id: \.self) { _ in
                         Rectangle()
                             .fill(.white)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -87,7 +99,7 @@ extension BookSelectorView: View {
                 }
                 .overlay(alignment: .bottom) {
                     Rectangle()
-                        .fill(.accent.gradient)
+                        .fill(.book.gradient)
                         .environment(\.colorScheme , .light)
                         .frame(maxWidth: 5)
                         .opacity(fingerLocation == nil ? 0 : 1)
@@ -99,13 +111,20 @@ extension BookSelectorView: View {
                 .frame(maxWidth: bookInnerWidth, maxHeight: bookHeight * 0.975)
                 .overlay(alignment: .top) {
                     Image(systemName: "bubble.middle.bottom.fill")
+                        #if os(watchOS)
+                        .font(.system(size: 36))
+                        #else
                         .font(.system(size: 54))
+                        #endif
                         .foregroundStyle(.white)
                         .frame(width: 40, height: 54)
                         .shadow(radius: 2)
                         .overlay(alignment: .center) {
                             if let selectedPoem {
                                 Text((selectedPoem - 2129).formatted())
+                                    #if os(watchOS)
+                                    .font(.footnote)
+                                    #endif
                                     .offset(y: -5)
                                     .foregroundStyle(.black)
                             }

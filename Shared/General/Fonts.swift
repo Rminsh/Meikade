@@ -42,7 +42,11 @@ enum Fonts: String, CaseIterable {
     var pointSize: CGFloat {
         switch self {
         case .dimaShekasteh, .shekasteh:
+            #if os(watchOS)
+            return 1.2
+            #else
             return 1.4
+            #endif
         default:
             return 1
         }

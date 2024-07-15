@@ -28,13 +28,26 @@ extension HafezFaalView: View {
             }
             
             Text("Make a wish and tap for a sign")
+                #if os(watchOS)
+                .font(.customFont(name: .shekasteh, style: .caption2))
+                #else
                 .font(.customFont(name: .shekasteh, style: .subheadline))
-                .foregroundStyle(.white)
                 .padding(.bottom)
+                #endif
+                .foregroundStyle(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        #if os(watchOS)
+        .ignoresSafeArea(edges: .bottom)
+        .containerBackground(for: .navigation) {
+            Image(.cover)
+                .aspectRatio(contentMode: .fill)
+                .grayscale(1)
+                .opacity(0.5)
+                .blur(radius: 5)
+        }
+        #elseif !os(visionOS)
         .background {
-            #if !os(visionOS)
             Image(.cover)
                 .resizable()
                 .grayscale(1)
@@ -42,8 +55,8 @@ extension HafezFaalView: View {
                 .blur(radius: 5)
                 .padding(-8)
                 .ignoresSafeArea(.all)
-            #endif
         }
+        #endif
         .navigationDestination(isPresented: $showPoem) {
             if #available(iOS 18.0, macOS 15.0, visionOS 2.0, watchOS 11.0, *) {
                 PoemView(poemType: .poem(id: selectedPoem ?? 0))
