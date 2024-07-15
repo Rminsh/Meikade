@@ -279,6 +279,16 @@
         }
       }
     },
+    "Share" : {
+      "localizations" : {
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "به اشتراک گذاری"
+          }
+        }
+      }
+    },
     "Theme" : {
       "localizations" : {
         "fa" : {
@@ -300,7 +310,7 @@
       }
     },
     "Unexpected Status Code (status) occured" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "fa" : {
           "stringUnit" : {

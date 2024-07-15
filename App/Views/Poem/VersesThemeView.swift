@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VersesThemeView {
-    
+    @Environment(\.dismiss) var dismiss
     @AppStorage("versesFont") var versesFont: String = Fonts.vazirmatn.rawValue
     
     #if os(macOS)
@@ -29,6 +29,41 @@ struct VersesThemeView {
 extension VersesThemeView: View {
     
     var body: some View {
+        #if os(watchOS)
+        listContent
+        #else
+        gridContent
+        #endif
+    }
+    
+    var listContent: some View {
+        List {
+            ForEach(Fonts.allCases, id:\.hashValue) { font in
+                Button {
+                    versesFont = font.rawValue
+                    dismiss()
+                } label: {
+                    HStack {
+                        Text("Font / قلم")
+                            .font(.customFont(
+                                name: Fonts(rawValue: font.rawValue) ?? .vazirmatn,
+                                style: .subheadline
+                            ))
+                            .foregroundStyle(.white)
+                            .tag(font.rawValue)
+                            .frame(maxWidth: .infinity, maxHeight: 42, alignment: .leading)
+                        
+                        if versesFont == font.rawValue {
+                            Image(systemName: "checkmark")
+                                .foregroundStyle(.white)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    var gridContent: some View {
         LazyVGrid(columns: columns) {
             ForEach(Fonts.allCases, id:\.hashValue) { font in
                 Button {
