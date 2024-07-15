@@ -111,9 +111,15 @@ extension PoetsListView: View {
             emptyStateView
         }
         .toolbar {
+            #if os(watchOS)
+            ToolbarItem {
+                poetTypes
+            }
+            #else
             ToolbarItem(placement: .principal) {
                 poetTypes
             }
+            #endif
         }
         .task {
             if poets.isEmpty {
@@ -124,15 +130,28 @@ extension PoetsListView: View {
     
     @MainActor
     var poetTypes: some View {
-        Picker("Poet Types", selection: $selectedType) {
+        Picker(selection: $selectedType) {
             ForEach(types, id: \.id) { type in
                 Text(LocalizedStringKey(type.nameEN))
                     .font(.customFont(style: .body))
                     .tag(type.id)
+                    #if os(watchOS)
+                    .frame(maxWidth: .infinity)
+                    #endif
             }
+        } label: {
+            Label("Poet Types", systemImage: "person.bust")
+                .font(.customFont(style: .body))
+                #if os(watchOS)
+                .frame(maxWidth: .infinity)
+                #endif
         }
+        #if os(watchOS)
+        .pickerStyle(.navigationLink)
+        #else
         .pickerStyle(.segmented)
-        #if os(visionOS)
+        #endif
+        #if os(visionOS) || os(watchOS)
         .onChange(of: selectedType) {
             Task {
                 await getPoets()
