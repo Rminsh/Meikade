@@ -27,23 +27,36 @@ struct ExploreItemView: View {
                 .frame(width: 64, height: 64)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .shadow(radius: 1)
+                #if os(watchOS)
+                .padding(.vertical)
+                #endif
             }
             
             VStack(alignment: .leading) {
                 Text(item.title)
+                    #if os(watchOS)
+                    .font(.customFont(style: .caption1))
+                    #else
                     .font(.customFont(style: .body))
+                    #endif
                     .fontWeight(.semibold)
                     .lineLimit(2)
                     .foregroundStyle(.primary)
                 
                 Text(item.subtitle)
+                    #if os(watchOS)
+                    .font(.customFont(style: .caption2))
+                    #else
                     .font(.customFont(style: .body))
+                    #endif
                     .foregroundStyle(.secondary)
             }
+            #if !os(watchOS)
             .frame(width: 130, alignment: .leading)
+            #endif
             .frame(maxHeight: .infinity)
         }
-        #if !os(visionOS)
+        #if !os(visionOS) && !os(watchOS)
         .padding()
         #endif
         #if os(iOS)

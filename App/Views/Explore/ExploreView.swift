@@ -46,7 +46,7 @@ extension ExploreView: View {
     var body: some View {
         NavigationStack(path: $path) {
             content
-                #if os(iOS)
+                #if os(iOS) || os(watchOS)
                 .navigationTitle("Meikade")
                 .navigationBarTitleDisplayMode(.inline)
                 #else
@@ -60,12 +60,21 @@ extension ExploreView: View {
                     ToolbarItem(placement: .principal) {
                         logo
                     }
-                    #else
+                    #elseif !os(watchOS)
                     ToolbarItem(placement: .secondaryAction) {
                         logo
                     }
                     #endif
                     
+                    #if os(watchOS)
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            path.append("page:/poem/random")
+                        } label: {
+                            Label("Random Poem", systemImage: "shuffle")
+                        }
+                    }
+                    #else
                     ToolbarItem(placement: .navigation) {
                         Button {
                             path.append("page:/poem/random")
@@ -73,6 +82,7 @@ extension ExploreView: View {
                             Label("Random Poem", systemImage: "shuffle")
                         }
                     }
+                    #endif
                 }
         }
         .task {
@@ -99,6 +109,16 @@ extension ExploreView: View {
         List {
             ForEach(exploreSections, id: \.id) { section in
                 Section {
+                    #if os(watchOS)
+                    ForEach(section.modelData, id: \.id) { item in
+                        Button {
+                            path.append(item.link)
+                        } label: {
+                            ExploreItemView(item: item)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    #else
                     ExploreSectionView {
                         LazyHStack {
                             ForEach(section.modelData, id: \.id) { item in
@@ -123,6 +143,7 @@ extension ExploreView: View {
                         .padding(.horizontal)
                         #endif
                     }
+                    #endif
                 } header: {
                     Text(section.section)
                         .font(.customFont(style: .body))
@@ -130,19 +151,25 @@ extension ExploreView: View {
                         .padding(.horizontal)
                         #endif
                         .padding(.bottom, 2)
+                        #if !os(watchOS)
                         .listRowSeparator(.hidden)
                         .listSectionSeparator(.hidden)
+                        #endif
                 }
+                #if !os(watchOS)
                 .listRowInsets(.init())
                 .listRowSeparator(.hidden)
                 .listSectionSeparator(.hidden)
                 .listSectionSeparatorTint(Color.clear)
                 .listRowSeparatorTint(Color.clear)
                 .listRowBackground(Color.clear)
+                #endif
             }
         }
         #if os(macOS)
         .listStyle(.plain)
+        #elseif os(watchOS)
+        .listStyle(.carousel)
         #else
         .listStyle(.grouped)
         #endif
