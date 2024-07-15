@@ -68,12 +68,14 @@ extension CatrgoriesListView: View {
         #endif
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay(emptyStateView)
+        #if !os(watchOS)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(title)
                     .font(.customFont(style: .title3, weight: .bold))
             }
         }
+        #endif
         .task {
             if categories.isEmpty {
                 await getPoems()
