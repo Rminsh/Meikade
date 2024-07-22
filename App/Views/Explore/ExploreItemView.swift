@@ -24,11 +24,14 @@ struct ExploreItemView: View {
                     }
                 }
                 .aspectRatio(contentMode: .fit)
+                #if os(watchOS)
+                .frame(width: 42, height: 42)
+                .clipShape(.circle)
+                .padding(.vertical)
+                #else
                 .frame(width: 64, height: 64)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .shadow(radius: 1)
-                #if os(watchOS)
-                .padding(.vertical)
                 #endif
             }
             
@@ -76,7 +79,7 @@ struct ExploreItemView: View {
 #Preview {
     ExploreItemView(
         item: .init(
-            title: "Test\ntest",
+            title: "Test",
             subtitle: "test",
             heightRatio: 1,
             image: "https://meikade.com/offlines/thumbs/28.png",
