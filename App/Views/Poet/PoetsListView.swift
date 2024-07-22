@@ -89,13 +89,22 @@ extension PoetsListView: View {
                             }
                             
                             Text(poet.title)
+                                #if os(watchOS)
+                                .font(.customFont(style: .caption1))
+                                #else
                                 .font(.customFont(style: .body))
+                                #endif
                         }
                     }
+                    #if !os(watchOS)
                     .listRowInsets(.init(top: 6, leading: 16, bottom: 6, trailing: 16))
+                    #endif
                 }
             }
         }
+        #if os(watchOS)
+        .listStyle(.carousel)
+        #endif
         #if os(macOS)
         .navigationTitle("")
         .listStyle(.inset(alternatesRowBackgrounds: true))
