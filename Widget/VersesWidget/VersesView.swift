@@ -10,6 +10,7 @@ import WidgetKit
 
 struct VersesView {
     var entry: VersesEntry
+    @Environment(\.widgetRenderingMode) var renderingMode
 }
  
 extension VersesView: View {
@@ -64,7 +65,7 @@ extension VersesView: View {
                                 .font(.customFont(name: .dimaShekasteh, style: .callout))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.4)
-                                .shadow(radius: 5)
+                                .shadow(radius: renderingMode == .fullColor ? 5 : 0)
                                 .frame(
                                     maxWidth: .infinity,
                                     alignment: verse.alignment
@@ -88,13 +89,14 @@ extension VersesView: View {
                         .font(.customFont(style: .caption2, weight: .bold))
                         .lineLimit(1)
                         .minimumScaleFactor(0.4)
+                        .widgetAccentable()
                 }
                 .dynamicTypeSize(.xSmall)
             }
         }
         .foregroundStyle(.white)
         .environment(\.layoutDirection, .rightToLeft)
-        .shadow(radius: 2)
+        .shadow(radius: renderingMode == .fullColor ? 2 : 0)
     }
 }
 
