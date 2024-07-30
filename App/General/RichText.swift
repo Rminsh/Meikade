@@ -23,7 +23,7 @@ struct RichText: UXViewRepresentable {
         label.textContentInset = .init(width: 20, height: 8)
         label.isEditable = false
         label.backgroundColor = .clear
-        
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
     
