@@ -91,7 +91,7 @@
       "size" : "512x512"
     },
     {
-      "filename" : "AppIcon1024x1024 1.png",
+      "filename" : "watchIcon.png",
       "idiom" : "universal",
       "platform" : "watchos",
       "size" : "1024x1024"
