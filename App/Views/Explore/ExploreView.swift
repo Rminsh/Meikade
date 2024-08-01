@@ -119,7 +119,7 @@ extension ExploreView: View {
                         .buttonStyle(.plain)
                     }
                     #else
-                    ExploreSectionView {
+                    ScrollView(.horizontal) {
                         LazyHStack {
                             ForEach(section.modelData, id: \.id) { item in
                                 Button {
@@ -142,7 +142,10 @@ extension ExploreView: View {
                         #if os(iOS)
                         .padding(.horizontal)
                         #endif
+                        .scrollTargetLayout()
                     }
+                    .scrollClipDisabled()
+                    .scrollTargetBehavior(.viewAligned)
                     #endif
                 } header: {
                     Text(section.section)
