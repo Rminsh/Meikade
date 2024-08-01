@@ -142,4 +142,13 @@ extension MeikadeEndpoint: Endpoint {
     var body: [String : Any]? {
         return nil
     }
+    
+    var cachePolicy: URLRequest.CachePolicy {
+        switch self {
+        case .home, .explore:
+            return .reloadRevalidatingCacheData
+        default:
+            return .returnCacheDataElseLoad
+        }
+    }
 }

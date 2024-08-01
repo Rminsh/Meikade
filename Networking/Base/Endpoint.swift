@@ -8,14 +8,15 @@
 import Foundation
 
 public protocol Endpoint {
-    var baseURL:    String            { get }
-    var path:       String            { get }
-    var method:     HTTPMethod        { get }
-    var baseHeader: [String: String]  { get }
-    var header:     [String: String]? { get }
-    var urlParams:  [URLQueryItem]?   { get }
-    var body:       [String: Any]?    { get }
-    var needsToken: Bool              { get }
+    var baseURL:     String                  { get }
+    var path:        String                  { get }
+    var method:      HTTPMethod              { get }
+    var baseHeader:  [String: String]        { get }
+    var header:      [String: String]?       { get }
+    var urlParams:   [URLQueryItem]?         { get }
+    var body:        [String: Any]?          { get }
+    var cachePolicy: URLRequest.CachePolicy  { get }
+    var needsToken:  Bool                    { get }
 }
 
 extension Endpoint {

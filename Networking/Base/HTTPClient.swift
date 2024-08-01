@@ -31,6 +31,7 @@ extension HTTPClient {
         request.httpMethod = endpoint.method.rawValue
         let headerAll = endpoint.baseHeader.merging(endpoint.header ?? [:], uniquingKeysWith: { (first, _) in first })
         request.allHTTPHeaderFields = headerAll
+        request.cachePolicy = endpoint.cachePolicy
         
         if let body = endpoint.body {
             // TODO: Manage this `try` of JSONSerialization error
