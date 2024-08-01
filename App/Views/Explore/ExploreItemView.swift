@@ -23,6 +23,7 @@ struct ExploreItemView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+                .pipeline(.init(configuration: .withDataCache))
                 .aspectRatio(contentMode: .fit)
                 #if os(watchOS)
                 .frame(width: 42, height: 42)

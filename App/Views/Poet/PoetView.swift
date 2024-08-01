@@ -114,6 +114,7 @@ extension PoetView: View {
                                     }
                             }
                         }
+                        .pipeline(.init(configuration: .withDataCache))
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 64, height: 64)
                         .clipShape(.circle)
