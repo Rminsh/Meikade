@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BookSelectorView {
-    @Binding var showDetail: Bool
     @Binding var selectedPoem: Int?
+    @State private var selectedPoemTemp: Int?
     
     @GestureState private var fingerLocation: CGPoint? = nil
     
@@ -27,8 +27,8 @@ struct BookSelectorView {
                 fingerLocation = value.location
             }
             .onEnded { value in
-                if selectedPoem != nil {
-                    showDetail = true
+                if selectedPoemTemp != nil {
+                    selectedPoem = selectedPoemTemp
                 }
             }
     }
@@ -120,8 +120,8 @@ extension BookSelectorView: View {
                         .frame(width: 40, height: 54)
                         .shadow(radius: 2)
                         .overlay(alignment: .center) {
-                            if let selectedPoem {
-                                Text((selectedPoem - 2129).formatted())
+                            if let selectedPoemTemp {
+                                Text((selectedPoemTemp - 2129).formatted())
                                     #if os(watchOS)
                                     .font(.footnote)
                                     #endif
@@ -137,7 +137,7 @@ extension BookSelectorView: View {
                                x >= 0,
                                x <= bookInnerWidth {
                                 DispatchQueue.main.async {
-                                    selectedPoem = Int.random(in: 2130..<2625)
+                                    selectedPoemTemp = Int.random(in: 2130..<2625)
                                     #if os(iOS)
                                     HapticFeedback.shared.start(.soft)
                                     #endif
@@ -154,8 +154,5 @@ extension BookSelectorView: View {
 
 #Preview {
     @State var selectedPoem: Int? = nil
-    return BookSelectorView(
-        showDetail: .constant(false),
-        selectedPoem: $selectedPoem
-    )
+    return BookSelectorView(selectedPoem: $selectedPoem)
 }

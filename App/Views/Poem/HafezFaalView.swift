@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HafezFaalView {
-    @State private var showPoem = false
     @State private var selectedPoem: Int? = nil
     @Namespace var container
 }
@@ -16,16 +15,13 @@ struct HafezFaalView {
 extension HafezFaalView: View {
     var body: some View {
         VStack(spacing: 0) {
-            BookSelectorView(
-                showDetail: $showPoem,
-                selectedPoem: $selectedPoem
-            )
-            .background {
-                if #available(iOS 18.0, macOS 15.0, visionOS 2.0, watchOS 11.0, *) {
-                    Color.clear
-                        .matchedTransitionSource(id: 1, in: container)
+            BookSelectorView(selectedPoem: $selectedPoem)
+                .background {
+                    if #available(iOS 18.0, macOS 15.0, visionOS 2.0, watchOS 11.0, *) {
+                        Color.clear
+                            .matchedTransitionSource(id: 1, in: container)
+                    }
                 }
-            }
             
             Text("Make a wish and tap for a sign")
                 #if os(watchOS)
@@ -57,14 +53,14 @@ extension HafezFaalView: View {
                 .ignoresSafeArea(.all)
         }
         #endif
-        .navigationDestination(isPresented: $showPoem) {
+        .navigationDestination(item: $selectedPoem) { poemID in
             if #available(iOS 18.0, macOS 15.0, visionOS 2.0, watchOS 11.0, *) {
-                PoemView(poemType: .poem(id: selectedPoem ?? 0))
+                PoemView(poemType: .poem(id: poemID))
                     #if !os(macOS)
                     .navigationTransition(.zoom(sourceID: 1, in: container))
                     #endif
             } else {
-                PoemView(poemType: .poem(id: selectedPoem ?? 0))
+                PoemView(poemType: .poem(id: poemID))
             }
         }
         #if os(macOS)
