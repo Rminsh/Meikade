@@ -15,17 +15,6 @@ struct VersesCompactView {
 extension VersesCompactView: View {
     
     var body: some View {
-        Group {
-            if #available(macOS 14.0, iOS 17.0, watchOS 10.0, *) {
-                content
-                    .containerBackground(.background, for: .widget)
-            } else {
-                content
-            }
-        }
-    }
-    
-    var content: some View {
         VStack {
             if let poem = entry.poem {
                 VStack {
@@ -47,11 +36,11 @@ extension VersesCompactView: View {
             }
         }
         .foregroundStyle(.white)
+        .containerBackground(.background, for: .widget)
         .environment(\.layoutDirection, .rightToLeft)
     }
 }
 
-@available(iOS 17.0, macOS 14.0, *)
 #Preview(as: .systemSmall) {
     VersesWidget()
 } timeline: {

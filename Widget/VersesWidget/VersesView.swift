@@ -15,47 +15,6 @@ struct VersesView {
  
 extension VersesView: View {
     var body: some View {
-        Group {
-            if #available(macOS 14.0, iOS 17.0, watchOS 10.0, *) {
-                content
-                    .containerBackground(for: .widget) {
-                        backCover
-                    }
-            } else {
-                content
-                    .padding()
-                    .background(backCover)
-            }
-        }
-    }
-    
-    var backCover: some View {
-        Group {
-            if let image = entry.image {
-                Group {
-                    #if os(macOS)
-                    Image(nsImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    #else
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    #endif
-                }
-            } else {
-                Image(.cover)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            }
-        }
-        .blur(radius: entry.poem == nil ? 0 : 4)
-        .padding(-10)
-        .overlay(Color.black.opacity(0.35))
-    }
-    
-    @MainActor
-    var content: some View {
         VStack {
             if let poem = entry.poem {
                 VStack {
@@ -97,10 +56,37 @@ extension VersesView: View {
         .foregroundStyle(.white)
         .environment(\.layoutDirection, .rightToLeft)
         .shadow(radius: renderingMode == .fullColor ? 2 : 0)
+        .containerBackground(for: .widget) {
+            backCover
+        }
+    }
+    
+    var backCover: some View {
+        Group {
+            if let image = entry.image {
+                Group {
+                    #if os(macOS)
+                    Image(nsImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    #else
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    #endif
+                }
+            } else {
+                Image(.cover)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            }
+        }
+        .blur(radius: entry.poem == nil ? 0 : 4)
+        .padding(-10)
+        .overlay(Color.black.opacity(0.35))
     }
 }
 
-@available(iOS 17.0, macOS 14.0, *)
 #Preview(as: .systemSmall) {
     VersesWidget()
 } timeline: {

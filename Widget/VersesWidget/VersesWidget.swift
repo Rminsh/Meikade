@@ -50,7 +50,6 @@ struct VersesEntryView: View {
     }
 }
 
-@available(iOS 17.0, macOS 14.0, *)
 #Preview(as: .systemSmall) {
     VersesWidget()
 } timeline: {
