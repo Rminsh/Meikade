@@ -161,19 +161,11 @@ extension PoetsListView: View {
         #else
         .pickerStyle(.segmented)
         #endif
-        #if os(visionOS) || os(watchOS)
         .onChange(of: selectedType) {
             Task {
                 await getPoets()
             }
         }
-        #else
-        .onChange(of: selectedType) { _ in
-            Task {
-                await getPoets()
-            }
-        }
-        #endif
     }
     
     @MainActor

@@ -132,7 +132,7 @@ extension BookSelectorView: View {
                         .opacity(fingerLocation == nil ? 0 : 1)
                         .position(x: min(max(fingerLocation?.x ?? 0 , 0), bookInnerWidth))
                         .offset(y: -28)
-                        .onChange(of: position) { _ in
+                        .onChange(of: position) {
                             if let x = fingerLocation?.x,
                                x >= 0,
                                x <= bookInnerWidth {
