@@ -145,7 +145,7 @@ extension MeikadeEndpoint: Endpoint {
     
     var cachePolicy: URLRequest.CachePolicy {
         switch self {
-        case .home, .explore:
+        case .home, .explore, .randomPoem:
             return .reloadRevalidatingCacheData
         default:
             return .returnCacheDataElseLoad
