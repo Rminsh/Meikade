@@ -153,6 +153,6 @@ extension BookSelectorView: View {
 }
 
 #Preview {
-    @State var selectedPoem: Int? = nil
+    @Previewable @State var selectedPoem: Int? = nil
     return BookSelectorView(selectedPoem: $selectedPoem)
 }
