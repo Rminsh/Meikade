@@ -775,7 +775,7 @@
 			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.1;
 			};
 		};
 		C69945E92B334B26008D475F /* XCRemoteSwiftPackageReference "Nuke" */ = {
@@ -783,7 +783,7 @@
 			repositoryURL = "https://github.com/kean/Nuke/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 12.7.0;
+				minimumVersion = 12.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
