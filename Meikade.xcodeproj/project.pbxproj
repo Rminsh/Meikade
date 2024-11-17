@@ -29,6 +29,13 @@
 			remoteGlobalIDString = C68C0FA02C43003B0098DC34;
 			remoteInfo = "MeikadeWatch Watch App";
 		};
+		C6B34B2B2CE884A4009F32F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C69945B12B32E8CD008D475F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C69945B82B32E8CD008D475F;
+			remoteInfo = Meikade;
+		};
 		C6D73A072B49CC3C00FC23DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C69945B12B32E8CD008D475F /* Project object */;
@@ -67,6 +74,7 @@
 		C64F90DA2B4A948500FB6BC2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C68C0FA12C43003B0098DC34 /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69945B92B32E8CD008D475F /* Meikade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meikade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6B34B272CE884A3009F32F8 /* MeikadeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeikadeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D739F12B49AC4300FC23DC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MeikadeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D739F82B49CC3B00FC23DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
@@ -102,6 +110,7 @@
 		C67DC8702CE7A3D6002E38D5 /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
 		C67DC8A72CE7A3DF002E38D5 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		C67DC8DB2CE7A3E5002E38D5 /* Widget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C67DC8E22CE7A3E5002E38D5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Widget; sourceTree = "<group>"; };
+		C6B34B282CE884A4009F32F8 /* MeikadeTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MeikadeTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +132,13 @@
 				C69945EB2B334B26008D475F /* Nuke in Frameworks */,
 				C69945ED2B334B26008D475F /* NukeExtensions in Frameworks */,
 				C67CCE642B4F377D002B358B /* RichTextKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6B34B242CE884A3009F32F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +164,7 @@
 				C67DC8702CE7A3D6002E38D5 /* Networking */,
 				C67DC8A72CE7A3DF002E38D5 /* Shared */,
 				C67DC8DB2CE7A3E5002E38D5 /* Widget */,
+				C6B34B282CE884A4009F32F8 /* MeikadeTests */,
 				C6D739F72B49CC3B00FC23DC /* Frameworks */,
 				C69945BA2B32E8CD008D475F /* Products */,
 			);
@@ -159,6 +176,7 @@
 				C69945B92B32E8CD008D475F /* Meikade.app */,
 				C6D739F62B49CC3B00FC23DC /* MeikadeWidget.appex */,
 				C68C0FA12C43003B0098DC34 /* Meikade.app */,
+				C6B34B272CE884A3009F32F8 /* MeikadeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +252,29 @@
 			productReference = C69945B92B32E8CD008D475F /* Meikade.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C6B34B262CE884A3009F32F8 /* MeikadeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6B34B2D2CE884A4009F32F8 /* Build configuration list for PBXNativeTarget "MeikadeTests" */;
+			buildPhases = (
+				C6B34B232CE884A3009F32F8 /* Sources */,
+				C6B34B242CE884A3009F32F8 /* Frameworks */,
+				C6B34B252CE884A3009F32F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6B34B2C2CE884A4009F32F8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C6B34B282CE884A4009F32F8 /* MeikadeTests */,
+			);
+			name = MeikadeTests;
+			packageProductDependencies = (
+			);
+			productName = MeikadeTests;
+			productReference = C6B34B272CE884A3009F32F8 /* MeikadeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C6D739F52B49CC3B00FC23DC /* WidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6D73A0A2B49CC3C00FC23DC /* Build configuration list for PBXNativeTarget "WidgetExtension" */;
@@ -266,7 +307,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					C68C0FA02C43003B0098DC34 = {
@@ -274,6 +315,10 @@
 					};
 					C69945B82B32E8CD008D475F = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					C6B34B262CE884A3009F32F8 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = C69945B82B32E8CD008D475F;
 					};
 					C6D739F52B49CC3B00FC23DC = {
 						CreatedOnToolsVersion = 15.2;
@@ -302,6 +347,7 @@
 				C69945B82B32E8CD008D475F /* Meikade */,
 				C6D739F52B49CC3B00FC23DC /* WidgetExtension */,
 				C68C0FA02C43003B0098DC34 /* Watch App */,
+				C6B34B262CE884A3009F32F8 /* MeikadeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,6 +361,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C69945B72B32E8CD008D475F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6B34B252CE884A3009F32F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,6 +398,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C6B34B232CE884A3009F32F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6D739F22B49CC3B00FC23DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +420,11 @@
 			platformFilter = ios;
 			target = C68C0FA02C43003B0098DC34 /* Watch App */;
 			targetProxy = C68C0FAC2C43003C0098DC34 /* PBXContainerItemProxy */;
+		};
+		C6B34B2C2CE884A4009F32F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C69945B82B32E8CD008D475F /* Meikade */;
+			targetProxy = C6B34B2B2CE884A4009F32F8 /* PBXContainerItemProxy */;
 		};
 		C6D73A082B49CC3C00FC23DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -642,6 +707,50 @@
 			};
 			name = Release;
 		};
+		C6B34B2E2CE884A4009F32F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.MeikadeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meikade.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Meikade";
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		C6B34B2F2CE884A4009F32F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.MeikadeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meikade.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Meikade";
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		C6D73A0B2B49CC3C00FC23DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6D739F12B49AC4300FC23DC /* Config.xcconfig */;
@@ -746,6 +855,15 @@
 			buildConfigurations = (
 				C69945C92B32E8CE008D475F /* Debug */,
 				C69945CA2B32E8CE008D475F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6B34B2D2CE884A4009F32F8 /* Build configuration list for PBXNativeTarget "MeikadeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6B34B2E2CE884A4009F32F8 /* Debug */,
+				C6B34B2F2CE884A4009F32F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
