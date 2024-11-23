@@ -9,7 +9,17 @@ import Testing
 @testable import Meikade
 
 struct EndpointTests {
-    @Test func homeEndpoint() async throws {
+    @Test(arguments: [MeikadeEndpoint.home, .explore, .poetTypes])
+    func methodType(_ endpoint: MeikadeEndpoint) async throws {
+        #expect(endpoint.method == .get)
+    }
+    
+    @Test(arguments: [MeikadeEndpoint.home, .poetTypes/*, .explore*/])
+    func header(_ endpoint: MeikadeEndpoint) async throws {
+        #expect(endpoint.header == nil)
+    }
+    
+    @Test("Home") func homeEndpoint() async throws {
         let endpoint = MeikadeEndpoint.home
         #expect(endpoint.method == .get)
         #expect(endpoint.path == "/api/main/home")
@@ -17,7 +27,7 @@ struct EndpointTests {
         #expect(endpoint.urlParams == nil)
     }
     
-    @Test func poetEndpoint() async throws {
+    @Test("Poets") func poetEndpoint() async throws {
         let endpoint = MeikadeEndpoint.poets(limit: 10, offset: 0, typeID: 1)
         #expect(endpoint.method == .get)
         #expect(endpoint.path == "/api/main/poets")
