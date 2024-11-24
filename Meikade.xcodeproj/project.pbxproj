@@ -103,6 +103,13 @@
 			);
 			target = C6D739F52B49CC3B00FC23DC /* WidgetExtension */;
 		};
+		C6D8B2F32CF247E700FF64AB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Meikade.xctestplan,
+			);
+			target = C6B34B262CE884A3009F32F8 /* MeikadeTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -110,7 +117,7 @@
 		C67DC8702CE7A3D6002E38D5 /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
 		C67DC8A72CE7A3DF002E38D5 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		C67DC8DB2CE7A3E5002E38D5 /* Widget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C67DC8E22CE7A3E5002E38D5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Widget; sourceTree = "<group>"; };
-		C6B34B282CE884A4009F32F8 /* MeikadeTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MeikadeTests; sourceTree = "<group>"; };
+		C6B34B282CE884A4009F32F8 /* MeikadeTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C6D8B2F32CF247E700FF64AB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = MeikadeTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -717,7 +724,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.MeikadeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID).tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -739,7 +746,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.MeikadeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONFIG_BUNDLE_ID).tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";

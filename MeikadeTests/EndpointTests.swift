@@ -8,15 +8,26 @@
 import Testing
 @testable import Meikade
 
+@Suite("API Endpoint Test")
 struct EndpointTests {
     @Test(arguments: [MeikadeEndpoint.home, .explore, .poetTypes])
     func methodType(_ endpoint: MeikadeEndpoint) async throws {
         #expect(endpoint.method == .get)
     }
     
-    @Test(arguments: [MeikadeEndpoint.home, .poetTypes/*, .explore*/])
-    func header(_ endpoint: MeikadeEndpoint) async throws {
+    @Test(
+        arguments: [
+            MeikadeEndpoint.home,
+            .explore,
+            .poetTypes,
+            .category(categoryID: 1),
+            .poet(poetID: 1)
+        ]
+    )
+    func inputs(_ endpoint: MeikadeEndpoint) async throws {
         #expect(endpoint.header == nil)
+        #expect(endpoint.body == nil)
+        #expect(endpoint.needsToken == false)
     }
     
     @Test("Home") func homeEndpoint() async throws {
