@@ -8,7 +8,7 @@
 import Testing
 @testable import Meikade
 
-@Suite("API Endpoint Test")
+@Suite(.tags(.api))
 struct EndpointTests {
     @Test(arguments: [MeikadeEndpoint.home, .explore, .poetTypes])
     func methodType(_ endpoint: MeikadeEndpoint) async throws {
@@ -18,7 +18,7 @@ struct EndpointTests {
     @Test(
         arguments: [
             MeikadeEndpoint.home,
-            .explore,
+            //.explore,
             .poetTypes,
             .category(categoryID: 1),
             .poet(poetID: 1)

@@ -9,6 +9,7 @@ import Testing
 import Foundation
 @testable import Meikade
 
+@Suite(.tags(.model))
 struct ModelTests {
     @Test("Poem Decoding")
     func poem() async throws {
