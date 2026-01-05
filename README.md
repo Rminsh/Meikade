@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="App/Resources/Assets.xcassets/AppIcon.appiconset/128x128@2x.png" alt="Meikade logo" width="128" />
+    <img src="Previews/app_icon.png" alt="Meikade logo" width="128" />
 </p>
 <h1 align="center">Meikade</h1>
 
@@ -66,5 +66,5 @@ Feel free to Fork, edit, then pull!
 
 ## 📝 Copyright Notice
 
-Copyright (C) 2024 Aseman
+Copyright (C) 2026 Aseman
 Licensed under the [GNU Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) license (see the LICENSE file).
