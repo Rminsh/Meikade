@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExploreView {
+struct ExploreView: View {
     
     @State var exploreSections: [ExploreSection] = []
     @State private var path = NavigationPath()
@@ -17,32 +17,16 @@ struct ExploreView {
     
     @Namespace var container
     
-    func getExplore() async {
-        loading = true
-        
-        let service = MeikadeService()
-        do {
-            let result = try await service.getExplore()
-            exploreSections = result.filter {
-                $0.section != "کاوش در لیست‌های کاربران" &&
-                $0.section != "User lists" &&
-                $0.type != "static"
-            }
-            if exploreSections.isEmpty {
-                emptyState = .exploreEmpty
-            }
-        } catch {
-            emptyState = .network(subtitle: error.localizedDescription)
-            #if DEBUG
-            print(error)
-            #endif
-        }
-        
-        loading = false
+    var logoPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        return .principal
+        #elseif !os(watchOS)
+        return .secondaryAction
+        #else
+        return .primaryAction
+        #endif
     }
-}
-
-extension ExploreView: View {
+    
     var body: some View {
         NavigationStack(path: $path) {
             content
@@ -56,13 +40,20 @@ extension ExploreView: View {
                     emptyStateView
                 }
                 .toolbar {
-                    #if os(iOS)
-                    ToolbarItem(placement: .principal) {
+                    #if os(visionOS)
+                    ToolbarItem(placement: logoPlacement) {
                         logo
                     }
                     #elseif !os(watchOS)
-                    ToolbarItem(placement: .secondaryAction) {
-                        logo
+                    if #available(iOS 26.0, macOS 26.0, *) {
+                        ToolbarItem(placement: logoPlacement) {
+                            logo
+                        }
+                        .sharedBackgroundVisibility(.hidden)
+                    } else {
+                        ToolbarItem(placement: logoPlacement) {
+                            logo
+                        }
                     }
                     #endif
                     
@@ -209,6 +200,32 @@ extension ExploreView: View {
                 ProgressView()
             }
         }
+    }
+}
+
+extension ExploreView {
+    func getExplore() async {
+        loading = true
+        
+        let service = MeikadeService()
+        do {
+            let result = try await service.getExplore()
+            exploreSections = result.filter {
+                $0.section != "کاوش در لیست‌های کاربران" &&
+                $0.section != "User lists" &&
+                $0.type != "static"
+            }
+            if exploreSections.isEmpty {
+                emptyState = .exploreEmpty
+            }
+        } catch {
+            emptyState = .network(subtitle: error.localizedDescription)
+            #if DEBUG
+            print(error)
+            #endif
+        }
+        
+        loading = false
     }
 }
 
